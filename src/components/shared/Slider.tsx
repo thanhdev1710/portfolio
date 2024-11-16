@@ -5,10 +5,6 @@ const images1 = [
   "/images/reactjs.webp",
   "/images/nextjs.webp",
   "/images/nodejs.webp",
-  "/images/express-js.webp",
-];
-
-const images2 = [
   "/images/postgresql.webp",
   "/images/redis.webp",
   "/images/kafka.webp",
@@ -23,7 +19,7 @@ export function Slider() {
           {images1.map((img) => (
             <div
               key={img}
-              className="h-full w-auto aspect-square overflow-hidden bg-[var(--background-primary)] p-2 rounded-2xl mx-2"
+              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 md:p-2 p-0.5 rounded-2xl md:mx-2 mx-0.5"
             >
               <Image
                 width={100}
@@ -36,10 +32,10 @@ export function Slider() {
           ))}
         </div>
         <div className={`flex w-full ${styles.slider}`}>
-          {images2.map((img) => (
+          {images1.map((img) => (
             <div
               key={img}
-              className="h-full w-auto aspect-square overflow-hidden bg-[var(--background-primary)] p-2 rounded-2xl mx-2"
+              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 md:p-2 p-0.5 rounded-2xl md:mx-2 mx-0.5"
             >
               <Image
                 width={100}

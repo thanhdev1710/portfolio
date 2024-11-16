@@ -11,13 +11,13 @@ export function ModeToggle() {
   return (
     <div className="flex gap-4">
       <button
-        className="bg-yellow-500 rounded-full w-32 h-16 p-1"
+        className="bg-[var(--border)] rounded-full w-32 h-16 p-1"
         onClick={() => {
           setTheme((prev) => (prev === "dark" ? "light" : "dark"));
         }}
       >
         <motion.div
-          className="h-full w-auto aspect-square rounded-full bg-red-600 relative"
+          className="h-full w-auto aspect-square rounded-full bg-[var(--background-primary)] relative"
           animate={{
             x: theme === "dark" ? 0 : 64,
           }}
@@ -34,9 +34,12 @@ export function ModeToggle() {
               duration: 0.5,
               ease: "easeInOut",
             }}
-            className="w-full h-full p-2 absolute top-0 left-0"
+            className="w-full h-full p-3 absolute bg-[var(--backround-primary)] top-0 left-0"
           >
-            <Sun className="h-full w-full" />
+            <Sun
+              fill="currentColor"
+              className="h-full w-full text-yellow-500"
+            />
           </motion.div>
           <motion.div
             animate={{
@@ -46,9 +49,12 @@ export function ModeToggle() {
               duration: 0.5,
               ease: "easeInOut",
             }}
-            className="w-full h-full p-2 absolute top-0 left-0"
+            className="w-full h-full p-3 absolute top-0 left-0"
           >
-            <Moon className="h-full w-full" />
+            <Moon
+              fill="currentColor"
+              className="h-full w-full text-yellow-700"
+            />
           </motion.div>
         </motion.div>
       </button>

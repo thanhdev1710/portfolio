@@ -1,5 +1,5 @@
 .slider {
-  animation: slider-right 10s linear infinite;
+  animation: slider-right 15s linear infinite;
 }
 
 @keyframes slider-right {
