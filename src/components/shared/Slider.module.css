@@ -1,0 +1,12 @@
+.slider {
+  animation: slider-right 10s linear infinite;
+}
+
+@keyframes slider-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
