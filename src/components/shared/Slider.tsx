@@ -19,7 +19,7 @@ export function Slider() {
           {images1.map((img) => (
             <div
               key={img}
-              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 md:p-2 p-0.5 rounded-2xl md:mx-2 mx-0.5"
+              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 p-2 rounded-2xl mx-2"
             >
               <Image
                 width={100}
@@ -35,7 +35,7 @@ export function Slider() {
           {images1.map((img) => (
             <div
               key={img}
-              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 md:p-2 p-0.5 rounded-2xl md:mx-2 mx-0.5"
+              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 p-2 rounded-2xl mx-2"
             >
               <Image
                 width={100}

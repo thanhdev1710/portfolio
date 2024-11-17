@@ -1,8 +1,11 @@
+import { ShootingStars } from "../shared/shooting-stars";
+import { StarsBackground } from "../shared/stars-background";
+
 export function Flex1() {
   return (
-    <div className="h-full w-full flex max-xl:h-[240px] gap-4">
-      <div className="card-customer xl:!w-[50%] p-10 flex items-center">
-        <div>
+    <section className="h-full w-full flex max-xl:h-[240px] gap-4">
+      <article className="card-customer xl:!w-[50%] p-10 flex items-center">
+        <div className="relative z-10">
           <h1 className="text-4xl font-semibold mb-6 leading-tight">
             Hi, I&apos;m ThanhDev
           </h1>
@@ -10,10 +13,12 @@ export function Flex1() {
             Web Developer Enthusiast & Micro-Influencer on YouTube
           </h2>
         </div>
-      </div>
-      <div className="card-customer overflow-hidden !w-[25%] !h-full max-xl:hidden">
+        <ShootingStars />
+        <StarsBackground />
+      </article>
+      <article className="card-customer overflow-hidden !w-[25%] !h-full max-xl:hidden">
         <div className="flex items-center justify-center w-full h-full">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col relative z-10 items-center">
             <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
               Experience
             </h3>
@@ -22,9 +27,11 @@ export function Flex1() {
             </strong>
           </div>
         </div>
-      </div>
-      <div className="card-customer overflow-hidden !w-[25%] !h-full max-xl:hidden">
-        <div className="flex items-center justify-center w-full h-full">
+        <ShootingStars />
+        <StarsBackground />
+      </article>
+      <article className="card-customer overflow-hidden !w-[25%] !h-full max-xl:hidden">
+        <div className="flex items-center justify-center relative z-10 w-full h-full">
           <div className="flex flex-col items-center">
             <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
               Projects
@@ -34,7 +41,9 @@ export function Flex1() {
             </strong>
           </div>
         </div>
-      </div>
-    </div>
+        <ShootingStars />
+        <StarsBackground />
+      </article>
+    </section>
   );
 }

@@ -9,7 +9,7 @@ export function ModeToggle() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 relative z-10">
       <button
         className="bg-[var(--border)] rounded-full w-32 h-16 p-1"
         onClick={() => {

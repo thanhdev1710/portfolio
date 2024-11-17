@@ -7,8 +7,20 @@
     text-wrap: balance;
   }
 
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .card-customer {
-    @apply h-full w-full rounded-[20px] bg-[var(--background-card)] border-2 border-[var(--border)] transition-all duration-700 hover:-translate-y-1 hover:shadow-md;
+    @apply relative h-full w-full rounded-[20px] bg-[var(--background-card)] border-2 border-[var(--border)] transition-all duration-700 hover:-translate-y-1 hover:shadow-md;
+    animation: fadeInUp 1s ease-out forwards; /* Thêm hiệu ứng fade-in từ dưới lên */
   }
 }
 
@@ -85,10 +97,5 @@
     color: var(--text-primary);
     background: var(--background-primary);
     font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-    cursor: none;
-  }
-
-  * {
-    cursor: none;
   }
 }
