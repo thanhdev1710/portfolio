@@ -64,6 +64,8 @@ const data: {
   href: string;
 }[] = [];
 
+console.log(data);
+
 export default function page() {
   return (
     <div className="h-full w-full p-4">
