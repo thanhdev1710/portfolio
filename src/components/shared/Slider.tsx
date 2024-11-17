@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./Slider.module.css";
 
 const images1 = [
-  "/images/reactjs.webp",
+  "/images/docker.webp",
   "/images/nextjs.webp",
   "/images/nodejs.webp",
   "/images/postgresql.webp",
