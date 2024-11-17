@@ -4,7 +4,6 @@ import styles from "./Slider.module.css";
 const images1 = [
   "/images/docker.webp",
   "/images/nextjs.webp",
-  "/images/nodejs.webp",
   "/images/postgresql.webp",
   "/images/redis.webp",
   "/images/kafka.webp",
