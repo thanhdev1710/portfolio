@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /api/
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://portfolio-thanhdev.vercel.app/sitemap.xml

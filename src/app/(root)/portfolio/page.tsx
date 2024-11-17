@@ -26,18 +26,18 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "ThanhDev",
-      url: "",
+      url: "https://portfolio-thanhdev.vercel.app/",
     },
   ],
   openGraph: {
     title: "Thanh's Portfolio - Backend Developer | Fullstack Web Developer",
     description:
       "Explore Thanh's Portfolio, a showcase of my skills in backend development, fullstack web applications, and optimization techniques.",
-    url: "https://www.thanhdev.com",
+    url: "https://portfolio-thanhdev.vercel.app/portfolio",
     siteName: "Thanh's Portfolio",
     images: [
       {
-        url: "https://www.thanhdev.com/thumbnail.jpg",
+        url: "/images/website.avif",
         width: 1200,
         height: 630,
         alt: "Thanh's Portfolio - Backend Developer",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Thanh's Portfolio - Backend Developer | Fullstack Web Developer",
     description:
       "Explore Thanh's Portfolio, showcasing my backend and fullstack development skills. Learn about my projects and achievements.",
-    images: "https://www.thanhdev.com/thumbnail.jpg", // Thay bằng hình ảnh của bạn
+    images: "/images/website.avif", // Thay bằng hình ảnh của bạn
   },
 };
 
