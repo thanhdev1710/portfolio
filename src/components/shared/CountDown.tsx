@@ -15,7 +15,7 @@ export default function CountDown() {
     >
       {({ remainingTime }) => {
         if (remainingTime === 0) {
-          setTimeout(() => router.replace("/portfolio"), 800);
+          setTimeout(() => router.replace("/portfolio"), 500);
         }
         return remainingTime === 0 ? (
           <span
