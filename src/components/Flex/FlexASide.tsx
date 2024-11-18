@@ -47,14 +47,14 @@ export default function FlexASide() {
       <article className="card-customer p-6 relative">
         <Link
           className="flex flex-col justify-between h-full w-full relative z-10"
-          href="/projects"
+          href="/blog"
         >
           <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
-            Projects
+            Blog Me
           </h3>
           <h4 className="text-xl font-medium tracking-wide line-clamp-3">
-            Explore my fullstack projects, from scalable social networks to
-            data-driven applications.
+            Sharing knowledge and experiences on building modern, scalable web
+            applications.
           </h4>
           <button className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden">
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />

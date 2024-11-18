@@ -38,18 +38,18 @@ export default function FlexResponsive() {
           <StarsBackground />
         </div>
       </article>
-      <article className="!h-[200px] xl:hidden group">
+      <article className="!h-[240px] xl:hidden group">
         <div className="card-customer p-6">
           <Link
             className="flex flex-col justify-between h-full w-full relative z-10"
-            href="/blog"
+            href="/projects"
           >
             <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
-              Blog me
+              Projects
             </h3>
-            <h4 className="text-xl font-medium tracking-wide">
-              Sharing knowledge and experiences on building modern, scalable web
-              applications.
+            <h4 className="text-xl font-medium tracking-wide line-clamp-3">
+              Explore my fullstack projects, from scalable social networks to
+              data-driven applications.
             </h4>
             <button className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden">
               <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />
