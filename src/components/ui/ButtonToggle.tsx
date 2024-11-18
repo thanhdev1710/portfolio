@@ -11,6 +11,7 @@ export function ModeToggle() {
   return (
     <div className="flex gap-4 relative z-10">
       <button
+        aria-label="Button Toggle"
         className="bg-[var(--border)] rounded-full w-32 h-16 p-1"
         onClick={() => {
           setTheme((prev) => (prev === "dark" ? "light" : "dark"));

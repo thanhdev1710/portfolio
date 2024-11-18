@@ -16,6 +16,7 @@ export default function FlexASide() {
         </h3>
         <div className="flex gap-4 w-full">
           <Link
+            aria-label="To instagram"
             href="https://www.instagram.com/cthanh_yi"
             target="_blank"
             className="rounded-2xl card-customer !h-auto aspect-square flex items-center justify-center hover:bg-pink-400 hover:text-white"
@@ -25,6 +26,7 @@ export default function FlexASide() {
             <StarsBackground />
           </Link>
           <Link
+            aria-label="To mail"
             href="mailto:chithanh171004@gmail.com"
             target="_blank"
             className="rounded-2xl card-customer !h-auto aspect-square flex items-center justify-center hover:bg-red-400 hover:text-white"
@@ -34,6 +36,7 @@ export default function FlexASide() {
             <StarsBackground />
           </Link>
           <Link
+            aria-label="To githup"
             href="https://github.com/chithanh1710"
             target="_blank"
             className="rounded-2xl card-customer !h-auto aspect-square flex items-center justify-center hover:bg-blue-400 hover:text-white"
@@ -46,6 +49,7 @@ export default function FlexASide() {
       </article>
       <article className="card-customer p-6 relative">
         <Link
+          aria-label="To blog"
           className="flex flex-col justify-between h-full w-full relative z-10"
           href="/blog"
         >
@@ -56,7 +60,10 @@ export default function FlexASide() {
             Sharing knowledge and experiences on building modern, scalable web
             applications.
           </h4>
-          <button className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden">
+          <button
+            aria-label="Button to Blog Me"
+            className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden"
+          >
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 -translate-x-10 translate-y-10 group-hover:translate-x-0 group-hover:-translate-y-0" />
           </button>

@@ -41,6 +41,7 @@ export default function FlexResponsive() {
       <article className="!h-[240px] xl:hidden group">
         <div className="card-customer p-6">
           <Link
+            aria-label="To projects"
             className="flex flex-col justify-between h-full w-full relative z-10"
             href="/projects"
           >
@@ -51,7 +52,10 @@ export default function FlexResponsive() {
               Explore my fullstack projects, from scalable social networks to
               data-driven applications.
             </h4>
-            <button className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden">
+            <button
+              aria-label="Button to Projects"
+              className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden"
+            >
               <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />
               <ArrowUpRight className="transition-all absolute ease-in-out duration-500 -translate-x-10 translate-y-10 group-hover:translate-x-0 group-hover:-translate-y-0" />
             </button>

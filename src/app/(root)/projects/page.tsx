@@ -72,6 +72,7 @@ export default function page() {
       <div className="border-2 border-[var(--border)] p-4 w-full h-full rounded-[30px]">
         <div className="max-w-[1130px] mx-auto h-full">
           <Link
+            aria-label="To Portfolio"
             href="/portfolio"
             className="size-14 rounded-full border-2 border-[var(--border)] flex items-center justify-center mx-auto max-sm:mt-4 max-sm:mb-8 mt-8 mb-16"
           >
@@ -89,7 +90,7 @@ export default function page() {
                     <h3>Galaxy Cinema Clone</h3>
                     <p>dasdaskdnas,dsn,das</p>
                   </div>
-                  <Button>
+                  <Button aria-label="Visit">
                     <ExternalLink /> Visit
                   </Button>
                 </div>

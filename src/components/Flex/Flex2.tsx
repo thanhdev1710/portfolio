@@ -21,6 +21,7 @@ export function Flex2() {
       </article>
       <article className="card-customer h-full max-lg:!h-[240px] xl:!w-[40%] p-6 max-xl:w-full group">
         <Link
+          aria-label="To About"
           className="flex flex-col justify-between h-full w-full relative z-10"
           href="/about"
         >
@@ -30,7 +31,10 @@ export function Flex2() {
           <h4 className="text-xl font-medium tracking-wide line-clamp-3">
             Passionate about fullstack development and building scalable apps.
           </h4>
-          <button className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden">
+          <button
+            aria-label="Button to About"
+            className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden"
+          >
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 -translate-x-10 translate-y-10 group-hover:translate-x-0 group-hover:-translate-y-0" />
           </button>
@@ -40,6 +44,7 @@ export function Flex2() {
       </article>
       <article className="card-customer !w-[35%] p-6 max-xl:hidden group">
         <Link
+          aria-label="To Projects"
           className="flex flex-col justify-between relative z-10 h-full w-full"
           href="/projects"
         >
@@ -50,7 +55,10 @@ export function Flex2() {
             Explore my fullstack projects, from scalable social networks to
             data-driven applications.
           </h4>
-          <button className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden">
+          <button
+            aria-label="Button to Projects"
+            className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden"
+          >
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 -translate-x-10 translate-y-10 group-hover:translate-x-0 group-hover:-translate-y-0" />
           </button>

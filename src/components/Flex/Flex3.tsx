@@ -18,12 +18,13 @@ export function Flex3() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="dark:bg-zinc-600 bg-zinc-200 p-4 rounded-xl w-full"
+            className="dark:bg-zinc-800 dark:!text-white bg-zinc-200 !text-black p-4 rounded-xl w-full "
             required
           />
           <button
+            aria-label="Subscribe"
             type="submit"
-            className="dark:bg-zinc-800 bg-zinc-400 text-white py-4 px-6 rounded-xl font-semibold"
+            className="dark:bg-zinc-800 dark:!text-white bg-zinc-200 !text-black py-4 px-6 rounded-xl font-semibold"
           >
             Subscribe
           </button>

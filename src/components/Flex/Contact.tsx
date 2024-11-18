@@ -30,6 +30,7 @@ export default function Contact() {
             </span>
           </div>
           <button
+            aria-label="Copy email"
             onClick={handleCopyEmail}
             className="flex items-center gap-2 justify-center w-full py-2 px-4 border-2 border-[var(--border)] rounded-full hover:bg-[var(--hover-bg)] transition-all"
           >
