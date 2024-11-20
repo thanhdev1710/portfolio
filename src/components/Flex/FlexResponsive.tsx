@@ -67,7 +67,7 @@ export default function FlexResponsive() {
       <article className="!h-[310px] w-full relative rounded-2xl overflow-hidden">
         <Image
           src="/images/img3.webp"
-          alt=""
+          alt="ThanhDev - Backend Developer"
           sizes="100vw"
           fill
           className="object-cover"

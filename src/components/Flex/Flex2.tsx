@@ -9,7 +9,7 @@ export function Flex2() {
     <section className="h-full w-full flex max-lg:flex-col-reverse max-lg:!h-full max-xl:!h-[240px] items-stretch gap-4">
       <article className="card-customer overflow-hidden flex-shrink-0 max-lg:!h-[310px] !w-[25%] !h-auto max-xl:!h-full max-xl:!w-auto aspect-square max-lg:hidden">
         <Image
-          alt=""
+          alt="ThanhDev - Backend Developer"
           src="/images/img3.webp"
           priority
           width={300}
