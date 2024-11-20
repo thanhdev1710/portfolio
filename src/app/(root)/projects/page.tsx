@@ -133,14 +133,14 @@ export default function page() {
           >
             <X className="text-[var(--text-primary)]" />
           </Link>
-          <div className="grid grid-cols-2 gap-4 w-full h-full max-md:grid-cols-1 ">
+          <div className="grid grid-cols-2 gap-6 w-full h-full max-md:grid-cols-1 ">
             {data.map((item, i) => (
               <div
                 key={i}
-                className="card-customer h-full w-full overflow-hidden !bg-transparent !border-none group p-2"
+                className="card-customer h-full w-full !bg-transparent !border-none group p-2"
               >
                 <VideoCustom video={item.video} />
-                <div className="flex items-center justify-between gap-4 px-4 mt-2">
+                <div className="flex items-center justify-between gap-4 px-4 mt-4">
                   <div>
                     <h3 className="font-semibold text-lg line-clamp-1 mb-2">
                       {item.title}

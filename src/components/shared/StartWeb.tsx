@@ -11,7 +11,7 @@ export default function StartWeb() {
         <h1 className={styles.title}>
           Hi there! <br /> <span>Welcome to Thanh&apos;s </span>
           <br />
-          <FlipWords words={["Portfolio", "Website"]} />
+          <FlipWords className="text-white" words={["Portfolio", "Website"]} />
           <div className={styles.aurora}>
             <div className={styles.aurora__item}></div>
             <div className={styles.aurora__item}></div>
@@ -19,7 +19,7 @@ export default function StartWeb() {
             <div className={styles.aurora__item}></div>
           </div>
         </h1>
-        <p className={styles.subtitle}>
+        <p className={`text-white ${styles.subtitle}`}>
           I’m a backend-focused developer, specializing in building scalable
           systems and optimizing website performance.
         </p>
