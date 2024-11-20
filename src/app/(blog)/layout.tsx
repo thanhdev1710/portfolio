@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     "Redis",
     "experience",
     "career tips",
+    "backend systems",
+    "API development",
   ],
   authors: [
     {

@@ -6,11 +6,11 @@ import FlexResponsive from "@/components/Flex/FlexResponsive";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "ThanhDev's Portfolio - Backend & Fullstack Developer",
   description:
-    "Welcome to Thanh's Portfolio. I am a backend-focused developer, specializing in building scalable systems, optimizing performance, and creating robust applications. Explore my projects and blog.",
+    "Welcome to ThanhDev's Portfolio. I am a backend-focused developer, specializing in building scalable systems, optimizing performance, and creating robust applications. Explore my projects and blog.",
   keywords: [
-    "Thanh",
+    "ThanhDev",
     "portfolio",
     "backend developer",
     "fullstack developer",
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     "Next.js",
     "PostgreSQL",
     "Redis",
+    "software engineering",
   ],
   authors: [
     {
@@ -30,17 +31,17 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "Thanh's Portfolio - Backend Developer | Fullstack Web Developer",
+    title: "ThanhDev's Portfolio - Backend Developer | Fullstack Web Developer",
     description:
-      "Explore Thanh's Portfolio, a showcase of my skills in backend development, fullstack web applications, and optimization techniques.",
+      "Explore ThanhDev's Portfolio, a showcase of skills in backend development, fullstack web applications, and optimization techniques.",
     url: "https://thanhdev.vercel.app/portfolio",
-    siteName: "Thanh's Portfolio",
+    siteName: "ThanhDev's Portfolio",
     images: [
       {
         url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "Thanh's Portfolio - Backend Developer",
+        alt: "ThanhDev's Portfolio - Backend Developer",
       },
     ],
     type: "website",
@@ -49,9 +50,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
     creator: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
-    title: "Thanh's Portfolio - Backend Developer | Fullstack Web Developer",
+    title: "ThanhDev's Portfolio - Backend Developer | Fullstack Web Developer",
     description:
-      "Explore Thanh's Portfolio, showcasing my backend and fullstack development skills. Learn about my projects and achievements.",
+      "Explore ThanhDev's Portfolio, showcasing backend and fullstack development skills. Learn about projects and achievements.",
     images: "/images/website.avif", // Thay bằng hình ảnh của bạn
   },
 };

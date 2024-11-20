@@ -1,26 +1,54 @@
 {
-  "name": "Thanh's Portfolio - Backend & Fullstack Developer",
-  "short_name": "Thanh's Portfolio",
-  "description": "Explore Thanh's Portfolio, showcasing my skills in backend development, fullstack web applications, and optimization techniques.",
+  "name": "ThanhDev Portfolio - Backend & Fullstack Developer",
+  "short_name": "ThanhDev",
+  "description": "Explore ThanhDev's Portfolio, showcasing skills in backend development, fullstack web applications, optimization techniques, and scalable systems.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#004777",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/icon.png",
-      "sizes": "any",
+      "src": "/images/icon.png",
+      "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "/icon.png",
+      "src": "/images/icon.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icon.png",
+      "src": "/images/icon.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "dark_theme": {
+    "background_color": "#000000",
+    "theme_color": "#ffffff"
+  },
+  "light_theme": {
+    "background_color": "#ffffff",
+    "theme_color": "#000000"
+  }
 }

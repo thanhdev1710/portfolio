@@ -7,12 +7,12 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "About Me",
+  title: "About ThanhDev - Backend & Fullstack Developer",
   description:
-    "Learn more about Thanh, a backend-focused developer passionate about building scalable systems, optimizing performance, and creating robust web applications. Explore my journey and achievements.",
+    "Learn more about ThanhDev, a backend-focused developer passionate about building scalable systems, optimizing performance, and creating robust web applications. Explore my journey, achievements, and expertise.",
   keywords: [
-    "Thanh",
-    "about",
+    "ThanhDev",
+    "about ThanhDev",
     "backend developer",
     "fullstack developer",
     "web developer",
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "Next.js",
     "PostgreSQL",
     "Redis",
+    "software engineering",
   ],
   authors: [
     {
@@ -31,17 +32,17 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "About Me - ThanhDev | Backend Developer | Fullstack Web Developer",
+    title: "About ThanhDev - Backend Developer | Fullstack Web Developer",
     description:
-      "Get to know Thanh, a skilled backend developer with experience in fullstack development and system optimization. Discover my story, expertise, and what drives me.",
+      "Get to know ThanhDev, a skilled backend developer with experience in fullstack development and system optimization. Discover my story, expertise, and what drives me.",
     url: "https://thanhdev.vercel.app/about", // Đảm bảo là đường dẫn đến trang About
-    siteName: "Thanh's Portfolio",
+    siteName: "ThanhDev's Portfolio",
     images: [
       {
         url: "/images/website.avif", // Thay đổi URL thumbnail nếu có
         width: 1200,
         height: 630,
-        alt: "Thanh's About Page - Backend Developer",
+        alt: "ThanhDev's About Page - Backend Developer",
       },
     ],
     type: "website",
@@ -50,9 +51,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
     creator: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
-    title: "About Me - ThanhDev | Backend Developer | Fullstack Web Developer",
+    title: "About ThanhDev - Backend Developer | Fullstack Web Developer",
     description:
-      "Get to know Thanh, a backend-focused developer who specializes in building scalable systems and optimizing performance. Learn about my journey and expertise.",
+      "Get to know ThanhDev, a backend-focused developer who specializes in building scalable systems and optimizing performance. Learn about my journey and expertise.",
     images: "/images/website.avif", // Thay bằng hình ảnh của bạn
   },
 };
