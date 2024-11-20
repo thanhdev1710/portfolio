@@ -3,4 +3,4 @@ Disallow: /api/
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://portfolio-thanhdev.vercel.app/sitemap.xml
+Sitemap: https://thanhdev.vercel.app/sitemap.xml
