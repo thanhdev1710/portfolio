@@ -137,7 +137,7 @@ export default function page() {
             {data.map((item, i) => (
               <div
                 key={i}
-                className="card-customer h-full w-full !bg-transparent !border-none group p-2"
+                className="card-customer h-full w-full !bg-transparent !border-none p-2"
               >
                 <VideoCustom video={item.video} />
                 <div className="flex items-center justify-between gap-4 px-4 mt-4">
@@ -170,7 +170,7 @@ export default function page() {
                     </TooltipProvider>
                   )}
                 </div>
-                <div className="absolute group-hover:scale-0 transition-all top-3 right-4 text-sm bg-opacity-80 p-2 rounded-lg">
+                <div className="absolute top-3 right-4 text-sm bg-opacity-80 p-2 rounded-lg">
                   <div
                     className={`status-tag px-3 py-1 text-center rounded-full font-semibold ${
                       item.status === "Active"
