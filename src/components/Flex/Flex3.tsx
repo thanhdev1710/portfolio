@@ -2,6 +2,7 @@ import { ShootingStars } from "../shared/shooting-stars";
 import { Slider } from "../shared/Slider";
 import { StarsBackground } from "../shared/stars-background";
 import { ModeToggle } from "../ui/ButtonToggle";
+import FormSubscribeEmail from "./FormSubscribeEmail";
 
 export function Flex3() {
   return (
@@ -14,21 +15,8 @@ export function Flex3() {
           Stay updated with the latest blog posts! Enter your email to
           subscribe.
         </p>
-        <form className="flex gap-4 relative z-10 max-md:flex-col">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="dark:bg-zinc-800 dark:!text-white bg-zinc-200 !text-black p-4 rounded-xl w-full "
-            required
-          />
-          <button
-            aria-label="Subscribe"
-            type="submit"
-            className="dark:bg-zinc-800 dark:!text-white bg-zinc-200 !text-black py-4 px-6 rounded-xl font-semibold"
-          >
-            Subscribe
-          </button>
-        </form>
+
+        <FormSubscribeEmail />
         <ShootingStars />
         <StarsBackground />
       </article>

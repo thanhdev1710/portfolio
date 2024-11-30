@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Metadata } from "next";
+import QueryProvider from "@/contexts/QueryProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -27,7 +29,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <QueryProvider>{children}</QueryProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
