@@ -6,9 +6,9 @@ import FlexResponsive from "@/components/Flex/FlexResponsive";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ThanhDev's Portfolio - Backend & Fullstack Developer",
+  title: "ThanhDev Portfolio - Backend & Fullstack Developer",
   description:
-    "Welcome to ThanhDev's Portfolio. I am a backend-focused developer, specializing in building scalable systems, optimizing performance, and creating robust applications. Explore my projects and blog.",
+    "Welcome to ThanhDev Portfolio. I am a backend-focused developer, specializing in building scalable systems, optimizing performance, and creating robust applications. Explore my projects and blog.",
   keywords: [
     "ThanhDev",
     "portfolio",
@@ -31,29 +31,29 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev's Portfolio - Backend Developer | Fullstack Web Developer",
+    title: "ThanhDev Portfolio - Backend Developer | Fullstack Web Developer",
     description:
-      "Explore ThanhDev's Portfolio, a showcase of skills in backend development, fullstack web applications, and optimization techniques.",
+      "Explore ThanhDev Portfolio, a showcase of skills in backend development, fullstack web applications, and optimization techniques.",
     url: "https://thanhdev.vercel.app/portfolio",
-    siteName: "ThanhDev's Portfolio",
+    siteName: "ThanhDev Portfolio",
     images: [
       {
         url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "ThanhDev's Portfolio - Backend Developer",
+        alt: "ThanhDev Portfolio - Backend Developer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
-    creator: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
-    title: "ThanhDev's Portfolio - Backend Developer | Fullstack Web Developer",
+    site: "@Chiithanh1", // Updated Twitter handle
+    creator: "@Chiithanh1", // Updated Twitter handle
+    title: "ThanhDev Portfolio - Backend Developer | Fullstack Web Developer",
     description:
-      "Explore ThanhDev's Portfolio, showcasing backend and fullstack development skills. Learn about projects and achievements.",
-    images: "/images/website.avif", // Thay bằng hình ảnh của bạn
+      "Explore ThanhDev Portfolio, showcasing backend and fullstack development skills. Learn about projects and achievements.",
+    images: "/images/website.avif", // Updated image URL if needed
   },
 };
 

@@ -35,26 +35,26 @@ export const metadata: Metadata = {
     title: "About ThanhDev - Backend Developer | Fullstack Web Developer",
     description:
       "Get to know ThanhDev, a skilled backend developer with experience in fullstack development and system optimization. Discover my story, expertise, and what drives me.",
-    url: "https://thanhdev.vercel.app/about", // Đảm bảo là đường dẫn đến trang About
-    siteName: "ThanhDev's Portfolio",
+    url: "https://thanhdev.vercel.app/about", // Ensure this is the correct URL for the About page
+    siteName: "ThanhDev Portfolio",
     images: [
       {
-        url: "/images/website.avif", // Thay đổi URL thumbnail nếu có
+        url: "/images/website.avif", // Change URL if a different thumbnail is used
         width: 1200,
         height: 630,
-        alt: "ThanhDev's About Page - Backend Developer",
+        alt: "ThanhDev About Page - Backend Developer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
-    creator: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
+    site: "@Chiithanh1", // Updated Twitter handle
+    creator: "@Chiithanh1", // Updated Twitter handle
     title: "About ThanhDev - Backend Developer | Fullstack Web Developer",
     description:
       "Get to know ThanhDev, a backend-focused developer who specializes in building scalable systems and optimizing performance. Learn about my journey and expertise.",
-    images: "/images/website.avif", // Thay bằng hình ảnh của bạn
+    images: "/images/website.avif", // Update if a different image is used
   },
 };
 

@@ -1,11 +1,17 @@
 {
+  "id": "/manifest.json",
   "name": "ThanhDev Portfolio - Backend & Fullstack Developer",
   "short_name": "ThanhDev",
-  "description": "Explore ThanhDev's Portfolio, showcasing skills in backend development, fullstack web applications, optimization techniques, and scalable systems.",
+  "description": "Explore ThanhDev Portfolio, showcasing skills in backend development, fullstack web applications, optimization techniques, and scalable systems.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#ffffff",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["portfolio", "developer", "web development"],
   "icons": [
     {
       "src": "/images/icon.png",
@@ -50,5 +56,11 @@
   "light_theme": {
     "background_color": "#ffffff",
     "theme_color": "#000000"
+  },
+  "prefer_related_applications": false,
+  "twitter": {
+    "card": "summary_large_image",
+    "site": "@Chiithanh1",
+    "creator": "@Chiithanh1"
   }
 }

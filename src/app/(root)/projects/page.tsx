@@ -12,9 +12,9 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "ThanhDev's Projects - Backend & Fullstack Web Development",
+  title: "ThanhDev Projects - Backend & Fullstack Web Development",
   description:
-    "Explore ThanhDev's projects, showcasing a range of web development work including backend systems, fullstack applications, and performance optimization. Discover the cutting-edge technologies and solutions ThanhDev has built.",
+    "Explore ThanhDev projects, showcasing a range of web development work including backend systems, fullstack applications, and performance optimization. Discover the cutting-edge technologies and solutions ThanhDev has built.",
   keywords: [
     "ThanhDev",
     "projects",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev's Projects - Backend Developer | Fullstack Web Developer",
+    title: "ThanhDev Projects - Backend Developer | Fullstack Web Developer",
     description:
-      "Explore ThanhDev's collection of projects, from backend systems to fullstack web applications. See how ThanhDev optimizes performance and builds scalable solutions with cutting-edge technologies.",
+      "Explore ThanhDev collection of projects, from backend systems to fullstack web applications. See how ThanhDev optimizes performance and builds scalable solutions with cutting-edge technologies.",
     url: "https://thanhdev.vercel.app/projects",
     siteName: "ThanhDev Portfolio",
     images: [
@@ -49,18 +49,18 @@ export const metadata: Metadata = {
         url: "/images/website.avif", // Thay đổi URL thumbnail nếu có
         width: 1200,
         height: 630,
-        alt: "ThanhDev's Projects - Backend Developer",
+        alt: "ThanhDev Projects - Backend Developer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
-    creator: "@yourtwitterhandle", // Thay bằng tên người dùng Twitter của bạn
-    title: "ThanhDev's Projects - Backend Developer | Fullstack Web Developer",
+    site: "@Chiithanh1",
+    creator: "@Chiithanh1",
+    title: "ThanhDev Projects - Backend Developer | Fullstack Web Developer",
     description:
-      "Explore ThanhDev's web development projects, focusing on backend systems, fullstack applications, and performance optimization. Learn about the technologies used and the solutions ThanhDev has built.",
+      "Explore ThanhDev web development projects, focusing on backend systems, fullstack applications, and performance optimization. Learn about the technologies used and the solutions ThanhDev has built.",
     images: "/images/website.avif", // Thay bằng hình ảnh của bạn
   },
 };

@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev's Blog | Backend Development & Insights",
+    title: "ThanhDev Blog | Backend Development & Insights",
     description:
-      "Explore ThanhDev's blog, sharing experiences in backend development, performance optimization, and best practices.",
+      "Explore ThanhDev blog, sharing experiences in backend development, performance optimization, and best practices.",
     url: "https://www.thanhdev.com/blog",
     images: [
       {
-        url: "https://www.thanhdev.com/thumbnail-blog.jpg",
+        url: "/images/thumbnail-blog.jpg",
         width: 1200,
         height: 630,
         alt: "ThanhDev Blog - Backend Development Insights",
@@ -44,12 +44,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yourtwitterhandle",
-    creator: "@yourtwitterhandle",
-    title: "ThanhDev's Blog | Backend Development & Insights",
+    site: "@Chiithanh1", // Updated Twitter handle
+    creator: "@Chiithanh1", // Updated Twitter handle
+    title: "ThanhDev Blog | Backend Development & Insights",
     description:
-      "Explore ThanhDev's blog, sharing experiences in backend development, performance optimization, and best practices.",
-    images: "https://www.thanhdev.com/thumbnail-blog.jpg",
+      "Explore ThanhDev blog, sharing experiences in backend development, performance optimization, and best practices.",
+    images: "/images/thumbnail-blog.jpg",
   },
 };
 
