@@ -47,7 +47,7 @@ export default function FlexASide() {
           </Link>
         </div>
       </article>
-      <article className="card-customer p-6 relative">
+      <article className="card-customer p-6 relative group">
         <Link
           aria-label="To blog"
           className="flex flex-col justify-between h-full w-full relative z-10"
