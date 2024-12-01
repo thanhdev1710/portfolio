@@ -19,7 +19,8 @@ export default function FormSubscribeEmail() {
           e.preventDefault();
           setIsSubmit(true);
           await toast.promise(mutateAsync(email), {
-            error: "Error. Please try again.",
+            error:
+              "We apologize for the inconvenience. The server is not running right now.",
             loading: "Processing...",
             success: "Subscribed! Check your email.",
           });

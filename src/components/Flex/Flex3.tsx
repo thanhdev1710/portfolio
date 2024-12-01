@@ -2,7 +2,7 @@ import { ShootingStars } from "../shared/shooting-stars";
 import { Slider } from "../shared/Slider";
 import { StarsBackground } from "../shared/stars-background";
 import { ModeToggle } from "../ui/ButtonToggle";
-import FormSubscribeEmail from "./FormSubscribeEmail";
+import FormSubscribeEmail from "../Form/FormSubscribeEmail";
 
 export function Flex3() {
   return (
