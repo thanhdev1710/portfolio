@@ -37,7 +37,7 @@ export default function FlexASide() {
           </Link>
           <Link
             aria-label="To githup"
-            href="https://github.com/chithanh1710"
+            href="https://github.com/thanhdev1710"
             target="_blank"
             className="rounded-2xl card-customer !h-auto aspect-square flex items-center justify-center hover:bg-blue-400 hover:text-white"
           >
