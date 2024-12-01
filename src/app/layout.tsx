@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  manifest: "https://thanhdev.vercel.app/manifest.json",
+  manifest: "https://thanhdev.io.vn/manifest.json",
 };
 
 export default function RootLayout({

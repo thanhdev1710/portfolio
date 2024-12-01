@@ -27,18 +27,18 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "ThanhDev",
-      url: "https://thanhdev.vercel.app/",
+      url: "https://thanhdev.io.vn/", // Đã cập nhật URL
     },
   ],
   openGraph: {
     title: "ThanhDev Portfolio - Backend Developer | Fullstack Web Developer",
     description:
       "Explore ThanhDev Portfolio, a showcase of skills in backend development, fullstack web applications, and optimization techniques.",
-    url: "https://thanhdev.vercel.app/portfolio",
+    url: "https://thanhdev.io.vn/portfolio", // Đã cập nhật URL
     siteName: "ThanhDev Portfolio",
     images: [
       {
-        url: "/images/website.avif",
+        url: "/images/website.avif", // Đảm bảo hình ảnh tồn tại
         width: 1200,
         height: 630,
         alt: "ThanhDev Portfolio - Backend Developer",
@@ -48,12 +48,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Chiithanh1", // Updated Twitter handle
-    creator: "@Chiithanh1", // Updated Twitter handle
+    site: "@Chiithanh1", // Twitter handle chính xác
+    creator: "@Chiithanh1", // Twitter handle chính xác
     title: "ThanhDev Portfolio - Backend Developer | Fullstack Web Developer",
     description:
       "Explore ThanhDev Portfolio, showcasing backend and fullstack development skills. Learn about projects and achievements.",
-    images: "/images/website.avif", // Updated image URL if needed
+    images: "/images/website.avif", // Đảm bảo đường dẫn đúng
   },
 };
 

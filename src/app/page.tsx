@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "ThanhDev",
-      url: "https://thanhdev.vercel.app/",
+      url: "https://thanhdev.io.vn/",
     },
   ],
   openGraph: {
     title: "ThanhDev - Backend Developer | Fullstack Web Developer",
     description:
       "Explore ThanhDev, showcasing expertise in backend and fullstack development. Learn about projects and optimization techniques.",
-    url: "https://thanhdev.vercel.app/portfolio",
+    url: "https://thanhdev.io.vn/portfolio",
     siteName: "ThanhDev",
     images: [
       {

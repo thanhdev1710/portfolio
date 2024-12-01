@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "ThanhDev",
-      url: "https://www.thanhdev.com",
+      url: "https://www.thanhdev.io.vn",
     },
   ],
   openGraph: {
     title: "ThanhDev Blog | Backend Development & Insights",
     description:
       "Explore ThanhDev blog, sharing experiences in backend development, performance optimization, and best practices.",
-    url: "https://www.thanhdev.com/blog",
+    url: "https://www.thanhdev.io.vn/blog",
     images: [
       {
         url: "/images/thumbnail-blog.jpg",

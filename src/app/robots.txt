@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /api/
 Disallow: /admin/
-Sitemap: https://thanhdev.vercel.app/sitemap.xml
+Sitemap: https://thanhdev.io.vn/sitemap.xml
