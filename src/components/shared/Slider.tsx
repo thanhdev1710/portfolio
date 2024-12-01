@@ -6,8 +6,7 @@ const images1 = [
   { src: "/images/nextjs.webp", alt: "Next.js Logo" },
   { src: "/images/postgresql.webp", alt: "PostgreSQL Logo" },
   { src: "/images/redis.webp", alt: "Redis Logo" },
-  { src: "/images/kafka.webp", alt: "Kafka Logo" },
-  { src: "/images/elasticsearch.webp", alt: "Elasticsearch Logo" },
+  { src: "/images/nodejs.webp", alt: "Node.js Logo" },
 ];
 
 export function Slider() {
