@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import QueryProvider from "@/contexts/QueryProvider";
 import { Toaster } from "react-hot-toast";
 
@@ -32,6 +34,8 @@ export default function RootLayout({
           <QueryProvider>{children}</QueryProvider>
           <Toaster />
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
