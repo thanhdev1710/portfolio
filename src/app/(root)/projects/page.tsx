@@ -76,7 +76,8 @@ const data: {
     title: "YiDiMoVi - Your Free Streaming Platform",
     description:
       "YiDiMoVi is a free online movie streaming platform, offering an extensive library of films with a user-friendly and immersive interface for movie enthusiasts.",
-    video: "/videos/YiDiMoVi.mp4",
+    video:
+      "https://ik.imagekit.io/yidiElectro/video/YiDiMoVi.mp4?updatedAt=1733062886229",
     href: "https://yididev.online/",
     status: "Active",
   },
@@ -84,7 +85,8 @@ const data: {
     title: "SoulNest - A Social Network for Connections",
     description:
       "SoulNest is a modern social network designed to foster meaningful connections, share moments, and build communities in a beautifully crafted digital space.",
-    video: "/videos/SoulNest.mp4",
+    video:
+      "https://ik.imagekit.io/yidiElectro/video/SoulNest.mp4?updatedAt=1733062886229",
     href: "",
     status: "In Development",
   },
@@ -92,7 +94,8 @@ const data: {
     title: "Portfolio - Showcasing My Expertise",
     description:
       "Explore my personal portfolio, a sleek and professional website highlighting my skills, projects, and journey as a fullstack developer.",
-    video: "/videos/Portfolio.mp4",
+    video:
+      "https://ik.imagekit.io/yidiElectro/video/Portfolio.mp4?updatedAt=1733062886229",
     href: "https://thanhdev.io.vn/",
     status: "Active",
   },
@@ -100,7 +103,8 @@ const data: {
     title: "GalaxyCinemaClone - Your Movie Theater Experience",
     description:
       "GalaxyCinemaClone replicates the ultimate movie theater booking experience with advanced features, seamless design, and real-time seat selection.",
-    video: "/videos/GalaxyCinemaClone.mp4",
+    video:
+      "https://ik.imagekit.io/yidiElectro/video/GalaxyCinemaClone.mp4?updatedAt=1733062886229",
     href: "",
     status: "No Funding",
   },
@@ -108,7 +112,8 @@ const data: {
     title: "ElectricCar - Revolutionizing Car Sales",
     description:
       "ElectricCar is an innovative platform dedicated to showcasing and selling electric vehicles, emphasizing sustainability and cutting-edge technology.",
-    video: "/videos/ElectricCar.mp4",
+    video:
+      "https://ik.imagekit.io/yidiElectro/video/ElectricCar.mp4?updatedAt=1733062886229",
     href: "https://car.yididev.online/app",
     status: "Active",
   },
@@ -116,7 +121,8 @@ const data: {
     title: "AdminCinema - Cinema Management Dashboard",
     description:
       "AdminCinema is a robust and intuitive admin dashboard for managing cinema operations, offering tools for scheduling, ticketing, and analytics.",
-    video: "/videos/AdminCinema.mp4",
+    video:
+      "https://ik.imagekit.io/yidiElectro/video/AdminCinema.mp4?updatedAt=1733062886229",
     href: "",
     status: "No Funding",
   },
