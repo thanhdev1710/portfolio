@@ -6,7 +6,7 @@ import FlexResponsive from "@/components/Flex/FlexResponsive";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ThanhDev Portfolio - Fullstack Developer",
+  title: "ThanhDev Portfolio - Backend & Fullstack Developer",
   description:
     "Welcome to ThanhDev Portfolio. I am a backend-focused developer, specializing in building scalable systems, optimizing performance, and creating robust applications. Explore my projects and blog.",
   keywords: [

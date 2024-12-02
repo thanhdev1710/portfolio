@@ -11,7 +11,11 @@ export default function StartWeb() {
         <h1 className={styles.title}>
           Hi there! <br /> <span>Welcome to Thanh&apos;s </span>
           <br />
-          <FlipWords className="text-white" words={["Portfolio", "Website"]} />
+          <FlipWords
+            duration={500}
+            className="text-white"
+            words={["Portfolio", "Website"]}
+          />
           <div className={styles.aurora}>
             <div className={styles.aurora__item}></div>
             <div className={styles.aurora__item}></div>

@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "About ThanhDev - Fullstack Developer",
+  title: "About ThanhDev - Backend & Fullstack Developer",
   description:
     "Learn more about ThanhDev, a backend-focused developer passionate about building scalable systems, optimizing performance, and creating robust web applications. Explore my journey, achievements, and expertise.",
   keywords: [
@@ -88,9 +88,9 @@ export default function page() {
                       eager to understand how systems work behind the scenes.
                       Over time, my passion grew for backend development, diving
                       into building scalable systems with technologies like
-                      PostgreSQL, Redis, and Next.js. I love optimizing
-                      performance and solving complex challenges that lead to
-                      robust applications.
+                      PostgreSQL, Redis, Express.js, and Next.js. I love
+                      optimizing performance and solving complex challenges that
+                      lead to robust applications.
                     </p>
                   </div>
                   <div className="mb-6">
@@ -99,9 +99,10 @@ export default function page() {
                     </h3>
                     <p className="text-[clamp(16px,1.5vw,18px)] font-medium leading-loose">
                       I’m currently focused on building high-performance backend
-                      systems and creating seamless user experiences with React
-                      and Next.js. Always learning and improving to stay ahead
-                      in the field.
+                      systems using Express.js, PostgreSQL, and Redis, while
+                      also creating seamless user experiences with React and
+                      Next.js. Always learning and improving to stay ahead in
+                      the field.
                     </p>
                   </div>
                 </div>
