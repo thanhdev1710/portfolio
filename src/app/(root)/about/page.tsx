@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "About ThanhDev - Backend & Fullstack Developer",
+  title: "About ThanhDev - Fullstack Developer",
   description:
     "Learn more about ThanhDev, a backend-focused developer passionate about building scalable systems, optimizing performance, and creating robust web applications. Explore my journey, achievements, and expertise.",
   keywords: [
