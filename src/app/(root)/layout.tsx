@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function layout({ children }: { children: ReactNode }) {
+export default async function layout({ children }: { children: ReactNode }) {
   return (
     <div className="portfolio relative">
       <main className="relative z-10 min-h-svh">{children}</main>
