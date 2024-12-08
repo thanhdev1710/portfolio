@@ -20,6 +20,7 @@ import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { forgot, login, resetPassword, signup } from "@/actions/authAction";
+import { useRouter } from "next/navigation";
 
 const FormSchemaSignUp = z
   .object({
@@ -115,6 +116,7 @@ export default function FormLogin({
   token?: string;
   formState: "login" | "signup" | "forgot" | "reset";
 }) {
+  const router = useRouter();
   const FormSchema =
     formState === "login"
       ? FormSchemaLogin
@@ -139,7 +141,10 @@ export default function FormLogin({
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     if (formState === "login") {
       await toast.promise(
-        login(data),
+        (async () => {
+          const message = await login(data);
+          if (message) throw new Error(message);
+        })(),
         {
           loading: "Đang đăng nhập...",
           success: "Đăng nhập thành công!",
@@ -149,9 +154,13 @@ export default function FormLogin({
           duration: 4000,
         }
       );
+      return router.replace("/blog");
     } else if (formState === "signup") {
       await toast.promise(
-        signup(data),
+        (async () => {
+          const message = await signup(data);
+          if (message) throw new Error(message);
+        })(),
         {
           loading: "Đang đăng ký...",
           success: "Đăng ký thành công!",
@@ -161,9 +170,13 @@ export default function FormLogin({
           duration: 4000,
         }
       );
+      return router.replace("/blog");
     } else if (formState === "forgot") {
       await toast.promise(
-        forgot(data),
+        (async () => {
+          const message = await forgot(data);
+          if (message) throw new Error(message);
+        })(),
         {
           loading: "Đang gửi email...",
           success: "Vui lòng kiểm tra email!",
@@ -175,7 +188,10 @@ export default function FormLogin({
       );
     } else if (formState === "reset" && token) {
       await toast.promise(
-        resetPassword(data, token),
+        (async () => {
+          const message = await resetPassword(data, token);
+          if (message) throw new Error(message);
+        })(),
         {
           loading: "Đang cập nhật mật khẩu...",
           success: "Cập nhật mật khẩu thành công!",
@@ -183,6 +199,7 @@ export default function FormLogin({
         },
         { duration: 4000 }
       );
+      return router.replace("/login");
     }
   }
 
