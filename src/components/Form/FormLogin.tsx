@@ -15,12 +15,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import toast from "react-hot-toast";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { forgot, login, resetPassword, signup } from "@/actions/authAction";
 import { useRouter } from "next/navigation";
+import { handlePromise } from "@/lib/utils";
 
 const FormSchemaSignUp = z
   .object({
@@ -139,44 +139,29 @@ export default function FormLogin({
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    const handlePromise = async (
-      callback: () => Promise<string | null>,
-      successMessage: string,
-      redirectUrl?: string
-    ) => {
-      await toast.promise(
-        (async () => {
-          const message = await callback(); // Gọi hàm API
-          if (message) throw new Error(message); // Ném lỗi nếu có `message`
-        })(),
-        {
-          loading: "Đang xử lý...",
-          success: successMessage,
-          error: (err) => `${err.message}`, // Hiển thị lỗi
-        },
-        {
-          duration: 4000,
-        }
-      );
-      if (redirectUrl) router.replace(redirectUrl); // Điều hướng nếu cần
-    };
-
     try {
       if (formState === "login") {
         await handlePromise(
           () => login(data),
           "Đăng nhập thành công!",
-          "/blog"
+          "/blog",
+          router
         );
       } else if (formState === "signup") {
-        await handlePromise(() => signup(data), "Đăng ký thành công!", "/blog");
+        await handlePromise(
+          () => signup(data),
+          "Đăng ký thành công!",
+          "/blog",
+          router
+        );
       } else if (formState === "forgot") {
         await handlePromise(() => forgot(data), "Vui lòng kiểm tra email!");
       } else if (formState === "reset" && token) {
         await handlePromise(
           () => resetPassword(data, token),
           "Cập nhật mật khẩu thành công!",
-          "/login"
+          "/login",
+          router
         );
       }
     } catch (error: any) {
