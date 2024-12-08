@@ -64,7 +64,9 @@ export default async function BlogLayout({
 
   return (
     <div>
+      <header></header>
       <main>{children}</main>
+      <footer></footer>
     </div>
   );
 }
