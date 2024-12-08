@@ -143,10 +143,7 @@ export default function FormLogin({
         {
           loading: "Đang đăng nhập...",
           success: "Đăng nhập thành công!",
-          error: (err) => {
-            console.error(err); // Log lỗi chi tiết
-            return err.message || "Đã xảy ra lỗi. Vui lòng thử lại!"; // Hiển thị thông báo lỗi chi tiết
-          },
+          error: (err) => `${err.message}`,
         },
         {
           duration: 4000,
@@ -158,10 +155,7 @@ export default function FormLogin({
         {
           loading: "Đang đăng ký...",
           success: "Đăng ký thành công!",
-          error: (err) => {
-            console.error(err); // Log lỗi chi tiết
-            return err.message || "Đã xảy ra lỗi. Vui lòng thử lại!"; // Hiển thị thông báo lỗi chi tiết
-          },
+          error: (err) => `${err.message}`,
         },
         {
           duration: 4000,
@@ -173,10 +167,7 @@ export default function FormLogin({
         {
           loading: "Đang gửi email...",
           success: "Vui lòng kiểm tra email!",
-          error: (err) => {
-            console.error(err); // Log lỗi chi tiết
-            return err.message || "Đã xảy ra lỗi. Vui lòng thử lại!"; // Hiển thị thông báo lỗi chi tiết
-          },
+          error: (err) => `${err.message}`,
         },
         {
           duration: 4000,
@@ -188,14 +179,9 @@ export default function FormLogin({
         {
           loading: "Đang cập nhật mật khẩu...",
           success: "Cập nhật mật khẩu thành công!",
-          error: (err) => {
-            console.error(err); // Log lỗi chi tiết
-            return err.message || "Đã xảy ra lỗi. Vui lòng thử lại!"; // Hiển thị thông báo lỗi chi tiết
-          },
+          error: (err) => `${err.message}`,
         },
-        {
-          duration: 4000,
-        }
+        { duration: 4000 }
       );
     }
   }

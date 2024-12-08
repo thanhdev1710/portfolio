@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use server";
 
 import { decode, JwtPayload } from "jsonwebtoken";
 import { cookies } from "next/headers";
@@ -20,7 +19,6 @@ export async function login(formData: any) {
         },
       }
     );
-
     if (!res.ok) {
       const error = await res.json();
       const message = String(error.message).toLowerCase().includes("password")
@@ -30,7 +28,6 @@ export async function login(formData: any) {
         : "Đăng nhập thất bại. Vui lòng thử lại!";
       throw new Error(message);
     }
-
     const { token } = await res.json();
 
     // Lưu token vào cookie
@@ -44,12 +41,7 @@ export async function login(formData: any) {
 
     return redirect("/blog");
   } catch (error) {
-    console.error(error);
-    throw new Error(
-      error instanceof Error
-        ? error.message
-        : "Đã xảy ra lỗi. Vui lòng thử lại!"
-    );
+    throw error;
   }
 }
 
@@ -68,7 +60,6 @@ export async function signup(formData: any) {
         },
       }
     );
-
     if (!res.ok) {
       const error = await res.json();
       const message = String(error.message).includes("users_email_key")
@@ -76,7 +67,6 @@ export async function signup(formData: any) {
         : "Đăng ký thất bại. Vui lòng thử lại!";
       throw new Error(message);
     }
-
     const { token } = await res.json();
 
     // Lưu token vào cookie
@@ -90,12 +80,7 @@ export async function signup(formData: any) {
 
     return redirect("/blog");
   } catch (error) {
-    console.error(error);
-    throw new Error(
-      error instanceof Error
-        ? error.message
-        : "Đã xảy ra lỗi. Vui lòng thử lại!"
-    );
+    throw error;
   }
 }
 
@@ -103,17 +88,14 @@ export async function auth() {
   const cookieStore = await cookies();
   const auth_token = cookieStore.get("auth_token");
   const token = auth_token?.value;
-
   if (!token) return null;
-
-  const user = decode(token) as JwtPayload;
+  const user = decode(auth_token?.value) as JwtPayload;
   if (user.exp && user.id) {
     const now = Number((Date.now() / 1000).toFixed(0));
     if (now < user.exp) {
       return user.id;
     }
   }
-
   return null;
 }
 
@@ -135,9 +117,9 @@ export async function forgot(formData: any) {
         },
       }
     );
-
     if (!res.ok) {
       const error = await res.json();
+
       const message =
         error.message === "There is no user with this email address"
           ? "Tài khoản này không tồn tại"
@@ -145,12 +127,7 @@ export async function forgot(formData: any) {
       throw new Error(message);
     }
   } catch (error) {
-    console.error(error);
-    throw new Error(
-      error instanceof Error
-        ? error.message
-        : "Đã xảy ra lỗi. Vui lòng thử lại!"
-    );
+    throw error;
   }
 }
 
@@ -168,9 +145,9 @@ export async function resetPassword(formData: any, token: string) {
         },
       }
     );
-
     if (!res.ok) {
       const error = await res.json();
+
       const message =
         error.message === "Token is invalid or has expired"
           ? "Mã không hợp lệ hoặc đã hết hạn!"
@@ -180,11 +157,6 @@ export async function resetPassword(formData: any, token: string) {
 
     return redirect("/login");
   } catch (error) {
-    console.error(error);
-    throw new Error(
-      error instanceof Error
-        ? error.message
-        : "Đã xảy ra lỗi. Vui lòng thử lại!"
-    );
+    throw error;
   }
 }
