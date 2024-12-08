@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import { auth } from "@/actions/authAction";
 
 export const metadata: Metadata = {
   title: "Blog | ThanhDev - Sharing My Backend Development Journey",
@@ -53,63 +54,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogLayout({
+export default async function BlogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="min-h-svh bg-gray-100 p-8">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800">Welcome to My Blog</h1>
-        <p className="text-lg text-gray-600">
-          Sharing my backend development journey and insights.
-        </p>
-      </header>
-      <div className="flex gap-8">
-        {/* Sidebar */}
-        <aside className="w-1/4">
-          <h2 className="text-xl font-semibold mb-4">Categories</h2>
-          <ul className="space-y-2">
-            <li>
-              <a href="/category/backend" className="text-blue-600">
-                Backend Development
-              </a>
-            </li>
-            <li>
-              <a href="/category/performance" className="text-blue-600">
-                Performance Optimization
-              </a>
-            </li>
-            <li>
-              <a href="/category/tutorials" className="text-blue-600">
-                Tutorials
-              </a>
-            </li>
-          </ul>
-          <h2 className="text-xl font-semibold mt-8 mb-4">Recent Posts</h2>
-          <ul className="space-y-2">
-            <li>
-              <a href="/blog/post-1" className="text-blue-600">
-                How I Optimized a PostgreSQL Query
-              </a>
-            </li>
-            <li>
-              <a href="/blog/post-2" className="text-blue-600">
-                Improving API Performance with Caching
-              </a>
-            </li>
-            <li>
-              <a href="/blog/post-3" className="text-blue-600">
-                Best Practices for Building Scalable Systems
-              </a>
-            </li>
-          </ul>
-        </aside>
+  const session = await auth();
+  console.log(session);
 
-        {/* Main content area */}
-        <main className="w-3/4">{children}</main>
-      </div>
+  return (
+    <div>
+      <main>{children}</main>
     </div>
   );
 }
