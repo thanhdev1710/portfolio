@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use server";
 
 import { decode, JwtPayload } from "jsonwebtoken";
 import { cookies } from "next/headers";
