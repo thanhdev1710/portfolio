@@ -139,67 +139,48 @@ export default function FormLogin({
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    if (formState === "login") {
+    const handlePromise = async (
+      callback: () => Promise<string | null>,
+      successMessage: string,
+      redirectUrl?: string
+    ) => {
       await toast.promise(
         (async () => {
-          const message = await login(data);
-          if (message) throw new Error(message);
+          const message = await callback(); // Gọi hàm API
+          if (message) throw new Error(message); // Ném lỗi nếu có `message`
         })(),
         {
-          loading: "Đang đăng nhập...",
-          success: "Đăng nhập thành công!",
-          error: (err) => `${err.message}`,
+          loading: "Đang xử lý...",
+          success: successMessage,
+          error: (err) => `${err.message}`, // Hiển thị lỗi
         },
         {
           duration: 4000,
         }
       );
-      return router.replace("/blog");
-    } else if (formState === "signup") {
-      await toast.promise(
-        (async () => {
-          const message = await signup(data);
-          if (message) throw new Error(message);
-        })(),
-        {
-          loading: "Đang đăng ký...",
-          success: "Đăng ký thành công!",
-          error: (err) => `${err.message}`,
-        },
-        {
-          duration: 4000,
-        }
-      );
-      return router.replace("/blog");
-    } else if (formState === "forgot") {
-      await toast.promise(
-        (async () => {
-          const message = await forgot(data);
-          if (message) throw new Error(message);
-        })(),
-        {
-          loading: "Đang gửi email...",
-          success: "Vui lòng kiểm tra email!",
-          error: (err) => `${err.message}`,
-        },
-        {
-          duration: 4000,
-        }
-      );
-    } else if (formState === "reset" && token) {
-      await toast.promise(
-        (async () => {
-          const message = await resetPassword(data, token);
-          if (message) throw new Error(message);
-        })(),
-        {
-          loading: "Đang cập nhật mật khẩu...",
-          success: "Cập nhật mật khẩu thành công!",
-          error: (err) => `${err.message}`,
-        },
-        { duration: 4000 }
-      );
-      return router.replace("/login");
+      if (redirectUrl) router.replace(redirectUrl); // Điều hướng nếu cần
+    };
+
+    try {
+      if (formState === "login") {
+        await handlePromise(
+          () => login(data),
+          "Đăng nhập thành công!",
+          "/blog"
+        );
+      } else if (formState === "signup") {
+        await handlePromise(() => signup(data), "Đăng ký thành công!", "/blog");
+      } else if (formState === "forgot") {
+        await handlePromise(() => forgot(data), "Vui lòng kiểm tra email!");
+      } else if (formState === "reset" && token) {
+        await handlePromise(
+          () => resetPassword(data, token),
+          "Cập nhật mật khẩu thành công!",
+          "/login"
+        );
+      }
+    } catch (error: any) {
+      console.error("Đã xảy ra lỗi:", error.message);
     }
   }
 
