@@ -25,8 +25,10 @@ export const handlePromise = async (
         success: successMessage,
         error: (err) => {
           if (err.message === "Đã xảy ra lỗi! Vui lòng đăng nhập lại.") {
+            toast.error("Đã xảy ra lỗi vui lòng đăng nhập lại");
             throw new Error(err.message);
           }
+
           return `${err.message}`;
         }, // Hiển thị lỗi
       },
@@ -37,6 +39,7 @@ export const handlePromise = async (
 
     if (redirectUrl && router) return router.replace(redirectUrl); // Điều hướng nếu cần
   } catch (error) {
+    console.error(error);
     throw error;
   }
 };

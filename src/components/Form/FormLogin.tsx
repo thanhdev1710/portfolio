@@ -174,39 +174,42 @@ export default function FormLogin({
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    if (formState === "login") {
-      return await handlePromise(
-        () => login(data),
-        "Đăng nhập thành công!",
-        "/blog",
-        router
-      );
-    } else if (formState === "signup") {
-      return await handlePromise(
-        () => signup(data),
-        "Đăng ký thành công!",
-        "/blog",
-        router
-      );
-    } else if (formState === "forgot") {
-      return await handlePromise(
-        () => forgot(data),
-        "Vui lòng kiểm tra email!"
-      );
-    } else if (formState === "reset" && token) {
-      return await handlePromise(
-        () => resetPassword(data, token),
-        "Cập nhật mật khẩu thành công!",
-        "/login",
-        router
-      );
-    } else if (formState === "update") {
-      return await handlePromise(
-        () => updatePassword(data),
-        "Cập nhật mật khẩu thành công",
-        "/blog",
-        router
-      );
+    try {
+      if (formState === "login") {
+        await handlePromise(
+          () => login(data),
+          "Đăng nhập thành công!",
+          "/blog",
+          router
+        );
+      } else if (formState === "signup") {
+        await handlePromise(
+          () => signup(data),
+          "Đăng ký thành công!",
+          "/blog",
+          router
+        );
+      } else if (formState === "forgot") {
+        await handlePromise(() => forgot(data), "Vui lòng kiểm tra email!");
+      } else if (formState === "reset" && token) {
+        await handlePromise(
+          () => resetPassword(data, token),
+          "Cập nhật mật khẩu thành công!",
+          "/login",
+          router
+        );
+      } else if (formState === "update") {
+        await handlePromise(
+          () => updatePassword(data),
+          "Cập nhật mật khẩu thành công",
+          "/blog",
+          router
+        );
+      }
+    } catch (error) {
+      console.error("Caught in onSubmit:", error);
+      // Rethrow error if necessary
+      throw error;
     }
   }
 
