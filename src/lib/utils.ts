@@ -23,20 +23,15 @@ export const handlePromise = async (
       {
         loading: "Đang xử lý...",
         success: successMessage,
-        error: (err) => {
-          if (err.message === "Đã xảy ra lỗi! Vui lòng đăng nhập lại.") {
-            toast.error("Đã xảy ra lỗi vui lòng đăng nhập lại");
-            throw new Error(err.message);
-          }
-
-          return `${err.message}`;
-        }, // Hiển thị lỗi
+        error: (err) => `${err.message}`,
       }
     );
 
     if (redirectUrl && router) return router.replace(redirectUrl); // Điều hướng nếu cần
-  } catch (error) {
-    console.error(error);
-    throw error;
+  } catch (error: any) {
+    console.error(error.message);
+    if (error.message === "Đã xảy ra lỗi! Vui lòng đăng nhập lại.") {
+      throw error;
+    }
   }
 };
