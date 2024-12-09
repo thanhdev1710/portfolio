@@ -29,9 +29,6 @@ export const handlePromise = async (
 
     if (redirectUrl && router) return router.replace(redirectUrl); // Điều hướng nếu cần
   } catch (error: any) {
-    console.error(error.message);
-    if (error.message === "Đã xảy ra lỗi! Vui lòng đăng nhập lại.") {
-      throw error;
-    }
+    throw error;
   }
 };

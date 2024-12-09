@@ -147,8 +147,10 @@ export default function FormLogin({
           router
         );
       }
-    } catch {
-      router.replace("/login");
+    } catch (error: any) {
+      if (error.message === "Đã xảy ra lỗi! Vui lòng đăng nhập lại.") {
+        router.replace("/login");
+      }
     }
   };
 
