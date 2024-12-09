@@ -16,5 +16,5 @@ export async function middleware(req: NextRequest) {
 
 // Định nghĩa route cần áp dụng middleware
 export const config = {
-  matcher: ["/dashboard", "/profile", "/settings"], // Các route cần kiểm tra đăng nhập
+  matcher: ["/user", "/update", "/profile", "/settings"], // Các route cần kiểm tra đăng nhập
 };

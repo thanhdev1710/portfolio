@@ -18,7 +18,13 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import { forgot, login, resetPassword, signup } from "@/actions/authAction";
+import {
+  forgot,
+  login,
+  resetPassword,
+  signup,
+  updatePassword,
+} from "@/actions/authAction";
 import { useRouter } from "next/navigation";
 import { handlePromise } from "@/lib/utils";
 
@@ -109,12 +115,37 @@ const FormSchemaReset = z
     message: "Mật khẩu phải khớp.",
   });
 
+const FormSchemaUpdate = z
+  .object({
+    password: z
+      .string({ message: "Bắt buộc" })
+      .min(16, { message: "Mật khẩu phải có ít nhất 16 ký tự." })
+      .max(50, { message: "Mật khẩu không được quá 50 ký tự." })
+      .refine(
+        (password) =>
+          /[A-Z]/.test(password) &&
+          /[a-z]/.test(password) &&
+          /[0-9]/.test(password) &&
+          /[!@#$%^&*(),.?":{}|<>]/.test(password),
+        {
+          message:
+            "Mật khẩu phải bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.",
+        }
+      ),
+    passwordConfirm: z.string({ message: "Bắt buộc" }),
+    passwordCurrent: z.string({ message: "Bắt buộc" }),
+  })
+  .refine((data) => data.password === data.passwordConfirm, {
+    path: ["passwordConfirm"],
+    message: "Mật khẩu phải khớp.",
+  });
+
 export default function FormLogin({
   token,
   formState,
 }: {
   token?: string;
-  formState: "login" | "signup" | "forgot" | "reset";
+  formState: "login" | "signup" | "forgot" | "reset" | "update";
 }) {
   const router = useRouter();
   const FormSchema =
@@ -124,7 +155,9 @@ export default function FormLogin({
       ? FormSchemaSignUp
       : formState === "forgot"
       ? FormSchemaForgot
-      : FormSchemaReset;
+      : formState === "reset"
+      ? FormSchemaReset
+      : FormSchemaUpdate;
   const listField =
     formState === "login"
       ? ["email", "password"]
@@ -132,7 +165,9 @@ export default function FormLogin({
       ? ["name", "email", "password", "passwordConfirm"]
       : formState === "forgot"
       ? ["email"]
-      : ["password", "passwordConfirm"];
+      : formState === "reset"
+      ? ["password", "passwordConfirm"]
+      : ["passwordCurrent", "password", "passwordConfirm"];
   const [isEye, setIsEye] = useState("");
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -141,26 +176,36 @@ export default function FormLogin({
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       if (formState === "login") {
-        await handlePromise(
+        return await handlePromise(
           () => login(data),
           "Đăng nhập thành công!",
           "/blog",
           router
         );
       } else if (formState === "signup") {
-        await handlePromise(
+        return await handlePromise(
           () => signup(data),
           "Đăng ký thành công!",
           "/blog",
           router
         );
       } else if (formState === "forgot") {
-        await handlePromise(() => forgot(data), "Vui lòng kiểm tra email!");
+        return await handlePromise(
+          () => forgot(data),
+          "Vui lòng kiểm tra email!"
+        );
       } else if (formState === "reset" && token) {
-        await handlePromise(
+        return await handlePromise(
           () => resetPassword(data, token),
           "Cập nhật mật khẩu thành công!",
           "/login",
+          router
+        );
+      } else if (formState === "update") {
+        return await handlePromise(
+          () => updatePassword(data),
+          "Cập nhật mật khẩu thành công",
+          "/blog",
           router
         );
       }
@@ -206,7 +251,9 @@ export default function FormLogin({
                     ? "Xác thực mật khẩu"
                     : s === "password"
                     ? "Mật khẩu"
-                    : "Email"}
+                    : s === "email"
+                    ? "Email"
+                    : "Mật khẩu hiện tại"}
                 </FormLabel>
                 <FormControl>
                   <div className="relative">

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { clsx, type ClassValue } from "clsx";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import toast from "react-hot-toast";
 import { twMerge } from "tailwind-merge";
 
@@ -11,21 +12,31 @@ export const handlePromise = async (
   callback: () => Promise<string | null>,
   successMessage: string,
   redirectUrl?: string,
-  router?: any
+  router?: AppRouterInstance
 ) => {
-  await toast.promise(
-    (async () => {
-      const message = await callback(); // Gọi hàm API
-      if (message) throw new Error(message); // Ném lỗi nếu có `message`
-    })(),
-    {
-      loading: "Đang xử lý...",
-      success: successMessage,
-      error: (err) => `${err.message}`, // Hiển thị lỗi
-    },
-    {
-      duration: 4000,
-    }
-  );
-  if (redirectUrl) router.replace(redirectUrl); // Điều hướng nếu cần
+  try {
+    await toast.promise(
+      (async () => {
+        const message = await callback(); // Gọi hàm API
+        if (message) throw new Error(message); // Ném lỗi nếu có `message`
+      })(),
+      {
+        loading: "Đang xử lý...",
+        success: successMessage,
+        error: (err) => {
+          if (err.message === "Đã xảy ra lỗi! Vui lòng đăng nhập lại.") {
+            throw new Error(err.message);
+          }
+          return `${err.message}`;
+        }, // Hiển thị lỗi
+      },
+      {
+        duration: 4000,
+      }
+    );
+
+    if (redirectUrl && router) return router.replace(redirectUrl); // Điều hướng nếu cần
+  } catch (error) {
+    throw error;
+  }
 };
