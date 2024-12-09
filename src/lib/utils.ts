@@ -31,9 +31,6 @@ export const handlePromise = async (
 
           return `${err.message}`;
         }, // Hiển thị lỗi
-      },
-      {
-        duration: 4000,
       }
     );
 
