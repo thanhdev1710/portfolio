@@ -4,7 +4,6 @@ import { ThemeProvider } from "next-themes";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import QueryProvider from "@/contexts/QueryProvider";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
@@ -31,7 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <QueryProvider>{children}</QueryProvider>
+          {children}
           <Toaster />
         </ThemeProvider>
         <Analytics />

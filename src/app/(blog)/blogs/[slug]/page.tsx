@@ -13,8 +13,6 @@ import Hashtag from "@/components/shared/Hashtag";
 import AsideBlogLeft from "@/components/shared/AsideBlogLeft";
 import AsideBlogRight from "@/components/shared/AsideBlogRight";
 
-export const revalidate = 86400;
-
 export async function generateMetadata({
   params,
 }: {

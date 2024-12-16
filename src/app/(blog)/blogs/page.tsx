@@ -7,7 +7,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import { PaginationBlog } from "@/components/shared/PaginationBlog";
 
-export const revalidate = 60;
+export const revalidate = 600;
 
 export default async function Page({
   searchParams,

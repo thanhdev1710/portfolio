@@ -1,7 +1,11 @@
 "use server";
 
-export const mailSubscribe = async (email: string) => {
-  const body = { email };
+export const mailSubscribe = async (formData: FormData) => {
+  const email = formData.get("email");
+  const body = {
+    email,
+  };
+
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_API_VERSION}email/subscribe`,

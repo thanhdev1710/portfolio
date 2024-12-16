@@ -51,7 +51,7 @@ export default function FlexASide() {
         <Link
           aria-label="To blog"
           className="flex flex-col justify-between h-full w-full relative z-10"
-          href="/blogs"
+          href="/blog"
         >
           <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
             Blog Me

@@ -2,8 +2,6 @@ import BreadcrumbCus from "@/components/shared/BreadcrumbCus";
 import Hashtag from "@/components/shared/Hashtag";
 import { GetAllHashtag } from "@/services/Hashtag";
 
-export const revalidate = 60;
-
 export default async function Page() {
   const { data } = await GetAllHashtag();
 
