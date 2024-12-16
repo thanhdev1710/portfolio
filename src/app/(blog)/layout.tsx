@@ -81,10 +81,14 @@ export default async function BlogLayout({
 
           <div className="flex items-center justify-center gap-2 max-md:hidden">
             <Button variant="link" asChild>
-              <Link href="/login">Đăng nhập</Link>
+              <Link aria-label="Đăng nhập" href="/login">
+                Đăng nhập
+              </Link>
             </Button>
             <Button variant="secondary" asChild>
-              <Link href="">Tạo tài khoản</Link>
+              <Link aria-label="Tạo tài khoản" href="">
+                Tạo tài khoản
+              </Link>
             </Button>
           </div>
         </div>

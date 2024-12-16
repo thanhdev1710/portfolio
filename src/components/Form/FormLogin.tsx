@@ -34,6 +34,7 @@ import {
   ZodPasswordSchema,
   ZodVerifyPasswordSchema,
 } from "@/schema_zod/auth";
+import Link from "next/link";
 
 // Các schema xác thực cho các form
 const FormSchemaSignUp = z
@@ -246,12 +247,13 @@ export default function FormLogin({
 
         {/* Liên kết quên mật khẩu cho login */}
         {formState === "login" && (
-          <a
+          <Link
+            aria-label="Quên mật khẩu"
             className="text-blue-600 text-sm !mt-2 inline-block"
             href="/forgot"
           >
             Quên mật khẩu?
-          </a>
+          </Link>
         )}
 
         {/* Nút submit */}
@@ -273,12 +275,13 @@ export default function FormLogin({
               ? "Không có tài khoản?"
               : "Bạn đã có tài khoản?"}
           </span>
-          <a
+          <Link
+            aria-label={formState === "login" ? "Đăng ký" : "Đăng nhập"}
             className="text-blue-400 underline"
             href={`/${formState === "login" ? "signup" : "login"}`}
           >
             {formState === "login" ? "Đăng ký" : "Đăng nhập"}
-          </a>
+          </Link>
         </p>
       </form>
     </Form>

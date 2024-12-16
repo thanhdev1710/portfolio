@@ -158,7 +158,7 @@ export default function page() {
                   </div>
                   {item.href ? (
                     <Button variant="default" asChild aria-label="Visit">
-                      <Link href={item.href}>
+                      <Link aria-label="Link to website" href={item.href}>
                         <ExternalLink /> Visit
                       </Link>
                     </Button>

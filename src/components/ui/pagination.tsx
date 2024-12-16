@@ -48,6 +48,7 @@ const PaginationLink = ({
   ...props
 }: PaginationLinkProps & { href: string }) => (
   <Link
+    aria-label="Pagination"
     href={href}
     scroll={true}
     aria-current={isActive ? "page" : undefined}

@@ -17,6 +17,7 @@ export default function NotFound() {
           exist. Please check the URL or return to the homepage.
         </p>
         <Link
+          aria-label="Go to Homepage"
           href="/"
           replace
           className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg rounded-full shadow-lg transform hover:scale-105 transition duration-300"

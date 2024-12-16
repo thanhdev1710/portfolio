@@ -5,6 +5,7 @@ import React from "react";
 export default function Logo() {
   return (
     <Link
+      aria-label="Link to blogs"
       href="/blogs"
       className="p-1 rounded bg-white h-full w-auto aspect-square flex items-center justify-center"
     >
