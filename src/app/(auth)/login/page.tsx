@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export default async function page() {
   const session = await auth();
   if (session != null) {
-    redirect("/blog");
+    redirect("/blogs");
   }
   return (
     <div className="flex items-center justify-center w-full min-h-svh bg-blue-300 py-8">

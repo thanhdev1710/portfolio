@@ -168,7 +168,7 @@ export default function page() {
                     updates!
                   </p>
                   <Button aria-label="Visit Blog" asChild>
-                    <Link aria-label="Visit Blog" href="/blog">
+                    <Link aria-label="Visit Blog" href="/blogs">
                       <ExternalLink />
                       Visit Blog
                     </Link>

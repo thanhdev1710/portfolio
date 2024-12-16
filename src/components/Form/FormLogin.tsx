@@ -120,14 +120,14 @@ export default function FormLogin({
         await handlePromise(
           () => login(data),
           "Đăng nhập thành công!",
-          "/blog",
+          "/blogs",
           router
         );
       } else if (formState === "signup") {
         await handlePromise(
           () => signup(data),
           "Đăng ký thành công!",
-          "/blog",
+          "/blogs",
           router
         );
       } else if (formState === "forgot") {
@@ -143,7 +143,7 @@ export default function FormLogin({
         await handlePromise(
           () => updatePassword(data),
           "Cập nhật mật khẩu thành công",
-          "/blog",
+          "/blogs",
           router
         );
       }

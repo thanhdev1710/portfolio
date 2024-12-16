@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { motion } from "motion/react";
 import { Moon, Sun } from "lucide-react";
 
-export function ModeToggle() {
+export function ButtonToggle() {
   const { setTheme, theme } = useTheme();
 
   return (

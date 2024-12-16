@@ -1,6 +1,11 @@
 import React from "react";
 import { Metadata } from "next";
 import { auth } from "@/actions/authAction";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ModeToggle } from "@/components/ui/ModeToggle";
+import Logo from "@/components/shared/Logo";
 
 export const metadata: Metadata = {
   title: "Blog | ThanhDev - Sharing My Backend Development Journey",
@@ -32,7 +37,7 @@ export const metadata: Metadata = {
     title: "ThanhDev Blog | Backend Development & Insights",
     description:
       "Explore ThanhDev blog, sharing experiences in backend development, performance optimization, and best practices.",
-    url: "https://www.thanhdev.io.vn/blog",
+    url: "https://www.thanhdev.io.vn/blogs",
     images: [
       {
         url: "/images/thumbnail-blog.jpg",
@@ -63,10 +68,31 @@ export default async function BlogLayout({
   console.log(session);
 
   return (
-    <div>
-      <header></header>
-      <main>{children}</main>
-      <footer></footer>
+    <div className="bg-[var(--background-primary)] min-h-svh flex flex-col gap-4">
+      <header className="w-full bg-background shadow px-4">
+        <div className="flex justify-between items-center gap-10 py-2 container mx-auto">
+          <div className="flex items-center h-10 gap-4">
+            <Logo />
+            <Input className="w-[40vw]" />
+            <div className="flex-shrink-0">
+              <ModeToggle />
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center gap-2 max-md:hidden">
+            <Button variant="link" asChild>
+              <Link href="/login">Đăng nhập</Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href="">Tạo tài khoản</Link>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <main className="container mx-auto flex flex-col gap-4 px-4">
+        {children}
+      </main>
     </div>
   );
 }

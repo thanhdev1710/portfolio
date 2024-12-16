@@ -1,7 +1,7 @@
 import { ShootingStars } from "../shared/shooting-stars";
 import { Slider } from "../shared/Slider";
 import { StarsBackground } from "../shared/stars-background";
-import { ModeToggle } from "../ui/ButtonToggle";
+import { ButtonToggle } from "../shared/ButtonToggle";
 import FormSubscribeEmail from "../Form/FormSubscribeEmail";
 
 export function Flex3() {
@@ -32,7 +32,7 @@ export function Flex3() {
           <StarsBackground />
         </div>
         <div className="card-customer max-md:!w-full max-md:p-6 !w-[40%] flex items-center justify-center">
-          <ModeToggle />
+          <ButtonToggle />
           <ShootingStars />
           <StarsBackground />
         </div>

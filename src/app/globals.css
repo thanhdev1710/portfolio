@@ -12,6 +12,7 @@
     box-shadow: 0 0 0px 1000px white inset !important;
     -webkit-text-fill-color: black !important;
   }
+
   .text-balance {
     text-wrap: balance;
   }
@@ -29,7 +30,7 @@
 
   .card-customer {
     @apply relative h-full w-full rounded-[20px] bg-[var(--background-card)] border-2 border-[var(--border)] transition-all duration-700 hover:-translate-y-1 hover:shadow-md;
-    animation: fadeInUp 1s ease-out forwards; /* Thêm hiệu ứng fade-in từ dưới lên */
+    animation: fadeInUp 1s ease-out forwards;
   }
 }
 
@@ -40,8 +41,6 @@
     --border: #cfd2d5;
     --text-primary: #212121;
     --text-secondary: #929aa3;
-
-    /* Shadcn */
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
@@ -66,16 +65,23 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background-primary: #0f0f0f;
     --background-card: #171717;
     --border: #272727;
     --text-primary: #c3c3c3;
     --text-secondary: #656565;
-
-    /* Shadcn */
-    --background: 224 71.4% 4.1%;
+    --background: 0 0% 0%;
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
@@ -98,18 +104,25 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-@layer base {
   body {
+    @apply bg-background text-foreground;
     color: var(--text-primary);
     background: var(--background-primary);
     font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
   }
 }
 
-/* Loading css */
 .spinner-3 {
   width: 50px;
   padding: 8px;
@@ -123,6 +136,7 @@
   mask-composite: subtract;
   animation: s3 1s infinite linear;
 }
+
 @keyframes s3 {
   to {
     transform: rotate(1turn);

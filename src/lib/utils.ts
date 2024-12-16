@@ -32,3 +32,27 @@ export const handlePromise = async (
     throw error;
   }
 };
+
+export function createQueryString(
+  name: string,
+  value: string,
+  searchParams: URLSearchParams
+) {
+  const params = new URLSearchParams(searchParams.toString());
+  params.set(name, value);
+  if (value === "") params.delete(name);
+  return params.toString();
+}
+
+export function deleteQueryStringParams(
+  keys: string[],
+  searchParams: URLSearchParams
+) {
+  const params = new URLSearchParams(searchParams.toString());
+
+  keys.forEach((key) => {
+    params.delete(key);
+  });
+
+  return params;
+}
