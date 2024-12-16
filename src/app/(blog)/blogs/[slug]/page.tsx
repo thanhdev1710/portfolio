@@ -13,12 +13,14 @@ import Hashtag from "@/components/shared/Hashtag";
 import AsideBlogLeft from "@/components/shared/AsideBlogLeft";
 import AsideBlogRight from "@/components/shared/AsideBlogRight";
 
+export const revalidate = 86400;
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const data = await GetBlogBySlug({ slug });
   return {
     title: data.title,
@@ -30,15 +32,15 @@ export default async function page({
   params,
   searchParams,
 }: {
-  params: { slug: string };
-  searchParams: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{
     fontSize: string;
     lineHeight: string;
     change: string;
-  };
+  }>;
 }) {
-  const { slug } = params;
-  const { fontSize: fs = "18", lineHeight: lh = "1.75" } = searchParams;
+  const { slug } = await params;
+  const { fontSize: fs = "18", lineHeight: lh = "1.75" } = await searchParams;
   const blog = await GetBlogBySlug({ slug });
   const sectionBlog = await GetSectionBlogById({ id: blog.id });
   let fontSize = fs;

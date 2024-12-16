@@ -8,15 +8,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+export const revalidate = 60;
+
 export default async function page({
   params,
   searchParams,
 }: {
-  params: { tag: string };
-  searchParams: { p: string; q: string };
+  params: Promise<{ tag: string }>;
+  searchParams: Promise<{ p: string; q: string }>;
 }) {
-  const { tag } = params;
-  const { p, q } = searchParams;
+  const { tag } = await params;
+  const { p, q } = await searchParams;
   const { data: listBlog, totalPage } = await GetListBlog({
     page: Number(p) || 1,
     search: q,

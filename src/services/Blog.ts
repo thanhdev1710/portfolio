@@ -12,8 +12,7 @@ export async function GetListBlog({
 }): Promise<RootListBlog> {
   try {
     const res = await fetch(
-      `${API_URL}${API_VERSION}posts?p=${page}&q=${search}&tag=${tag}`,
-      { next: { revalidate: 0 } }
+      `${API_URL}${API_VERSION}posts?p=${page}&q=${search}&tag=${tag}`
     );
     if (!res.ok) throw new Error("");
     const data = await res.json();
@@ -30,9 +29,7 @@ export async function GetBlogBySlug({
   slug: string;
 }): Promise<BlogBySlug> {
   try {
-    const res = await fetch(`${API_URL}${API_VERSION}posts/${slug}`, {
-      next: { revalidate: 0 },
-    });
+    const res = await fetch(`${API_URL}${API_VERSION}posts/${slug}`);
     if (!res.ok) throw new Error("");
     const data = await res.json();
 
@@ -48,9 +45,7 @@ export async function GetSectionBlogById({
   id: number;
 }): Promise<ListSectionBlog> {
   try {
-    const res = await fetch(`${API_URL}${API_VERSION}posts/${id}/sections`, {
-      next: { revalidate: 0 },
-    });
+    const res = await fetch(`${API_URL}${API_VERSION}posts/${id}/sections`);
     if (!res.ok) throw new Error("");
     const data = await res.json();
 
