@@ -23,7 +23,7 @@ export const handlePromise = async (
       {
         loading: "Đang xử lý...",
         success: successMessage,
-        error: (err) => `${err.message}`,
+        error: (err: any) => `${err.message}`,
       }
     );
 
