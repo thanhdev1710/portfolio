@@ -140,7 +140,7 @@ export default function page() {
           >
             <X className="text-[var(--text-primary)]" />
           </Link>
-          <div className="grid grid-cols-2 gap-6 w-full h-full max-md:grid-cols-1 ">
+          <div className="grid grid-cols-2 gap-6 w-full h-full max-md:grid-cols-1">
             {data.map((item, i) => (
               <div
                 key={i}
@@ -166,9 +166,9 @@ export default function page() {
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger>
-                          <Button variant="default" aria-label="Visit">
+                          <div className="inline-flex items-center justify-center p-2 bg-transparent rounded-md cursor-pointer">
                             <Info />
-                          </Button>
+                          </div>
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>This project is under development</p>
