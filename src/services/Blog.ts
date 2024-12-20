@@ -38,6 +38,7 @@ export async function GetBlogBySlug({
   slug: string;
 }): Promise<BlogBySlug> {
   const url = `${API_URL}${API_VERSION}posts/${slug}`;
+
   try {
     const res = await fetch(url, { credentials: "include" });
 
@@ -46,7 +47,6 @@ export async function GetBlogBySlug({
     }
 
     const data = await res.json();
-
     if (!data?.data) {
       throw new Error("No blog data found.");
     }

@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 
 function setTokenCookie(token: string, cookieStore: ReadonlyRequestCookies) {
   // Lưu token vào cookie
-  cookieStore.set("auth_token", token, {
+  cookieStore.set("jwt", token, {
     httpOnly: true,
     maxAge: 60 * 60 * 24,
     secure: true,
@@ -104,13 +104,13 @@ export async function signup(formData: any) {
 
 export async function auth() {
   const cookieStore = await cookies();
-  const auth_token = cookieStore.get("auth_token");
-  const token = auth_token?.value;
+  const jwt = cookieStore.get("jwt");
+  const token = jwt?.value;
 
   if (!token) return null;
 
   try {
-    const user = decode(auth_token?.value) as JwtPayload;
+    const user = decode(jwt?.value) as JwtPayload;
 
     if (user.exp && user.id) {
       const now = Number((Date.now() / 1000).toFixed(0));
@@ -127,7 +127,7 @@ export async function auth() {
 
 export async function logout() {
   try {
-    (await cookies()).delete("auth_token");
+    (await cookies()).delete("jwt");
   } catch (error: any) {
     return error.message;
   }
@@ -205,7 +205,7 @@ export async function updatePassword(formData: any) {
         body,
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${cookieStore.get("auth_token")?.value}`,
+          Authorization: `Bearer ${cookieStore.get("jwt")?.value}`,
         },
       }
     );

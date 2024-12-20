@@ -5,16 +5,15 @@ import { vi } from "date-fns/locale";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import ButtonShare from "@/components/Button/ButtonShare";
 import BreadcrumbCus from "@/components/shared/BreadcrumbCus";
-import ReactMarkdown from "react-markdown";
 import Hashtag from "@/components/shared/Hashtag";
 import AsideBlogLeft from "@/components/shared/AsideBlogLeft";
 import AsideBlogRight from "@/components/shared/AsideBlogRight";
 import { ContextChangeFontSize } from "@/context/ContextChangeFontSize";
-import Context from "antd/es/app/context";
 import MarkdownChangeFontSize from "@/components/shared/MarkdownChangeFontSize";
+import RecordView from "./RecordView";
 
 export async function generateMetadata({
   params,
@@ -31,14 +30,8 @@ export async function generateMetadata({
 
 export default async function page({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{
-    fontSize: string;
-    lineHeight: string;
-    change: string;
-  }>;
 }) {
   const { slug } = await params;
   const blog = await GetBlogBySlug({ slug });
@@ -46,6 +39,9 @@ export default async function page({
 
   return (
     <ContextChangeFontSize>
+      <Suspense fallback={null}>
+        <RecordView slug={slug} />
+      </Suspense>
       <BreadcrumbCus
         urls={[
           { label: "Trang chủ", url: "/blogs" },
