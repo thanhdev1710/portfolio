@@ -9,7 +9,7 @@ export default async function Page() {
     <>
       <BreadcrumbCus
         urls={[
-          { label: "Trang chủ", url: "/" },
+          { label: "Trang chủ", url: "/blogs" },
           { label: "Hashtag", url: "/tags" },
         ]}
       />

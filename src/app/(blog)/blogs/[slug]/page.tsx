@@ -12,6 +12,9 @@ import ReactMarkdown from "react-markdown";
 import Hashtag from "@/components/shared/Hashtag";
 import AsideBlogLeft from "@/components/shared/AsideBlogLeft";
 import AsideBlogRight from "@/components/shared/AsideBlogRight";
+import { ContextChangeFontSize } from "@/context/ContextChangeFontSize";
+import Context from "antd/es/app/context";
+import MarkdownChangeFontSize from "@/components/shared/MarkdownChangeFontSize";
 
 export async function generateMetadata({
   params,
@@ -38,24 +41,14 @@ export default async function page({
   }>;
 }) {
   const { slug } = await params;
-  const { fontSize: fs = "18", lineHeight: lh = "1.75" } = await searchParams;
   const blog = await GetBlogBySlug({ slug });
   const sectionBlog = await GetSectionBlogById({ id: blog.id });
-  let fontSize = fs;
-  let lineHeight = lh;
-
-  if (Number(fontSize) > 23 || Number(fontSize) < 13) {
-    fontSize = "18";
-  }
-  if (Number(lineHeight) > 2.5 || Number(lineHeight) < 1.75) {
-    lineHeight = "1.75";
-  }
 
   return (
-    <>
+    <ContextChangeFontSize>
       <BreadcrumbCus
         urls={[
-          { label: "Trang chủ", url: "/" },
+          { label: "Trang chủ", url: "/blogs" },
           { label: "Bài viết", url: "/blogs" },
           { label: blog.title, url: `/blogs/${blog.slug}` },
         ]}
@@ -98,9 +91,9 @@ export default async function page({
                 <ToolBoxShow
                   numBookmark={1}
                   numMess={2}
-                  numView={3}
-                  numVoteDown={4}
-                  numVoteUp={5}
+                  numView={blog.countView || 0}
+                  numVoteDown={blog.countDisLike || 0}
+                  numVoteUp={blog.countLike || 0}
                   sizeIcon={20}
                   sizeText={20}
                 />
@@ -108,15 +101,7 @@ export default async function page({
             </header>
             <section>
               <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-              <div
-                style={{
-                  fontSize: `${fontSize}px`,
-                  lineHeight: lineHeight,
-                }}
-                className="mb-2 prose dark:prose-invert"
-              >
-                <ReactMarkdown>{blog.content}</ReactMarkdown>
-              </div>
+              <MarkdownChangeFontSize str={blog.content} />
 
               {blog.image && (
                 <Image
@@ -135,15 +120,7 @@ export default async function page({
                   <h3 className="text-2xl font-semibold">
                     {i + 1}. {section.title}
                   </h3>
-                  <div
-                    style={{
-                      fontSize: `${fontSize}px`,
-                      lineHeight: lineHeight,
-                    }}
-                    className="mb-2 prose dark:prose-invert"
-                  >
-                    <ReactMarkdown>{section.content}</ReactMarkdown>
-                  </div>
+                  <MarkdownChangeFontSize str={section.content} />
                   {section.imageUrl && (
                     <div className="flex flex-col gap-1">
                       <Image
@@ -163,15 +140,7 @@ export default async function page({
             <footer>
               <div>
                 <h2 className="text-4xl font-bold mb-4">Tóm tắt</h2>
-                <div
-                  style={{
-                    fontSize: `${fontSize}px`,
-                    lineHeight: lineHeight,
-                  }}
-                  className="mb-2 prose dark:prose-invert"
-                >
-                  <ReactMarkdown>{blog.summary}</ReactMarkdown>
-                </div>
+                <MarkdownChangeFontSize str={blog.summary} />
               </div>
               <div className="flex gap-4 mt-8">
                 {blog.tags.map((tag) => (
@@ -194,6 +163,6 @@ export default async function page({
         </div>
         <AsideBlogRight />
       </div>
-    </>
+    </ContextChangeFontSize>
   );
 }

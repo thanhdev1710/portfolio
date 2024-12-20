@@ -20,6 +20,7 @@ export interface Blog {
   tags: string[];
   countView: number;
   countLike: number;
+  countDisLike: number;
 }
 
 export interface BlogBySlug extends Blog {

@@ -13,10 +13,7 @@ export async function GetListBlog({
   const url = `${API_URL}${API_VERSION}posts?p=${page}&q=${search}&tag=${tag}`;
 
   try {
-    const res = await fetch(url, {
-      cache: "force-cache",
-      next: { revalidate: 600, tags: ["blogs"] }, // Revalidate every 10 minutes
-    });
+    const res = await fetch(url);
 
     if (!res.ok) {
       throw new Error(`Failed to fetch blogs. Status: ${res.status}`);
@@ -41,12 +38,8 @@ export async function GetBlogBySlug({
   slug: string;
 }): Promise<BlogBySlug> {
   const url = `${API_URL}${API_VERSION}posts/${slug}`;
-
   try {
-    const res = await fetch(url, {
-      cache: "force-cache",
-      next: { revalidate: 604800, tags: ["blogs", "blog"] }, // Revalidate every 7 days
-    });
+    const res = await fetch(url, { credentials: "include" });
 
     if (!res.ok) {
       throw new Error(`Failed to fetch blog by slug. Status: ${res.status}`);
@@ -57,7 +50,6 @@ export async function GetBlogBySlug({
     if (!data?.data) {
       throw new Error("No blog data found.");
     }
-
     return data.data;
   } catch (error) {
     console.error(`Error fetching blog by slug: ${slug}`, error);
@@ -75,7 +67,7 @@ export async function GetSectionBlogById({
   try {
     const res = await fetch(url, {
       cache: "force-cache",
-      next: { revalidate: 604800, tags: ["blogs", "blog", "section-blog"] }, // Revalidate every 7 days
+      next: { revalidate: 604800, tags: ["section-blog"] }, // Revalidate every 7 days
     });
 
     if (!res.ok) {

@@ -7,8 +7,6 @@ import { format } from "date-fns";
 import Image from "next/image";
 import { PaginationBlog } from "@/components/shared/PaginationBlog";
 
-export const revalidate = 600;
-
 export default async function Page({
   searchParams,
 }: {
@@ -19,11 +17,12 @@ export default async function Page({
     page: Number(p) || 1,
     search: q,
   });
+
   return (
     <>
       <BreadcrumbCus
         urls={[
-          { label: "Trang chủ", url: "/" },
+          { label: "Trang chủ", url: "/blogs" },
           { label: "Bài viết", url: "/blogs" },
         ]}
       />
@@ -67,11 +66,11 @@ export default async function Page({
               </div>
 
               <ToolBoxShow
-                numBookmark={1}
-                numMess={2}
-                numView={3}
-                numVoteUp={4}
-                numVoteDown={5}
+                numBookmark={0}
+                numMess={0}
+                numView={blog.countView || 0}
+                numVoteUp={blog.countLike || 0}
+                numVoteDown={blog.countDisLike || 0}
                 sizeIcon={16}
                 sizeText={16}
               />

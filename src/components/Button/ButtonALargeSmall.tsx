@@ -1,46 +1,16 @@
 "use client";
-import { createQueryString } from "@/lib/utils";
-import { ALargeSmall, Minus, Plus, X } from "lucide-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
+import { useContextChangeFontSize } from "@/context/ContextChangeFontSize";
+import { Minus, Plus, X, ALargeSmall } from "lucide-react";
 
 export default function ButtonALargeSmall() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-  const [isClick, setIsClick] = useState(() =>
-    searchParams.get("change")
-      ? searchParams.get("change") === "true"
-        ? true
-        : false
-      : false
-  );
-  const [fontSize, setFontSize] = useState(
-    () => Number(searchParams.get("fontSize")) || 18
-  );
-  const [lineHeight, setLineHeight] = useState(
-    () => Number(searchParams.get("lineHeight")) || 1.75
-  );
-
-  const handleFontChange = useCallback(
-    (name: string, value: string) => {
-      const params = createQueryString(name, value, searchParams);
-      router.replace(`${pathname}?${params}`, { scroll: false });
-    },
-    [pathname, router, searchParams]
-  );
-
-  useEffect(() => {
-    handleFontChange("fontSize", fontSize.toString());
-  }, [handleFontChange, fontSize]);
-
-  useEffect(() => {
-    handleFontChange("lineHeight", lineHeight.toString());
-  }, [handleFontChange, lineHeight]);
-
-  useEffect(() => {
-    handleFontChange("change", isClick.toString());
-  }, [handleFontChange, isClick]);
+  const {
+    fontSize,
+    setFontSize,
+    lineHeight,
+    setLineHeight,
+    isClick,
+    setIsClick,
+  } = useContextChangeFontSize();
 
   return (
     <div className="relative mt-4">
@@ -81,7 +51,7 @@ export default function ButtonALargeSmall() {
               <p className="flex-shrink-0 w-24 text-sm">Độ cao hàng</p>
               <button
                 onClick={() =>
-                  setLineHeight((prev) => (prev > 1.75 ? prev - 0.25 : prev))
+                  setLineHeight((prev) => (prev > 1.5 ? prev - 0.25 : prev))
                 }
                 className="size-10 flex items-center justify-center transition-all border-2 border-gray-300 bg-gray-50 hover:border-gray-400 hover:bg-gray-100 rounded-full"
               >
