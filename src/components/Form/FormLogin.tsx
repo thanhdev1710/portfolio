@@ -159,8 +159,16 @@ export default function FormLogin({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 px-8 py-6 bg-white text-black shadow-md rounded-xl w-full max-w-md mx-auto"
+        className="space-y-4 relative px-8 py-6 bg-white text-black shadow-md rounded-xl w-full max-w-md mx-auto"
       >
+        {/* Nút quay về trang blogs */}
+        <div className="absolute top-4 right-4">
+          <Link href="/blogs" aria-label="Quay về trang Blogs">
+            <Button className="text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800">
+              Quay về
+            </Button>
+          </Link>
+        </div>
         {/* Logo */}
         <div className="bg-blue-100 rounded-xl w-40 mx-auto flex items-center justify-center p-2">
           <Image

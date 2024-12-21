@@ -54,16 +54,18 @@ export async function login(formData: any) {
         : String(error.message).toLowerCase().includes("email")
         ? "Tài khoản này không tồn tại"
         : "Đăng nhập thất bại. Vui lòng thử lại!";
-      return message;
+      return { success: false, message };
     }
 
     const { token } = await res.json();
-    // Lưu token vào cookie
     setTokenCookie(token, cookieStore);
-
-    return null;
-  } catch (error: any) {
-    return error.message;
+    return { success: true, message: "Đăng nhập thành công!" };
+  } catch (error) {
+    if (error instanceof Error) {
+      return { success: false, message: error.message };
+    } else {
+      return { success: false, message: "Đã xảy ra lỗi" };
+    }
   }
 }
 
@@ -88,17 +90,18 @@ export async function signup(formData: any) {
       const message = String(error.message).includes("users_email_key")
         ? "Tài khoản này đã tồn tại"
         : "Đăng ký thất bại. Vui lòng thử lại!";
-      return message;
+      return { success: false, message };
     }
 
     const { token } = await res.json();
-
-    // Lưu token vào cookie
     setTokenCookie(token, cookieStore);
-
-    return null;
-  } catch (error: any) {
-    return error.message;
+    return { success: true, message: "Đăng ký thành công!" };
+  } catch (error) {
+    if (error instanceof Error) {
+      return { success: false, message: error.message };
+    } else {
+      return { success: false, message: "Đã xảy ra lỗi" };
+    }
   }
 }
 
@@ -107,7 +110,7 @@ export async function auth() {
   const jwt = cookieStore.get("jwt");
   const token = jwt?.value;
 
-  if (!token) return null;
+  if (!token) return { success: false, message: "Người dùng chưa đăng nhập." };
 
   try {
     const user = decode(jwt?.value) as JwtPayload;
@@ -115,21 +118,21 @@ export async function auth() {
     if (user.exp && user.id) {
       const now = Number((Date.now() / 1000).toFixed(0));
       if (now < user.exp) {
-        return user.id;
+        return { success: true, data: { id: user.id, jwt: token } };
       }
     }
 
-    return null;
+    return { success: false, message: "Phiên đăng nhập đã hết hạn." };
   } catch {
-    return null;
+    return { success: false, message: "Token không hợp lệ." };
   }
 }
 
 export async function logout() {
   try {
     (await cookies()).delete("jwt");
-  } catch (error: any) {
-    return error.message;
+  } catch (error) {
+    throw error;
   }
 }
 
@@ -154,12 +157,16 @@ export async function forgot(formData: any) {
         error.message === "There is no user with this email address"
           ? "Tài khoản này không tồn tại"
           : "Đã xảy ra lỗi. Vui lòng thử lại!";
-      return message;
+      return { success: false, message };
     }
 
-    return null;
-  } catch (error: any) {
-    return error.message;
+    return { success: true, message: "Email khôi phục đã được gửi!" };
+  } catch (error) {
+    if (error instanceof Error) {
+      return { success: false, message: error.message };
+    } else {
+      return { success: false, message: "Đã xảy ra lỗi" };
+    }
   }
 }
 
@@ -184,12 +191,16 @@ export async function resetPassword(formData: any, token: string) {
         error.message === "Token is invalid or has expired"
           ? "Mã không hợp lệ hoặc đã hết hạn!"
           : "Đã xảy ra lỗi. Vui lòng thử lại!";
-      return message;
+      return { success: false, message };
     }
 
-    return null;
-  } catch (error: any) {
-    return error.message;
+    return { success: true, message: "Mật khẩu đã được đặt lại thành công!" };
+  } catch (error) {
+    if (error instanceof Error) {
+      return { success: false, message: error.message };
+    } else {
+      return { success: false, message: "Đã xảy ra lỗi" };
+    }
   }
 }
 
@@ -218,14 +229,17 @@ export async function updatePassword(formData: any) {
           ? "Mật khẩu hiện tại của bạn không đúng"
           : "Đã xảy ra lỗi. Vui lòng thử lại!";
       message = pleaseLogin(error) || message;
-      return message;
+      return { success: false, message };
     }
 
     const { token } = await res.json();
-
     setTokenCookie(token, cookieStore);
-    return null;
-  } catch (error: any) {
-    return error.message;
+    return { success: true, message: "Mật khẩu đã được cập nhật!" };
+  } catch (error) {
+    if (error instanceof Error) {
+      return { success: false, message: error.message };
+    } else {
+      return { success: false, message: "Đã xảy ra lỗi" };
+    }
   }
 }

@@ -50,7 +50,7 @@ export default async function page({
         ]}
       />
       <div className="flex xl:gap-8 lg:gap-4 min-h-svh">
-        <AsideBlogLeft />
+        <AsideBlogLeft blogId={blog.id} />
         <div className="w-full space-y-16">
           <main className="flex flex-col gap-8">
             <header className="flex justify-between">
@@ -88,7 +88,7 @@ export default async function page({
                   numBookmark={1}
                   numMess={2}
                   numView={blog.countView || 0}
-                  numVoteDown={blog.countDisLike || 0}
+                  numVoteDown={blog.countDislike || 0}
                   numVoteUp={blog.countLike || 0}
                   sizeIcon={20}
                   sizeText={20}

@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const handlePromise = async (
-  callback: () => Promise<string | null>,
+  callback: () => Promise<{ success: boolean; message: string }>,
   successMessage: string,
   redirectUrl?: string,
   router?: AppRouterInstance
@@ -17,8 +17,8 @@ export const handlePromise = async (
   try {
     await toast.promise(
       (async () => {
-        const message = await callback(); // Gọi hàm API
-        if (message) throw new Error(message); // Ném lỗi nếu có `message`
+        const response = await callback(); // Gọi hàm API
+        if (!response.success) throw new Error(response.message); // Kiểm tra success
       })(),
       {
         loading: "Đang xử lý...",

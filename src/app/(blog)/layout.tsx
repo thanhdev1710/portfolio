@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import Logo from "@/components/shared/Logo";
+import { User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog | ThanhDev - Sharing My Backend Development Journey",
@@ -65,7 +66,7 @@ export default async function BlogLayout({
   children: React.ReactNode;
 }) {
   const session = await auth();
-  console.log(session);
+  console.log(session.data?.id);
 
   return (
     <div className="bg-[var(--background-primary)] min-h-svh flex flex-col gap-4">
@@ -80,16 +81,26 @@ export default async function BlogLayout({
           </div>
 
           <div className="flex items-center justify-center gap-2 max-md:hidden">
-            <Button variant="link" asChild>
-              <Link aria-label="Đăng nhập" href="/login">
-                Đăng nhập
-              </Link>
-            </Button>
-            <Button variant="secondary" asChild>
-              <Link aria-label="Tạo tài khoản" href="">
-                Tạo tài khoản
-              </Link>
-            </Button>
+            {session.success ? (
+              <Button variant="default" className="rounded-full size-8" asChild>
+                <Link aria-label="Tài khoản người dùng" href="/user">
+                  <User />
+                </Link>
+              </Button>
+            ) : (
+              <>
+                <Button variant="link" asChild>
+                  <Link aria-label="Đăng nhập" href="/login">
+                    Đăng nhập
+                  </Link>
+                </Button>
+                <Button variant="secondary" asChild>
+                  <Link aria-label="Tạo tài khoản" href="/signup">
+                    Tạo tài khoản
+                  </Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </header>

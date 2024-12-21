@@ -10,9 +10,7 @@ export default function RecordView({ slug }: { slug: string }) {
         method: "PATCH",
         credentials: "include",
       });
-      console.log(res.statusText);
     };
-
     recordView();
   }, [slug]); // Đảm bảo chạy lại khi slug thay đổi
 

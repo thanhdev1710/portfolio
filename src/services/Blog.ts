@@ -13,7 +13,7 @@ export async function GetListBlog({
   const url = `${API_URL}${API_VERSION}posts?p=${page}&q=${search}&tag=${tag}`;
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { next: { tags: ["blog"] } });
 
     if (!res.ok) {
       throw new Error(`Failed to fetch blogs. Status: ${res.status}`);
@@ -40,7 +40,10 @@ export async function GetBlogBySlug({
   const url = `${API_URL}${API_VERSION}posts/${slug}`;
 
   try {
-    const res = await fetch(url, { credentials: "include" });
+    const res = await fetch(url, {
+      credentials: "include",
+      next: { tags: ["blog"] },
+    });
 
     if (!res.ok) {
       throw new Error(`Failed to fetch blog by slug. Status: ${res.status}`);

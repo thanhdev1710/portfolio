@@ -70,7 +70,7 @@ export default async function Page({
                 numMess={0}
                 numView={blog.countView || 0}
                 numVoteUp={blog.countLike || 0}
-                numVoteDown={blog.countDisLike || 0}
+                numVoteDown={blog.countDislike || 0}
                 sizeIcon={16}
                 sizeText={16}
               />

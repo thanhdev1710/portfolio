@@ -6,7 +6,7 @@ export async function middleware(req: NextRequest) {
   const session = await auth();
 
   // Nếu không có session, redirect đến trang login
-  if (!session) {
+  if (!session.success) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
