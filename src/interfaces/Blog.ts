@@ -18,7 +18,10 @@ export interface Blog {
   emailUser: string;
   imageUser: string;
   tags: string[];
+  duration: number;
+  categories: string[];
   countView: number;
+  countBookmark: number;
   countLike: number;
   countDislike: number;
 }

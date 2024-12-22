@@ -4,6 +4,7 @@ import React from "react";
 import ButtonALargeSmall from "../Button/ButtonALargeSmall";
 import ButtonShare from "../Button/ButtonShare";
 import ButtonLike from "../Button/ButtonLike";
+import ButtonBookmark from "../Button/ButtonBookmark";
 
 export default function AsideBlogLeft({ blogId }: { blogId: number }) {
   return (
@@ -18,9 +19,7 @@ export default function AsideBlogLeft({ blogId }: { blogId: number }) {
         </Tooltip>
 
         <Tooltip placement="right" title="Lưu lại bài viết">
-          <button className="flex items-center justify-center size-10 p-2 rounded-full bg-slate-600 shadow-md hover:bg-slate-700">
-            <Bookmark className="w-full h-full text-white" />
-          </button>
+          <ButtonBookmark blogId={blogId} />
         </Tooltip>
 
         <ButtonALargeSmall />

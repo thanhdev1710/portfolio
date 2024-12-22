@@ -8,12 +8,12 @@ import Link from "next/link";
 import React, { Suspense } from "react";
 import ButtonShare from "@/components/Button/ButtonShare";
 import BreadcrumbCus from "@/components/shared/BreadcrumbCus";
-import Hashtag from "@/components/shared/Hashtag";
 import AsideBlogLeft from "@/components/shared/AsideBlogLeft";
 import AsideBlogRight from "@/components/shared/AsideBlogRight";
 import { ContextChangeFontSize } from "@/context/ContextChangeFontSize";
 import MarkdownChangeFontSize from "@/components/shared/MarkdownChangeFontSize";
 import RecordView from "./RecordView";
+import Tag from "@/components/shared/Hashtag";
 
 export async function generateMetadata({
   params,
@@ -82,14 +82,14 @@ export default async function page({
                     )}
                   </span>
                   <span> - </span>
-                  <span>2 phút đọc</span>
+                  <span>{blog.duration} phút đọc</span>
                 </div>
                 <ToolBoxShow
-                  numBookmark={1}
+                  numBookmark={blog.countBookmark}
+                  numView={blog.countView}
+                  numVoteDown={blog.countDislike}
+                  numVoteUp={blog.countLike}
                   numMess={2}
-                  numView={blog.countView || 0}
-                  numVoteDown={blog.countDislike || 0}
-                  numVoteUp={blog.countLike || 0}
                   sizeIcon={20}
                   sizeText={20}
                 />
@@ -140,7 +140,7 @@ export default async function page({
               </div>
               <div className="flex gap-4 mt-8">
                 {blog.tags.map((tag) => (
-                  <Hashtag key={tag} label={tag} url={tag} />
+                  <Tag title="tags" key={tag} label={tag} url={tag} />
                 ))}
               </div>
               <p className="my-4 text-gray-400">All rights reserved</p>

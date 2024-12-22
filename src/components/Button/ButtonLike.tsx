@@ -1,5 +1,5 @@
 "use client";
-import { likeAction } from "@/actions/likeAction";
+import { likeAction } from "@/actions/postAction";
 import { ArrowBigDown, ArrowBigUp } from "lucide-react";
 import React from "react";
 import toast from "react-hot-toast";
