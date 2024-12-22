@@ -45,12 +45,13 @@ const PaginationLink = ({
   isActive,
   href,
   size = "icon",
+  scroll,
   ...props
-}: PaginationLinkProps & { href: string }) => (
+}: PaginationLinkProps & { href: string; scroll: boolean }) => (
   <Link
     aria-label="Pagination"
     href={href}
-    scroll={true}
+    scroll={scroll}
     aria-current={isActive ? "page" : undefined}
     className={cn(
       buttonVariants({

@@ -132,7 +132,11 @@ export default async function Page({
         ))}
       </section>
       <div className="mt-4 mb-8">
-        <PaginationBlog curPage={Number(p) || 1} totalPage={totalPage} />
+        <PaginationBlog
+          href="/blogs"
+          curPage={Number(p) || 1}
+          totalPage={totalPage}
+        />
       </div>
     </>
   );
