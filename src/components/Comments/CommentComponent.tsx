@@ -48,12 +48,21 @@ export default function CommentComponent({
   // Kiểm tra nếu comment.replies tồn tại trước khi sử dụng
   const replies = comment.replies || []; // Nếu không có replies, trả về mảng rỗng
 
+  const highlightLinks = (text: string) => {
+    // Regex để tìm tất cả các URL (HTTP, HTTPS và các liên kết tương đối)
+    const urlRegex = /(https?:\/\/[^\s]+|\/[^\s]+)/g;
+
+    return text.replace(urlRegex, (url) => {
+      return `<a href="${url}" class="text-blue-500" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    });
+  };
+
   return (
     <div
       className={`rounded-lg p-4 shadow my-2 ${comment.parentId ? "ml-5" : ""}`}
     >
       <div className="flex items-center space-x-3">
-        <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center font-bold p-1">
+        <div className="h-8 w-8 relative rounded-full bg-blue-500 flex items-center justify-center font-bold p-1">
           <Image
             alt="Ảnh người dùng"
             src={comment.user_img || "/images/user-default.png"}
@@ -61,17 +70,24 @@ export default function CommentComponent({
             height={100}
             className="rounded-full object-cover w-full h-full"
           />
+          {comment.parentId && (
+            <div className="h-0.5 w-6 absolute top-1/2 -translate-y-1/2 -left-[112%] bg-gray-400"></div>
+          )}
         </div>
         <span className="font-semibold">{comment.user_name}</span>
         <span className="text-xs ">
           {new Date(comment.updatedAt).toLocaleString("vi")}
         </span>
       </div>
-
-      <p className="mt-2 ">{comment.body}</p>
+      <p
+        className="mt-2"
+        dangerouslySetInnerHTML={{
+          __html: highlightLinks(comment.body),
+        }}
+      ></p>
 
       {replies.length > 0 && (
-        <div className="mt-4 border-l-2 border-gray-400 pl-4 space-y-4">
+        <div className="mt-4 border-l-2 border-gray-400">
           {replies.slice(0, visibleReplies).map((reply) => (
             <CommentComponent
               userId={userId}
@@ -83,7 +99,11 @@ export default function CommentComponent({
         </div>
       )}
 
-      <div className="mt-4 flex gap-4 items-center">
+      <div
+        className={`mt-4 flex ${
+          showReplyInput ? "flex-col" : "flex-row"
+        }  gap-4`}
+      >
         {!showReplyInput ? (
           <button
             className="text-sm text-blue-400 hover:underline"
@@ -92,7 +112,7 @@ export default function CommentComponent({
             Trả lời
           </button>
         ) : (
-          <form onSubmit={handleReplySubmit} className="space-y-2">
+          <form onSubmit={handleReplySubmit} className="space-y-2 w-80">
             <textarea
               value={replyText}
               onChange={(e) => setReplyText(e.target.value)}

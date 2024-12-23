@@ -95,7 +95,7 @@ export default async function page({
                   numView={blog.countView}
                   numVoteDown={blog.countDislike}
                   numVoteUp={blog.countLike}
-                  numMess={2}
+                  numMess={blog.countComment}
                   sizeIcon={20}
                   sizeText={20}
                 />

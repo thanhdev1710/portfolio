@@ -22,6 +22,7 @@ export interface Blog {
   categories: string[];
   countView: number;
   countBookmark: number;
+  countComment: number;
   countLike: number;
   countDislike: number;
 }

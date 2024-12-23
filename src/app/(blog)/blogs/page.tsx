@@ -119,7 +119,7 @@ export default async function Page({
               </div>
 
               <ToolBoxShow
-                numMess={0}
+                numMess={blog.countComment}
                 numBookmark={blog.countBookmark}
                 numView={blog.countView}
                 numVoteUp={blog.countLike}
