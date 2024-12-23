@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
@@ -13,7 +14,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import {
@@ -163,11 +163,14 @@ export default function FormLogin({
       >
         {/* Nút quay về trang blogs */}
         <div className="absolute top-4 right-4">
-          <Link href="/blogs" aria-label="Quay về trang Blogs">
-            <Button className="text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800">
+          <Button
+            asChild
+            className="text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800"
+          >
+            <Link href="/blogs" aria-label="Quay về trang Blogs">
               Quay về
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
         {/* Logo */}
         <div className="bg-blue-100 rounded-xl w-40 mx-auto flex items-center justify-center p-2">
@@ -210,8 +213,8 @@ export default function FormLogin({
                     ? "Email"
                     : "Mật khẩu hiện tại"}
                 </FormLabel>
-                <FormControl>
-                  <div className="relative">
+                <div className="relative">
+                  <FormControl>
                     <Input
                       type={
                         fieldName.startsWith("password")
@@ -234,19 +237,19 @@ export default function FormLogin({
                       }
                       {...field}
                     />
-                    {fieldName.startsWith("password") && (
-                      <div
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIsEye(isEye === fieldName ? "" : fieldName);
-                        }}
-                        className="absolute top-1/2 -translate-y-1/2 right-3 text-gray-400 size-5 cursor-pointer"
-                      >
-                        {isEye === fieldName ? <Eye /> : <EyeOff />}
-                      </div>
-                    )}
-                  </div>
-                </FormControl>
+                  </FormControl>
+                  {fieldName.startsWith("password") && (
+                    <div
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsEye(isEye === fieldName ? "" : fieldName);
+                      }}
+                      className="absolute top-1/2 -translate-y-1/2 right-3 text-gray-400 size-5 cursor-pointer"
+                    >
+                      {isEye === fieldName ? <Eye /> : <EyeOff />}
+                    </div>
+                  )}
+                </div>
                 <FormMessage />
               </FormItem>
             )}

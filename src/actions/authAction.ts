@@ -32,10 +32,12 @@ function pleaseLogin(error: any) {
 }
 
 export async function login(formData: any) {
-  const cookieStore = await cookies();
-  const body = JSON.stringify(formData);
+  console.log("run");
 
   try {
+    const cookieStore = await cookies();
+    const body = JSON.stringify(formData);
+    console.log("run");
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_API_VERSION}users/login`,
       {
@@ -56,6 +58,7 @@ export async function login(formData: any) {
         : "Đăng nhập thất bại. Vui lòng thử lại!";
       return { success: false, message };
     }
+    console.log(res);
 
     const { token } = await res.json();
     setTokenCookie(token, cookieStore);

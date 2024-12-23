@@ -66,7 +66,6 @@ export default async function BlogLayout({
   children: React.ReactNode;
 }) {
   const session = await auth();
-  console.log(session.data?.id);
 
   return (
     <div className="bg-[var(--background-primary)] min-h-svh flex flex-col gap-4">

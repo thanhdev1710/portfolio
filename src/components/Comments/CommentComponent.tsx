@@ -1,11 +1,21 @@
 "use client";
 import { createComment } from "@/actions/commentAction";
+import { likeAction } from "@/actions/postAction";
 import { Comment } from "@/interfaces/Comment";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-export default function CommentComponent({ comment }: { comment: Comment }) {
+export default function CommentComponent({
+  comment,
+  userId,
+  parentId,
+}: {
+  comment: Comment;
+  userId?: number;
+  parentId: number;
+}) {
   const [visibleReplies, setVisibleReplies] = useState(2); // Bắt đầu hiển thị 2 bình luận
   const [showReplyInput, setShowReplyInput] = useState(false); // Hiển thị input trả lời
   const [replyText, setReplyText] = useState(""); // Nội dung trả lời
@@ -20,7 +30,7 @@ export default function CommentComponent({ comment }: { comment: Comment }) {
       const body = {
         blogId: comment.postId,
         body: replyText,
-        parentId: comment.id,
+        parentId: parentId,
       };
       const res = await createComment(body);
       if (res.success) {
@@ -60,7 +70,20 @@ export default function CommentComponent({ comment }: { comment: Comment }) {
 
       <p className="mt-2 ">{comment.body}</p>
 
-      <div className="mt-4">
+      {replies.length > 0 && (
+        <div className="mt-4 border-l-2 border-gray-400 pl-4 space-y-4">
+          {replies.slice(0, visibleReplies).map((reply) => (
+            <CommentComponent
+              userId={userId}
+              key={reply.id}
+              comment={reply}
+              parentId={comment.id}
+            />
+          ))}
+        </div>
+      )}
+
+      <div className="mt-4 flex gap-4 items-center">
         {!showReplyInput ? (
           <button
             className="text-sm text-blue-400 hover:underline"
@@ -94,15 +117,63 @@ export default function CommentComponent({ comment }: { comment: Comment }) {
             </div>
           </form>
         )}
-      </div>
-
-      {replies.length > 0 && (
-        <div className="mt-4 border-l-2 border-gray-400 pl-4 space-y-4">
-          {replies.slice(0, visibleReplies).map((reply) => (
-            <CommentComponent key={reply.id} comment={reply} />
-          ))}
+        <div className="flex gap-3 items-center">
+          <button
+            onClick={async () => {
+              const res = await likeAction({
+                status: "like",
+                commentId: comment.id,
+              });
+              if (res.success) {
+                toast.success(res.message);
+              } else {
+                toast.error(res.message);
+              }
+            }}
+            className={`flex gap-1 items-center  text-white rounded-md p-1 ${
+              userId && comment.likeUserIds.includes(userId)
+                ? "bg-blue-500 hover:bg-blue-600"
+                : "bg-blue-300 hover:bg-blue-400"
+            }`}
+          >
+            <ThumbsUp
+              className={`size-4 ${
+                userId && comment.likeUserIds.includes(userId)
+                  ? "fill-current"
+                  : ""
+              }`}
+            />
+            <span className="text-xs">{comment.countLike}</span>
+          </button>
+          <button
+            onClick={async () => {
+              const res = await likeAction({
+                status: "dislike",
+                commentId: comment.id,
+              });
+              if (res.success) {
+                toast.success(res.message);
+              } else {
+                toast.error(res.message);
+              }
+            }}
+            className={`flex gap-1 items-center  text-white rounded-md p-1 ${
+              userId && comment.dislikeUserIds.includes(userId)
+                ? "bg-red-500 hover:bg-red-600"
+                : "bg-red-300 hover:bg-red-400"
+            }`}
+          >
+            <ThumbsDown
+              className={`size-4 ${
+                userId && comment.dislikeUserIds.includes(userId)
+                  ? "fill-current"
+                  : ""
+              }`}
+            />
+            <span className="text-xs">{comment.countDislike}</span>
+          </button>
         </div>
-      )}
+      </div>
 
       {replies.length > 2 && visibleReplies < replies.length && (
         <div className="mt-4 flex justify-center">

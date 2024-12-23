@@ -10,5 +10,9 @@ export interface Comment {
   updatedAt: string;
   user_name: string;
   user_img: string;
+  countDislike: number;
+  countLike: number;
+  likeUserIds: number[];
+  dislikeUserIds: number[];
   replies?: Comment[];
 }

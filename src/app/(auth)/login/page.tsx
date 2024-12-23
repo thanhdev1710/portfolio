@@ -7,6 +7,8 @@ export default async function page() {
   if (session.success) {
     redirect("/blogs");
   }
+  console.log("login");
+
   return (
     <div className="flex items-center justify-center w-full min-h-svh bg-blue-300 py-8">
       <FormLogin formState={"login"} />

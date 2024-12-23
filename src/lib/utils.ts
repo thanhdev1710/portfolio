@@ -22,12 +22,13 @@ export const handlePromise = async (
       })(),
       {
         loading: "Đang xử lý...",
-        success: successMessage,
+        success: () => {
+          if (redirectUrl && router) router.replace(redirectUrl);
+          return successMessage;
+        },
         error: (err: any) => `${err.message}`,
       }
     );
-
-    if (redirectUrl && router) return router.replace(redirectUrl); // Điều hướng nếu cần
   } catch (error: any) {
     throw error;
   }

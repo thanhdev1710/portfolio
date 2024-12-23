@@ -15,6 +15,7 @@ import MarkdownChangeFontSize from "@/components/shared/MarkdownChangeFontSize";
 import RecordView from "./RecordView";
 import Tag from "@/components/shared/Hashtag";
 import CommentsList from "@/components/Comments/Comments";
+import { auth } from "@/actions/authAction";
 
 export async function generateMetadata({
   params,
@@ -36,6 +37,7 @@ export default async function page({
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ p: string }>;
 }) {
+  const session = await auth();
   const { slug } = await params;
   const { p } = await searchParams;
   const blog = await GetBlogBySlug({ slug });
@@ -160,7 +162,12 @@ export default async function page({
           <section>
             <h2 className="font-bold text-2xl">Bình luận</h2>
             <div className="mt-4">
-              <CommentsList slug={slug} p={Number(p) || 1} blogId={blog.id} />
+              <CommentsList
+                userId={Number(session.data?.id)}
+                slug={slug}
+                p={Number(p) || 1}
+                blogId={blog.id}
+              />
             </div>
           </section>
         </div>

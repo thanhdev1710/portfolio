@@ -27,17 +27,22 @@ function buildCommentTree(comments: Comments): Comment[] {
 
 // Component to render the list of comments
 export default async function CommentsList({
+  userId,
   blogId,
   p,
   slug,
 }: {
+  userId?: number;
   blogId: number;
   p: number;
   slug: string;
 }) {
-  const comments = await fetch(`${API_URL}${API_VERSION}comments/${blogId}`, {
-    next: { tags: ["comment"] },
-  })
+  const comments = await fetch(
+    `${API_URL}${API_VERSION}comments/${blogId}/${userId || 0}`,
+    {
+      next: { tags: ["comment"] },
+    }
+  )
     .then((res) => res.json())
     .catch((err) => console.log(err));
 
@@ -51,7 +56,12 @@ export default async function CommentsList({
     <div>
       <CreateComment blogId={blogId} />
       {commentTree.slice((p - 1) * 3, p * 3).map((comment) => (
-        <CommentComponent key={comment.id} comment={comment} />
+        <CommentComponent
+          userId={userId}
+          key={comment.id}
+          comment={comment}
+          parentId={comment.id}
+        />
       ))}
       <div className="mt-4 mb-8">
         <PaginationBlog

@@ -6,14 +6,32 @@ import { auth } from "./authAction";
 export async function likeAction({
   blogId,
   status,
+  commentId,
 }: {
-  blogId: number;
+  blogId?: number;
   status: string;
+  commentId?: number;
 }) {
   try {
     const { data } = await auth();
     if (!data?.jwt) {
       throw new Error("Bạn cần phải đăng nhập.");
+    }
+
+    let body;
+
+    if (commentId) {
+      body = {
+        commentId,
+        status,
+      };
+    }
+
+    if (blogId) {
+      body = {
+        postId: blogId,
+        status,
+      };
     }
 
     const res = await fetch(`${API_URL}${API_VERSION}like`, {
@@ -22,10 +40,7 @@ export async function likeAction({
         "Content-Type": "application/json",
         Authorization: `Bearer ${data.jwt}`,
       },
-      body: JSON.stringify({
-        postId: blogId,
-        status,
-      }),
+      body: JSON.stringify(body),
     });
 
     if (!res.ok) {
@@ -34,7 +49,12 @@ export async function likeAction({
 
     const { message } = await res.json();
 
-    revalidateTag("blog");
+    if (commentId) {
+      revalidateTag("comment");
+    }
+    if (blogId) {
+      revalidateTag("blog");
+    }
     return { success: true, message };
   } catch (error) {
     if (error instanceof Error) {
