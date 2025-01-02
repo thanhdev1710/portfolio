@@ -59,35 +59,3 @@ export async function GetBlogBySlug({
     throw error;
   }
 }
-
-export async function GetSectionBlogById({
-  id,
-}: {
-  id: number;
-}): Promise<ListSectionBlog> {
-  const url = `${API_URL}${API_VERSION}posts/${id}/sections`;
-
-  try {
-    const res = await fetch(url, {
-      cache: "force-cache",
-      next: { revalidate: 604800, tags: ["section-blog"] }, // Revalidate every 7 days
-    });
-
-    if (!res.ok) {
-      throw new Error(
-        `Failed to fetch sections for blog ID: ${id}. Status: ${res.status} - ${res.statusText}`
-      );
-    }
-
-    const data = await res.json();
-
-    if (!data?.data) {
-      throw new Error(`No section data found for blog ID: ${id}`);
-    }
-
-    return data.data;
-  } catch (error) {
-    console.error(`Error fetching sections for blog ID: ${id}`, error);
-    throw error;
-  }
-}
