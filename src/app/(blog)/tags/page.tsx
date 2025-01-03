@@ -1,4 +1,5 @@
 import BreadcrumbCus from "@/components/shared/BreadcrumbCus";
+import Tag from "@/components/shared/Hashtag";
 import Hashtag from "@/components/shared/Hashtag";
 import { GetAllHashtag } from "@/services/Hashtag";
 
@@ -28,7 +29,8 @@ export default async function Page() {
             >
               {hashtag.countBlog > 100 ? "100+" : hashtag.countBlog}
             </div>
-            <Hashtag
+            <Tag
+              title="tags"
               className={`px-6 py-4 h-full transition-all duration-500 text-xl text-white w-32 ${
                 hashtag.countBlog > 100
                   ? "bg-red-400 group-hover:bg-red-600"

@@ -57,7 +57,7 @@ export default async function page({
       />
       <div className="flex xl:gap-8 lg:gap-4 min-h-svh">
         <AsideBlogLeft blogId={blog.id} />
-        <div className="w-full space-y-16">
+        <div id="main-content-toc" className="w-full space-y-16">
           <main className="flex flex-col gap-8">
             <header className="flex justify-between">
               <div className="flex gap-2 text-sm text-gray-400 dark:text-gray-500 mt-2">
