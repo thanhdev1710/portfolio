@@ -1,5 +1,5 @@
 import ToolBoxShow from "@/components/shared/ToolBoxShow";
-import { GetBlogBySlug, GetSectionBlogById } from "@/services/Blog";
+import { GetBlogBySlug } from "@/services/Blog";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { Metadata } from "next";
@@ -41,7 +41,6 @@ export default async function page({
   const { slug } = await params;
   const { p } = await searchParams;
   const blog = await GetBlogBySlug({ slug });
-  const sectionBlog = await GetSectionBlogById({ id: blog.id });
 
   return (
     <ContextChangeFontSize>
@@ -115,29 +114,6 @@ export default async function page({
                   className="object-cover w-full h-auto aspect-video rounded-xl shadow"
                 />
               )}
-            </section>
-            <section className="flex flex-col gap-4">
-              {sectionBlog.map((section, i) => (
-                <article key={section.id}>
-                  <h3 className="text-2xl font-semibold">
-                    {i + 1}. {section.title}
-                  </h3>
-                  <MarkdownChangeFontSize str={section.content} />
-                  {section.imageUrl && (
-                    <div className="flex flex-col gap-1">
-                      <Image
-                        alt={`Ảnh ${section.altText}`}
-                        src={section.imageUrl}
-                        width={1000}
-                        height={600}
-                        sizes="60vw"
-                        className="object-cover w-full h-auto aspect-video rounded-xl shadow"
-                      />
-                      <p className="text-center text-xs">{section.altText}</p>
-                    </div>
-                  )}
-                </article>
-              ))}
             </section>
             <footer>
               <div>
