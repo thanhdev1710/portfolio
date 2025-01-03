@@ -163,10 +163,7 @@ export default function FormLogin({
       >
         {/* Nút quay về trang blogs */}
         <div className="absolute top-4 right-4">
-          <Button
-            asChild
-            className="text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800"
-          >
+          <Button asChild>
             <Link href="/blogs" aria-label="Quay về trang Blogs">
               Quay về
             </Link>
