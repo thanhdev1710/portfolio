@@ -17,6 +17,7 @@ export interface Blog {
   nameUser: string;
   emailUser: string;
   imageUser: string;
+  roleUser: "admin" | "author" | "editor" | "subscriber";
   tags: string[];
   duration: number;
   categories: string[];

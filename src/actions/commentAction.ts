@@ -16,14 +16,14 @@ export async function createComment({
   try {
     const values = { postId: blogId, body, parentId };
     const { data } = await auth();
-    if (!data?.jwt) {
+    if (!data?.token) {
       throw new Error("Bạn cần phải đăng nhập");
     }
     const res = await fetch(`${API_URL}${API_VERSION}comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${data.jwt}`,
+        Authorization: `Bearer ${data.token}`,
       },
       body: JSON.stringify(values),
     });

@@ -7,7 +7,7 @@ import { StarsBackground } from "../shared/stars-background";
 
 export default function FlexASide() {
   return (
-    <section className="min-h-svh w-full xl:w-[24%] flex flex-col gap-4">
+    <section className="xl:min-h-svh h-full w-full xl:w-[24%] flex flex-col gap-4">
       <article className="flex flex-col gap-4 max-sm:flex-col max-sm:h-full max-xl:flex-row max-xl:h-[100px] max-lg:h-[80px]">
         <h3 className="card-customer relative text-xl tracking-widest font-bold uppercase max-sm:h-[90px] xl:py-8 xl:px-6 max-xl:flex max-xl:items-center max-xl:justify-center text-center">
           <span className="relative z-10">Fullstack developer</span>

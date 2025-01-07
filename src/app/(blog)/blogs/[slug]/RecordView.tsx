@@ -6,13 +6,13 @@ import { useEffect } from "react";
 export default function RecordView({ slug }: { slug: string }) {
   useEffect(() => {
     const recordView = async () => {
-      const res = await fetch(`${API_URL}${API_VERSION}posts/${slug}`, {
+      await fetch(`${API_URL}${API_VERSION}posts/${slug}`, {
         method: "PATCH",
         credentials: "include",
       });
     };
     recordView();
-  }, [slug]); // Đảm bảo chạy lại khi slug thay đổi
+  }, []);
 
   return null;
 }

@@ -14,7 +14,7 @@ export async function likeAction({
 }) {
   try {
     const { data } = await auth();
-    if (!data?.jwt) {
+    if (!data?.token) {
       throw new Error("Bạn cần phải đăng nhập.");
     }
 
@@ -38,7 +38,7 @@ export async function likeAction({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${data.jwt}`,
+        Authorization: `Bearer ${data.token}`,
       },
       body: JSON.stringify(body),
     });
@@ -68,7 +68,7 @@ export async function likeAction({
 export async function bookmarkAction({ blogId }: { blogId: number }) {
   try {
     const { data } = await auth();
-    if (!data?.jwt) {
+    if (!data?.token) {
       throw new Error("Bạn cần phải đăng nhập");
     }
 
@@ -76,7 +76,7 @@ export async function bookmarkAction({ blogId }: { blogId: number }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${data.jwt}`,
+        Authorization: `Bearer ${data.token}`,
       },
       body: JSON.stringify({
         postId: blogId,

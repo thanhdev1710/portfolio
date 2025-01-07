@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import Logo from "@/components/shared/Logo";
 import { User } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Blog | ThanhDev - Sharing My Backend Development Journey",
@@ -66,6 +67,7 @@ export default async function BlogLayout({
   children: React.ReactNode;
 }) {
   const session = await auth();
+  const user = session.data?.user;
 
   return (
     <div className="bg-[var(--background-primary)] min-h-svh flex flex-col gap-4">
@@ -80,12 +82,16 @@ export default async function BlogLayout({
           </div>
 
           <div className="flex items-center justify-center gap-2 max-md:hidden">
-            {session.success ? (
-              <Button variant="default" className="rounded-full size-8" asChild>
-                <Link aria-label="Tài khoản người dùng" href="/user">
-                  <User />
-                </Link>
-              </Button>
+            {session.success && user ? (
+              <Link aria-label="Tài khoảng người dùng" href="/account">
+                <Image
+                  width={60}
+                  height={60}
+                  alt={`User ${user.name}`}
+                  src={user.image || "/images/user-default.png"}
+                  className="size-8 rounded-full"
+                />
+              </Link>
             ) : (
               <>
                 <Button variant="link" asChild>
@@ -104,9 +110,11 @@ export default async function BlogLayout({
         </div>
       </header>
 
-      <main className="container mx-auto flex flex-col gap-4 px-4">
-        {children}
-      </main>
+      <div className="w-full px-4">
+        <main className="container mx-auto flex flex-col gap-4">
+          {children}
+        </main>
+      </div>
     </div>
   );
 }

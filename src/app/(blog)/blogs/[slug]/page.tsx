@@ -44,7 +44,7 @@ export default async function page({
 
   return (
     <ContextChangeFontSize>
-      <Suspense fallback={null}>
+      <Suspense key={slug} fallback={null}>
         <RecordView slug={slug} />
       </Suspense>
       <BreadcrumbCus
@@ -71,8 +71,8 @@ export default async function page({
                 </div>
                 <Link
                   className="text-blue-600 dark:text-blue-400 font-medium"
-                  href={`/user/${blog.idUser}`}
-                  aria-label="Link to user"
+                  href={`/account/${blog.idUser}`}
+                  aria-label="Link to account"
                 >
                   {blog.nameUser}
                 </Link>
@@ -139,7 +139,7 @@ export default async function page({
             <h2 className="font-bold text-2xl">Bình luận</h2>
             <div className="mt-4">
               <CommentsList
-                userId={Number(session.data?.id)}
+                userId={Number(session.data?.user.id)}
                 slug={slug}
                 p={Number(p) || 1}
                 blogId={blog.id}

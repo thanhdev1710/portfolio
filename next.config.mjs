@@ -3,6 +3,11 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.viblo.asia", pathname: "/*" },
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+        pathname: "/yidiElectro/**",
+      },
     ],
   },
 };

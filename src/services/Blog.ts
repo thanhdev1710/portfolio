@@ -5,12 +5,14 @@ export async function GetListBlog({
   page = 1,
   search = "",
   tag = "",
+  category = "",
 }: {
   page?: number;
   search?: string;
   tag?: string;
+  category?: string;
 }): Promise<RootListBlog> {
-  const url = `${API_URL}${API_VERSION}posts?p=${page}&q=${search}&tag=${tag}`;
+  const url = `${API_URL}${API_VERSION}posts?p=${page}&q=${search}&tag=${tag}&category=${category}`;
 
   try {
     const res = await fetch(url, { next: { tags: ["blog"] } });

@@ -116,12 +116,18 @@ export async function auth() {
   if (!token) return { success: false, message: "Người dùng chưa đăng nhập." };
 
   try {
-    const user = decode(jwt?.value) as JwtPayload;
+    const user = decode(jwt?.value) as JwtPayload & {
+      email: string;
+      id: number;
+      name: string;
+      role: string;
+      image: string;
+    };
 
     if (user.exp && user.id) {
       const now = Number((Date.now() / 1000).toFixed(0));
       if (now < user.exp) {
-        return { success: true, data: { id: user.id, jwt: token } };
+        return { success: true, data: { user, token } };
       }
     }
 
