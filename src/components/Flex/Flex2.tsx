@@ -7,17 +7,16 @@ import { StarsBackground } from "../shared/stars-background";
 export function Flex2() {
   return (
     <section className="h-full w-full flex max-lg:flex-col-reverse max-lg:!h-full max-xl:!h-[240px] items-stretch gap-4">
-      <article className="card-customer overflow-hidden flex-shrink-0 max-lg:!h-[310px] !w-[25%] !h-auto max-xl:!h-full max-xl:!w-auto aspect-square max-lg:hidden">
+      <article className="card-customer flex items-center justify-center overflow-hidden flex-shrink-0 max-lg:!h-[310px] !w-[25%] !h-auto max-xl:!h-full max-xl:!w-auto aspect-square max-lg:hidden">
         <Image
           alt="ThanhDev - Backend Developer"
           src="/images/img3.webp"
           priority
-          width={300}
-          height={300}
+          width={500}
+          height={500}
+          quality={100}
           className="object-cover w-full h-full"
         />
-        <ShootingStars />
-        <StarsBackground />
       </article>
       <article className="card-customer h-full max-lg:!h-[240px] xl:!w-[40%] p-6 max-xl:w-full group">
         <Link

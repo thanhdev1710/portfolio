@@ -85,7 +85,7 @@ export default async function BlogLayout({
                   width={60}
                   height={60}
                   alt={`User ${user.name}`}
-                  src={user.image || "/images/user-default.png"}
+                  src={user.image || "/images/user-default.avif"}
                   className="size-8 rounded-full"
                 />
               </Link>

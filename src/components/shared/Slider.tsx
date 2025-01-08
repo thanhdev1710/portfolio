@@ -2,11 +2,11 @@ import Image from "next/image";
 import styles from "./Slider.module.css";
 
 const images1 = [
-  { src: "/images/docker.webp", alt: "Docker Logo" },
-  { src: "/images/nextjs.webp", alt: "Next.js Logo" },
-  { src: "/images/postgresql.webp", alt: "PostgreSQL Logo" },
-  { src: "/images/redis.webp", alt: "Redis Logo" },
-  { src: "/images/nodejs.webp", alt: "Node.js Logo" },
+  { src: "/images/icon-skill/docker.avif", alt: "Docker Logo" },
+  { src: "/images/icon-skill/nextjs.avif", alt: "Next.js Logo" },
+  { src: "/images/icon-skill/postgresql.avif", alt: "PostgreSQL Logo" },
+  { src: "/images/icon-skill/redis.avif", alt: "Redis Logo" },
+  { src: "/images/icon-skill/nodejs.avif", alt: "Node.js Logo" },
 ];
 
 export function Slider() {

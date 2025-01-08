@@ -86,7 +86,7 @@ export default async function page({
                 <div className="size-10 rounded-full flex-shrink-0 border-2 border-blue-400 p-1">
                   <Image
                     alt="Image user"
-                    src={blog.imageUser || "/images/user-default.png"}
+                    src={blog.imageUser || "/images/user-default.avif"}
                     width={60}
                     height={60}
                     className="w-full h-full object-cover rounded-full"

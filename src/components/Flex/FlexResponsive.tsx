@@ -70,7 +70,7 @@ export default function FlexResponsive() {
           alt="ThanhDev - Backend Developer"
           sizes="100vw"
           fill
-          className="object-cover"
+          className="object-contain"
         />
       </article>
     </section>

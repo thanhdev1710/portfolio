@@ -65,7 +65,7 @@ export default function CommentComponent({
         <div className="h-8 w-8 relative rounded-full bg-blue-500 flex items-center justify-center font-bold p-1">
           <Image
             alt="Ảnh người dùng"
-            src={comment.user_img || "/images/user-default.png"}
+            src={comment.user_img || "/images/user-default.avif"}
             width={100}
             height={100}
             className="rounded-full object-cover w-full h-full"
