@@ -1,5 +1,4 @@
 import { Tooltip } from "antd";
-import { Bookmark } from "lucide-react";
 import React from "react";
 import ButtonALargeSmall from "../Button/ButtonALargeSmall";
 import ButtonShare from "../Button/ButtonShare";

@@ -9,10 +9,7 @@ import Link from "next/link";
 
 export default function BlogComponent({ blog }: { blog: Blog }) {
   return (
-    <article
-      key={blog.id}
-      className="h-full w-full bg-background rounded-lg p-4 flex gap-4 shadow"
-    >
+    <article className="h-full w-full bg-background rounded-lg p-4 flex gap-4 shadow">
       <div className="size-10 rounded-full flex-shrink-0 border-2 border-blue-400 p-1">
         <Image
           alt="Image user"

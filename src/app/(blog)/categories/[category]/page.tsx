@@ -29,7 +29,7 @@ export default async function page({
       />
       <section className="flex flex-col gap-4">
         {listBlog.map((blog) => (
-          <BlogComponent blog={blog} />
+          <BlogComponent key={blog.id} blog={blog} />
         ))}
       </section>
       <div className="mt-4 mb-8">

@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import Logo from "@/components/shared/Logo";
-import { User } from "lucide-react";
 import Image from "next/image";
 
 export const metadata: Metadata = {

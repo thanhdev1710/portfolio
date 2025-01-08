@@ -1,12 +1,7 @@
 import BlogComponent from "@/components/shared/BlogComponent";
 import BreadcrumbCus from "@/components/shared/BreadcrumbCus";
-import Hashtag from "@/components/shared/Hashtag";
 import { PaginationBlog } from "@/components/shared/PaginationBlog";
-import ToolBoxShow from "@/components/shared/ToolBoxShow";
 import { GetListBlog } from "@/services/Blog";
-import { format } from "date-fns";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export default async function page({
@@ -34,7 +29,7 @@ export default async function page({
       />
       <section className="flex flex-col gap-4">
         {listBlog.map((blog) => (
-          <BlogComponent blog={blog} />
+          <BlogComponent key={blog.id} blog={blog} />
         ))}
       </section>
       <div className="mt-4 mb-8">

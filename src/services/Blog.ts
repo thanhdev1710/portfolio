@@ -1,5 +1,5 @@
 import { API_URL, API_VERSION } from "@/constants/base";
-import { BlogBySlug, RootListBlog, ListSectionBlog } from "@/interfaces/Blog";
+import { BlogBySlug, RootListBlog } from "@/interfaces/Blog";
 
 export async function GetListBlog({
   page = 1,

@@ -12,7 +12,7 @@ export default function RecordView({ slug }: { slug: string }) {
       });
     };
     recordView();
-  }, []);
+  }, [slug]);
 
   return null;
 }
