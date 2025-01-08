@@ -3,22 +3,22 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "ThanhDev - Backend Developer | Fullstack Web Developer",
+  title: "ThanhDev - Fullstack Web Developer",
   description:
-    "Discover ThanhDev, a backend-focused developer specializing in scalable systems, performance optimization, and robust applications. Explore projects and blogs by ThanhDev.",
+    "Explore ThanhDev's portfolio as a fullstack web developer. Learn about projects and skills in building web applications using the PERN stack (PostgreSQL, Express.js, React, Node.js).",
   keywords: [
     "ThanhDev",
     "portfolio",
-    "backend developer",
     "fullstack developer",
     "web developer",
     "Thanh",
-    "career journey",
-    "optimization",
-    "experience",
+    "learning journey",
+    "PERN stack",
     "React",
     "Next.js",
     "PostgreSQL",
+    "Express.js",
+    "Node.js",
     "Redis",
   ],
   authors: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev - Backend Developer | Fullstack Web Developer",
+    title: "ThanhDev - Fullstack Web Developer",
     description:
-      "Explore ThanhDev, showcasing expertise in backend and fullstack development. Learn about projects and optimization techniques.",
+      "Explore ThanhDev's portfolio, showcasing projects and learning experiences as a fullstack web developer using the PERN stack.",
     url: "https://thanhdev.io.vn/portfolio",
     siteName: "ThanhDev",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "ThanhDev - Backend Developer | Fullstack Web Developer",
+        alt: "ThanhDev - Fullstack Web Developer",
       },
     ],
     type: "website",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@Chiithanh1",
     creator: "@Chiithanh1",
-    title: "ThanhDev - Backend Developer | Fullstack Web Developer",
+    title: "ThanhDev - Fullstack Web Developer",
     description:
-      "Discover ThanhDev, showcasing skills in backend and fullstack development. Explore projects and achievements.",
+      "Check out ThanhDev's portfolio, with projects showcasing web development skills and learning experiences with the PERN stack.",
     images: "/images/website.avif",
   },
 };

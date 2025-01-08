@@ -1,74 +1,54 @@
-import { Flex1 } from "@/components/Flex/Flex1";
-import { Flex2 } from "@/components/Flex/Flex2";
-import { Flex3 } from "@/components/Flex/Flex3";
-import FlexASide from "@/components/Flex/FlexASide";
-import FlexResponsive from "@/components/Flex/FlexResponsive";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ThanhDev Portfolio - Backend & Fullstack Developer",
+  title: "ThanhDev Portfolio - Fullstack Web Developer",
   description:
-    "Welcome to ThanhDev Portfolio. I am a backend-focused developer, specializing in building scalable systems, optimizing performance, and creating robust applications. Explore my projects and blog.",
+    "Welcome to ThanhDev Portfolio. I am a fullstack web developer with a focus on backend development, performance optimization, and building scalable systems. Explore my projects and blog on technologies like React, Next.js, PostgreSQL, Redis, and more.",
   keywords: [
     "ThanhDev",
     "portfolio",
-    "backend developer",
     "fullstack developer",
+    "backend developer",
     "web developer",
-    "career journey",
-    "optimization",
-    "experience",
+    "PERN stack",
     "React",
     "Next.js",
     "PostgreSQL",
     "Redis",
+    "Node.js",
+    "performance optimization",
+    "scalable systems",
     "software engineering",
   ],
   authors: [
     {
       name: "ThanhDev",
-      url: "https://thanhdev.io.vn/", // Đã cập nhật URL
+      url: "https://thanhdev.io.vn/", // Update with your actual URL
     },
   ],
   openGraph: {
-    title: "ThanhDev Portfolio - Backend Developer | Fullstack Web Developer",
+    title: "ThanhDev Portfolio - Fullstack Web Developer",
     description:
-      "Explore ThanhDev Portfolio, a showcase of skills in backend development, fullstack web applications, and optimization techniques.",
-    url: "https://thanhdev.io.vn/portfolio", // Đã cập nhật URL
+      "Explore ThanhDev Portfolio, showcasing skills in backend and fullstack web development, performance optimization, and scalable systems.",
+    url: "https://thanhdev.io.vn/portfolio", // Update with your actual URL
     siteName: "ThanhDev Portfolio",
     images: [
       {
-        url: "/images/website.avif", // Đảm bảo hình ảnh tồn tại
+        url: "/images/website.avif", // Ensure the image exists
         width: 1200,
         height: 630,
-        alt: "ThanhDev Portfolio - Backend Developer",
+        alt: "ThanhDev Portfolio - Fullstack Web Developer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Chiithanh1", // Twitter handle chính xác
-    creator: "@Chiithanh1", // Twitter handle chính xác
-    title: "ThanhDev Portfolio - Backend Developer | Fullstack Web Developer",
+    site: "@Chiithanh1", // Correct Twitter handle
+    creator: "@Chiithanh1", // Correct Twitter handle
+    title: "ThanhDev Portfolio - Fullstack Web Developer",
     description:
       "Explore ThanhDev Portfolio, showcasing backend and fullstack development skills. Learn about projects and achievements.",
-    images: "/images/website.avif", // Đảm bảo đường dẫn đúng
+    images: "/images/website.avif", // Ensure the image link is correct
   },
 };
-
-export default function page() {
-  return (
-    <div className="h-full w-full p-4">
-      <div className="border-2 border-[var(--border)] p-4 w-full h-full rounded-[30px] flex xl:flex-row flex-col gap-4">
-        <section className="min-h-svh w-full xl:w-[76%] flex flex-col gap-4">
-          <Flex1 />
-          <Flex2 />
-          <FlexResponsive />
-          <Flex3 />
-        </section>
-        <FlexASide />
-      </div>
-    </div>
-  );
-}

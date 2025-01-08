@@ -9,13 +9,12 @@ import Logo from "@/components/shared/Logo";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Blog | ThanhDev - Sharing My Backend Development Journey",
+  title: "Blog | ThanhDev - Sharing My Development Journey",
   description:
-    "Welcome to my blog where I share my experience, insights, and tips about backend development, web technologies, and performance optimization.",
+    "Welcome to my blog where I share my experience, insights, and tips about web technologies, performance optimization, and development practices.",
   keywords: [
     "ThanhDev",
     "blog",
-    "backend developer",
     "fullstack developer",
     "web development",
     "performance optimization",
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
     "Redis",
     "experience",
     "career tips",
-    "backend systems",
     "API development",
   ],
   authors: [
@@ -35,28 +33,28 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev Blog | Backend Development & Insights",
+    title: "ThanhDev Blog | Web Development & Insights",
     description:
-      "Explore ThanhDev blog, sharing experiences in backend development, performance optimization, and best practices.",
+      "Explore ThanhDev blog, sharing experiences in web development, performance optimization, and best practices.",
     url: "https://www.thanhdev.io.vn/blogs",
     images: [
       {
-        url: "/images/thumbnail-blog.jpg",
+        url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "ThanhDev Blog - Backend Development Insights",
+        alt: "ThanhDev Blog - Development Insights",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Chiithanh1", // Updated Twitter handle
-    creator: "@Chiithanh1", // Updated Twitter handle
-    title: "ThanhDev Blog | Backend Development & Insights",
+    site: "@Chiithanh1",
+    creator: "@Chiithanh1",
+    title: "ThanhDev Blog | Web Development & Insights",
     description:
-      "Explore ThanhDev blog, sharing experiences in backend development, performance optimization, and best practices.",
-    images: "/images/thumbnail-blog.jpg",
+      "Explore ThanhDev blog, sharing experiences in web development, performance optimization, and best practices.",
+    images: "/images/website.avif",
   },
 };
 
@@ -82,7 +80,7 @@ export default async function BlogLayout({
 
           <div className="flex items-center justify-center gap-2 max-md:hidden">
             {session.success && user ? (
-              <Link aria-label="Tài khoảng người dùng" href="/account">
+              <Link aria-label="User account" href="/account">
                 <Image
                   width={60}
                   height={60}
@@ -94,13 +92,13 @@ export default async function BlogLayout({
             ) : (
               <>
                 <Button variant="link" asChild>
-                  <Link aria-label="Đăng nhập" href="/login">
-                    Đăng nhập
+                  <Link aria-label="Login" href="/login">
+                    Login
                   </Link>
                 </Button>
                 <Button variant="secondary" asChild>
-                  <Link aria-label="Tạo tài khoản" href="/signup">
-                    Tạo tài khoản
+                  <Link aria-label="Sign up" href="/signup">
+                    Sign up
                   </Link>
                 </Button>
               </>

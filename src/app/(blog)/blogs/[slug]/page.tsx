@@ -24,9 +24,32 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const data = await GetBlogBySlug({ slug });
+
   return {
     title: data.title,
     description: data.summary,
+    openGraph: {
+      title: data.title,
+      description: data.summary,
+      url: `https://www.thanhdev.io.vn/blogs/${slug}`,
+      images: [
+        {
+          url: data.image || "/images/website.avif",
+          width: 1200,
+          height: 630,
+          alt: `Image for ${data.title}`,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@Chiithanh1", // Updated Twitter handle
+      creator: "@Chiithanh1", // Updated Twitter handle
+      title: data.title,
+      description: data.summary,
+      images: data.image || "/images/website.avif",
+    },
   };
 }
 
