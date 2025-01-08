@@ -1,7 +1,12 @@
+import { Flex1 } from "@/components/Flex/Flex1";
+import { Flex2 } from "@/components/Flex/Flex2";
+import { Flex3 } from "@/components/Flex/Flex3";
+import FlexASide from "@/components/Flex/FlexASide";
+import FlexResponsive from "@/components/Flex/FlexResponsive";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ThanhDev Portfolio - Fullstack Web Developer",
+  title: "Portfolio",
   description:
     "Welcome to ThanhDev Portfolio. I am a fullstack web developer with a focus on backend development, performance optimization, and building scalable systems. Explore my projects and blog on technologies like React, Next.js, PostgreSQL, Redis, and more.",
   keywords: [
@@ -27,7 +32,7 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev Portfolio - Fullstack Web Developer",
+    title: "Portfolio | ThanhDev - Fullstack Web Development with PERN",
     description:
       "Explore ThanhDev Portfolio, showcasing skills in backend and fullstack web development, performance optimization, and scalable systems.",
     url: "https://thanhdev.io.vn/portfolio", // Update with your actual URL
@@ -37,7 +42,7 @@ export const metadata: Metadata = {
         url: "/images/website.avif", // Ensure the image exists
         width: 1200,
         height: 630,
-        alt: "ThanhDev Portfolio - Fullstack Web Developer",
+        alt: "Portfolio | ThanhDev - Fullstack Web Development with PERN",
       },
     ],
     type: "website",
@@ -52,3 +57,19 @@ export const metadata: Metadata = {
     images: "/images/website.avif", // Ensure the image link is correct
   },
 };
+
+export default function page() {
+  return (
+    <div className="h-full w-full p-4">
+      <div className="border-2 border-[var(--border)] p-4 w-full h-full rounded-[30px] flex xl:flex-row flex-col gap-4">
+        <section className="min-h-svh w-full xl:w-[76%] flex flex-col gap-4">
+          <Flex1 />
+          <Flex2 />
+          <FlexResponsive />
+          <Flex3 />
+        </section>
+        <FlexASide />
+      </div>
+    </div>
+  );
+}

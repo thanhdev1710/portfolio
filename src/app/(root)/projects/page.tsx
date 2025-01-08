@@ -12,7 +12,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "ThanhDev Projects - Fullstack Web Development with PERN",
+  title: "Projects",
   description:
     "Explore ThanhDev's projects showcasing a range of web development work using the PERN stack (PostgreSQL, Express.js, React, Node.js), including backend systems, fullstack applications, and performance optimization.",
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev Projects - Fullstack Web Development with PERN",
+    title: "Projects | ThanhDev - Fullstack Web Development with PERN",
     description:
       "Explore ThanhDev's collection of projects developed using the PERN stack (PostgreSQL, Express.js, React, Node.js). Learn about the cutting-edge technologies and solutions ThanhDev has built.",
     url: "https://thanhdev.io.vn/projects",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "ThanhDev Projects - Fullstack Web Development with PERN",
+        alt: "Projects | ThanhDev - Fullstack Web Development with PERN",
       },
     ],
     type: "website",
