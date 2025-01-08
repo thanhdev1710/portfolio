@@ -1,5 +1,5 @@
 import { API_URL, API_VERSION } from "@/constants/base";
-import { BlogBySlug, RootListBlog } from "@/interfaces/Blog";
+import { RootListBlog, BlogBySlug } from "@/interfaces/Blog";
 
 export async function GetListBlog({
   page = 1,
@@ -18,19 +18,21 @@ export async function GetListBlog({
     const res = await fetch(url, { next: { tags: ["blog"] } });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch blogs. Status: ${res.status}`);
+      throw new Error(
+        `Lỗi khi tải danh sách blog. Trạng thái: ${res.status} - ${res.statusText}`
+      );
     }
 
     const data = await res.json();
 
     if (!data) {
-      throw new Error("No data returned from the server.");
+      throw new Error("Không có dữ liệu trả về từ máy chủ.");
     }
 
     return data;
   } catch (error) {
-    console.error("Error fetching blog list:", error);
-    throw error;
+    console.error("Lỗi khi lấy danh sách bài viết:", error);
+    throw new Error("Đã xảy ra lỗi khi lấy danh sách blog.");
   }
 }
 
@@ -48,16 +50,18 @@ export async function GetBlogBySlug({
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch blog by slug. Status: ${res.status}`);
+      throw new Error(
+        `Lỗi khi lấy bài viết theo slug: ${res.status} - ${res.statusText}`
+      );
     }
 
     const data = await res.json();
     if (!data?.data) {
-      throw new Error("No blog data found.");
+      throw new Error("Không tìm thấy dữ liệu bài viết.");
     }
     return data.data;
   } catch (error) {
-    console.error(`Error fetching blog by slug: ${slug}`, error);
-    throw error;
+    console.error(`Lỗi khi lấy bài viết theo slug: ${slug}`, error);
+    throw new Error("Đã xảy ra lỗi khi lấy bài viết.");
   }
 }

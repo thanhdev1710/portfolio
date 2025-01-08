@@ -7,12 +7,13 @@ export async function GetAllHashtag(): Promise<Tags> {
       cache: "force-cache",
       next: { revalidate: 600, tags: ["blogs", "blog"] },
     });
-    if (!res.ok) throw new Error("");
-    const data = await res.json();
+    if (!res.ok) throw new Error(`Lỗi khi tải hashtag: ${res.statusText}`);
+    const data = await res.json().catch(() => []);
 
     return data;
   } catch (error) {
-    throw error;
+    console.error("Lỗi khi lấy hashtag:", error); // Log chi tiết lỗi
+    throw new Error("Đã xảy ra lỗi khi lấy hashtag."); // Thông báo lỗi chi tiết bằng tiếng Việt
   }
 }
 
@@ -22,11 +23,12 @@ export async function GetAllCategories(): Promise<Tags> {
       cache: "force-cache",
       next: { revalidate: 600, tags: ["blogs", "blog"] },
     });
-    if (!res.ok) throw new Error("");
-    const data = await res.json();
+    if (!res.ok) throw new Error(`Lỗi khi tải danh mục: ${res.statusText}`);
+    const data = await res.json().catch(() => []);
 
     return data;
   } catch (error) {
-    throw error;
+    console.error("Lỗi khi lấy danh mục:", error); // Log chi tiết lỗi
+    throw new Error("Đã xảy ra lỗi khi lấy danh mục."); // Thông báo lỗi chi tiết bằng tiếng Việt
   }
 }

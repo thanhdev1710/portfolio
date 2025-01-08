@@ -18,20 +18,15 @@ export const mailSubscribe = async (formData: FormData) => {
       }
     );
 
-    // Kiểm tra nếu phản hồi không phải 2xx
     if (!res.ok) {
-      const errorDetails = await res.json(); // Lấy thông tin chi tiết lỗi từ server (nếu có)
+      const errorDetails = await res.json();
       throw new Error(
         `Error ${res.status}: ${errorDetails.message || "Unknown error"}`
       );
     }
 
-    // Xử lý dữ liệu trả về (nếu có)
-    const data = await res.json();
-    console.log("Subscription successful:", data);
+    await res.json();
   } catch (error) {
-    // Ghi lỗi nếu có
-    console.error("Subscription failed:", error);
-    throw error; // Ném lỗi tiếp để xử lý ở nơi khác nếu cần
+    throw error;
   }
 };

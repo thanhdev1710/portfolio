@@ -33,7 +33,7 @@ import {
   ZodPassWordConfirmSchema,
   ZodPasswordSchema,
   ZodVerifyPasswordSchema,
-} from "@/schema_zod/auth";
+} from "@/schema/auth";
 import Link from "next/link";
 
 // Các schema xác thực cho các form

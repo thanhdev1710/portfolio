@@ -44,7 +44,7 @@ export async function likeAction({
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to like blog. Status: ${res.status}`);
+      throw new Error(`Không thể thích bài viết. Trạng thái: ${res.status}`);
     }
 
     const { message } = await res.json();
@@ -60,7 +60,7 @@ export async function likeAction({
     if (error instanceof Error) {
       return { success: false, message: error.message || "Đã xảy ra lỗi." };
     } else {
-      return { success: false, message: "Đã xảy ra lỗi." };
+      return { success: false, message: "Đã xảy ra lỗi không xác định." };
     }
   }
 }
@@ -69,7 +69,7 @@ export async function bookmarkAction({ blogId }: { blogId: number }) {
   try {
     const { data } = await auth();
     if (!data?.token) {
-      throw new Error("Bạn cần phải đăng nhập");
+      throw new Error("Bạn cần phải đăng nhập.");
     }
 
     const res = await fetch(`${API_URL}${API_VERSION}bookmark`, {
@@ -84,7 +84,7 @@ export async function bookmarkAction({ blogId }: { blogId: number }) {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to bookmark blog. Status: ${res.status}`);
+      throw new Error(`Không thể lưu bài viết. Trạng thái: ${res.status}`);
     }
 
     const { message } = await res.json();
@@ -93,9 +93,9 @@ export async function bookmarkAction({ blogId }: { blogId: number }) {
     return { success: true, message };
   } catch (error) {
     if (error instanceof Error) {
-      return { success: false, message: error.message || "Đã xảy ra lỗi" };
+      return { success: false, message: error.message || "Đã xảy ra lỗi." };
     } else {
-      return { success: false, message: "Đã xảy ra lỗi." };
+      return { success: false, message: "Đã xảy ra lỗi không xác định." };
     }
   }
 }
