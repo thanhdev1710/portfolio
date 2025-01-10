@@ -6,6 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { getAllProject } from "@/services/Project";
 import { ExternalLink, Info, X } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -66,70 +67,8 @@ export const metadata: Metadata = {
   },
 };
 
-const data: {
-  title: string;
-  description: string;
-  video: string;
-  href: string;
-  status: "Active" | "No Funding" | "In Development";
-}[] = [
-  {
-    title: "YiDiMoVi - Your Free Streaming Platform",
-    description:
-      "YiDiMoVi is a free online movie streaming platform, offering an extensive library of films with a user-friendly and immersive interface for movie enthusiasts.",
-    video:
-      "https://ik.imagekit.io/yidiElectro/video/YiDiMoVi.mp4?updatedAt=1733062886229",
-    href: "https://yididev.online/",
-    status: "Active",
-  },
-  {
-    title: "SoulNest - A Social Network for Connections",
-    description:
-      "SoulNest is a modern social network designed to foster meaningful connections, share moments, and build communities in a beautifully crafted digital space.",
-    video:
-      "https://ik.imagekit.io/yidiElectro/video/SoulNest.mp4?updatedAt=1733062886229",
-    href: "",
-    status: "In Development",
-  },
-  {
-    title: "Portfolio - Showcasing My Expertise",
-    description:
-      "Explore my personal portfolio, a sleek and professional website highlighting my skills, projects, and journey as a fullstack developer.",
-    video:
-      "https://ik.imagekit.io/yidiElectro/video/Portfolio.mp4?updatedAt=1733062886229",
-    href: "https://thanhdev.io.vn/",
-    status: "Active",
-  },
-  {
-    title: "GalaxyCinemaClone - Your Movie Theater Experience",
-    description:
-      "GalaxyCinemaClone replicates the ultimate movie theater booking experience with advanced features, seamless design, and real-time seat selection.",
-    video:
-      "https://ik.imagekit.io/yidiElectro/video/GalaxyCinemaClone.mp4?updatedAt=1733062886229",
-    href: "",
-    status: "No Funding",
-  },
-  {
-    title: "ElectricCar - Revolutionizing Car Sales",
-    description:
-      "ElectricCar is an innovative platform dedicated to showcasing and selling electric vehicles, emphasizing sustainability and cutting-edge technology.",
-    video:
-      "https://ik.imagekit.io/yidiElectro/video/ElectricCar.mp4?updatedAt=1733062886229",
-    href: "https://car.yididev.online/app",
-    status: "Active",
-  },
-  {
-    title: "AdminCinema - Cinema Management Dashboard",
-    description:
-      "AdminCinema is a robust and intuitive admin dashboard for managing cinema operations, offering tools for scheduling, ticketing, and analytics.",
-    video:
-      "https://ik.imagekit.io/yidiElectro/video/AdminCinema.mp4?updatedAt=1733062886229",
-    href: "",
-    status: "No Funding",
-  },
-];
-
-export default function page() {
+export default async function page() {
+  const listProject = await getAllProject();
   return (
     <div className="h-full w-full p-4">
       <div className="border-2 border-[var(--border)] p-4 w-full h-full rounded-[30px]">
@@ -141,59 +80,48 @@ export default function page() {
           >
             <X className="text-[var(--text-primary)]" />
           </Link>
-          <div className="grid grid-cols-2 gap-6 w-full h-full max-md:grid-cols-1">
-            {data.map((item, i) => (
-              <div
-                key={i}
+          <section className="grid grid-cols-2 gap-6 w-full h-full max-md:grid-cols-1">
+            {listProject.data.map((project) => (
+              <article
+                key={project.slug}
                 className="card-customer h-full w-full !bg-transparent !border-none p-2"
               >
-                <VideoCustom video={item.video} />
+                <VideoCustom video={project.video} />
                 <div className="flex items-center justify-between gap-4 px-4 mt-4">
                   <div>
-                    <h3 className="font-semibold text-lg line-clamp-1 mb-2">
-                      {item.title}
-                    </h3>
+                    <h2 className="font-bold text-lg line-clamp-1 mb-2">
+                      {project.title}
+                    </h2>
                     <p className="font-light text-sm line-clamp-2">
-                      {item.description}
+                      {project.shortDescription}
                     </p>
                   </div>
-                  {item.href ? (
-                    <Button variant="default" asChild aria-label="Visit">
-                      <Link aria-label="Link to website" href={item.href}>
-                        <ExternalLink /> Visit
-                      </Link>
-                    </Button>
-                  ) : (
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <div className="inline-flex items-center justify-center p-2 bg-transparent rounded-md cursor-pointer">
-                            <Info />
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>This project is under development</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  )}
+
+                  <Button variant="default" asChild aria-label="Visit">
+                    <Link
+                      aria-label="Link to website"
+                      href={`/projects/${project.slug}`}
+                    >
+                      <ExternalLink /> Visit
+                    </Link>
+                  </Button>
                 </div>
                 <div className="absolute top-3 right-4 text-sm bg-opacity-80 p-2 rounded-lg">
                   <div
                     className={`status-tag px-3 py-1 text-center rounded-full font-semibold ${
-                      item.status === "Active"
+                      project.status === "active"
                         ? "bg-green-500 text-white"
-                        : item.status === "No Funding"
+                        : project.status === "no-funding"
                         ? "bg-red-500 text-white"
                         : "bg-yellow-500 text-black"
                     }`}
                   >
-                    <span>{item.status}</span>
+                    <span>{project.status}</span>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
-          </div>
+          </section>
         </div>
       </div>
     </div>

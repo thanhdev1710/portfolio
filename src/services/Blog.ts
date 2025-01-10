@@ -32,7 +32,7 @@ export async function GetListBlog({
     return data;
   } catch (error) {
     console.error("Lỗi khi lấy danh sách bài viết:", error);
-    throw new Error("Đã xảy ra lỗi khi lấy danh sách blog.");
+    throw new Error("Đã xảy ra lỗi khi lấy danh sách bài viết.");
   }
 }
 

@@ -11,9 +11,9 @@ export default function MarkdownChangeFontSize({ str }: { str: string }) {
         fontSize: `${fontSize}px`,
         lineHeight: lineHeight,
       }}
-      className="mb-2 prose dark:prose-invert"
+      className="mb-2 prose dark:prose-invert max-w-none"
     >
-      <ReactMarkdown>{str}</ReactMarkdown>
+      <ReactMarkdown className="max-w-none">{str}</ReactMarkdown>
     </div>
   );
 }
