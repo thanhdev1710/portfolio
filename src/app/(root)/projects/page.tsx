@@ -1,13 +1,7 @@
 import VideoCustom from "@/components/shared/VideoCustom";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { getAllProject } from "@/services/Project";
-import { ExternalLink, Info, X } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";

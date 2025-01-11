@@ -15,7 +15,7 @@ export const getAllProject = async (): Promise<Projects> => {
 
     const data = await res.json();
     return data;
-  } catch (error) {
+  } catch {
     throw new Error("Đã xảy ra lỗi khi lấy danh sách dự án.");
   }
 };
@@ -34,7 +34,7 @@ export const getProjectBySlug = async (slug: string): Promise<Project> => {
       notFound();
     }
     return data.data[0];
-  } catch (error) {
+  } catch {
     throw new Error("Đã xảy ra lỗi khi lấy dự án.");
   }
 };
