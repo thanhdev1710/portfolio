@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { updateMeImage } from "@/actions/userAction";
 import { Upload } from "antd";

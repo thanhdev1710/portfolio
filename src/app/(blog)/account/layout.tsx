@@ -1,9 +1,7 @@
 import { auth, logout } from "@/actions/authAction";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import React, { ReactNode, Suspense } from "react";
-import Info from "./Info";
 import ImageUpload from "./ImageUpload";
 import NavLink from "./NavLink";
 
@@ -13,20 +11,6 @@ export default async function layout({ children }: { children: ReactNode }) {
   if (!user) {
     redirect("/login");
   }
-  const info = [
-    {
-      title: "Tên",
-      value: user.name,
-    },
-    {
-      title: "Email",
-      value: user.email,
-    },
-    {
-      title: "Quyền",
-      value: user.role.toUpperCase(),
-    },
-  ];
   return (
     <div>
       <div className="flex justify-between items-center border-b py-4 mb-8">

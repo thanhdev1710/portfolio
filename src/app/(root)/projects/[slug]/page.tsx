@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { getProjectBySlug } from "@/services/Project";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";

@@ -1,11 +1,6 @@
-import { auth, logout } from "@/actions/authAction";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { auth } from "@/actions/authAction";
 import { redirect } from "next/navigation";
-import React, { Suspense } from "react";
 import Info from "./Info";
-import ImageUpload from "./ImageUpload";
-import NavLink from "./NavLink";
 
 export default async function page() {
   const session = await auth();
