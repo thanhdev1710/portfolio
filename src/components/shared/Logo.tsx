@@ -7,7 +7,7 @@ export default function Logo() {
     <Link
       aria-label="Link to blogs"
       href="/blogs"
-      className="p-1 rounded bg-white h-full w-auto aspect-square flex items-center justify-center"
+      className="h-full w-auto aspect-square flex items-center justify-center"
     >
       <Image
         width={100}

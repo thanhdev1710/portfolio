@@ -68,9 +68,9 @@ export default function FlexResponsive() {
         <Image
           src="/images/img3.webp"
           alt="ThanhDev - Backend Developer"
-          sizes="100vw"
+          sizes="90vw"
           fill
-          className="object-contain"
+          className="object-cover"
         />
       </article>
     </section>

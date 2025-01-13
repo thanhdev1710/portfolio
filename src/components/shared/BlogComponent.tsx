@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function BlogComponent({ blog }: { blog: Blog }) {
   return (
     <article className="h-full w-full bg-background rounded-lg p-4 flex gap-4 shadow">
-      <div className="size-10 rounded-full flex-shrink-0 border-2 border-blue-400 p-1">
+      <div className="size-10 rounded-full flex-shrink-0 border-2 border-blue-400 p-0.5">
         <Image
           alt="Image user"
           src={blog.imageUser || "/images/user-default.avif"}

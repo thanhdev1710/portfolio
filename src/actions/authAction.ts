@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
+import { API_URL, API_VERSION } from "@/constants/base";
 import { decode, JwtPayload } from "jsonwebtoken";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { cookies } from "next/headers";
@@ -32,12 +33,9 @@ function pleaseLogin(error: any) {
 }
 
 export async function login(formData: any) {
-  console.log("run");
-
   try {
     const cookieStore = await cookies();
     const body = JSON.stringify(formData);
-    console.log("run");
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_API_VERSION}users/login`,
       {
@@ -58,7 +56,6 @@ export async function login(formData: any) {
         : "Đăng nhập thất bại. Vui lòng thử lại!";
       return { success: false, message };
     }
-    console.log(res);
 
     const { token } = await res.json();
     setTokenCookie(token, cookieStore);
@@ -127,7 +124,17 @@ export async function auth() {
     if (user.exp && user.id) {
       const now = Number((Date.now() / 1000).toFixed(0));
       if (now < user.exp) {
-        return { success: true, data: { user, token } };
+        const res = await fetch(`${API_URL}${API_VERSION}users/getMe`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          next: {
+            tags: ["user"],
+          },
+        });
+        const account = (await res.json()).data;
+
+        return { success: true, data: { user: account, token } };
       }
     }
 

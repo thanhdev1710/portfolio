@@ -81,7 +81,7 @@ export default async function page() {
                 className="card-customer h-full w-full !bg-transparent !border-none p-2"
               >
                 <VideoCustom video={project.video} />
-                <div className="flex items-center justify-between gap-4 px-4 mt-4">
+                <div className="flex flex-col gap-4 px-4 mt-4">
                   <div>
                     <h2 className="font-bold text-lg line-clamp-1 mb-2">
                       {project.title}
@@ -91,12 +91,12 @@ export default async function page() {
                     </p>
                   </div>
 
-                  <Button variant="default" asChild aria-label="Visit">
+                  <Button variant="default" asChild aria-label="Chi tiết">
                     <Link
                       aria-label="Link to website"
                       href={`/projects/${project.slug}`}
                     >
-                      <ExternalLink /> Visit
+                      <ExternalLink /> Khám phá ngay
                     </Link>
                   </Button>
                 </div>
@@ -107,10 +107,16 @@ export default async function page() {
                         ? "bg-green-500 text-white"
                         : project.status === "no-funding"
                         ? "bg-red-500 text-white"
-                        : "bg-yellow-500 text-black"
+                        : "bg-yellow-500 text-white"
                     }`}
                   >
-                    <span>{project.status}</span>
+                    <span>
+                      {project.status === "active"
+                        ? "Đang hoạt động"
+                        : project.status === "no-funding"
+                        ? "Không có kinh phí"
+                        : "Đang phát triển"}
+                    </span>
                   </div>
                 </div>
               </article>
