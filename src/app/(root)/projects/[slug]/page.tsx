@@ -38,22 +38,40 @@ export default async function page({
                 className="aspect-video w-full h-auto p-0.5 rounded-lg transition-all shadow-lg dark:border-2 dark:border-blue-200"
               />
             </div>
-
-            <button
-              className={`${
-                project.status === "active"
-                  ? "bg-green-500 hover:bg-green-600"
+            {project.demoLink ? (
+              <Link
+                href={project.demoLink || "#"}
+                className={`${
+                  project.status === "active"
+                    ? "bg-green-500 hover:bg-green-600 cursor-pointer"
+                    : project.status === "in-development"
+                    ? "bg-yellow-500 hover:bg-yellow-600 cursor-not-allowed"
+                    : "bg-red-500 cursor-not-allowed"
+                } flex items-center justify-center w-full mb-16 mt-8 transition-all text-white py-2 font-bold rounded`}
+              >
+                {project.status === "active"
+                  ? "Khám phá website ngay"
                   : project.status === "in-development"
-                  ? "bg-yellow-500 hover:bg-yellow-600"
-                  : "bg-red-500 cursor-not-allowed"
-              } w-full mb-16 mt-8 transition-all text-white py-2 font-bold rounded`}
-            >
-              {project.status === "active"
-                ? "Khám phá website ngay"
-                : project.status === "in-development"
-                ? "Đang trong môi trường phát triển"
-                : "Không có kinh phí để duy trì trang web"}
-            </button>
+                  ? "Đang trong môi trường phát triển"
+                  : "Không có kinh phí để duy trì trang web"}
+              </Link>
+            ) : (
+              <div
+                className={`${
+                  project.status === "active"
+                    ? "bg-green-500 hover:bg-green-600 cursor-pointer"
+                    : project.status === "in-development"
+                    ? "bg-yellow-500 hover:bg-yellow-600 cursor-not-allowed"
+                    : "bg-red-500 cursor-not-allowed"
+                } flex items-center justify-center w-full mb-16 mt-8 transition-all text-white py-2 font-bold rounded`}
+              >
+                {project.status === "active"
+                  ? "Khám phá website ngay"
+                  : project.status === "in-development"
+                  ? "Đang trong môi trường phát triển"
+                  : "Không có kinh phí để duy trì trang web"}
+              </div>
+            )}
 
             <ReactMarkdown className="prose dark:prose-invert w-full max-w-none">
               {project.detailedDescription}

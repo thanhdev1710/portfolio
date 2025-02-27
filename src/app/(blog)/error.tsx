@@ -13,8 +13,8 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    toast.error("Server connection error. Please try again later.");
+    // Hiển thị thông báo lỗi qua toast
+    toast.error(`Error: ${error.message || "An unexpected error occurred"}`);
   }, [error]);
 
   return (
@@ -30,11 +30,10 @@ export default function Error({
           Error 💥
         </h1>
         <h2 className="text-5xl sm:text-6xl font-extrabold text-gradient mb-4">
-          Blog is Under Development!
+          {error.message}
         </h2>
         <p className="text-lg sm:text-xl mb-6">
-          We apologize for the inconvenience. Our blog is currently under
-          development. Please check back later.
+          If the problem persists, please contact support or try again later.
         </p>
         <button
           onClick={reset}

@@ -55,5 +55,17 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
+  fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_API_VERSION}visit`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        page: "portfolio",
+      }),
+    }
+  );
   return <StartWeb />;
 }
