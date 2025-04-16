@@ -2,11 +2,13 @@ import Image from "next/image";
 import styles from "./Slider.module.css";
 
 const images1 = [
+  { src: "/images/icon-skill/golang.avif", alt: "Golang Logo" },
+  { src: "/images/icon-skill/gin.avif", alt: "Gin Logo" },
+  { src: "/images/icon-skill/express-js.avif", alt: "Expressjs Logo" },
   { src: "/images/icon-skill/docker.avif", alt: "Docker Logo" },
   { src: "/images/icon-skill/nextjs.avif", alt: "Next.js Logo" },
   { src: "/images/icon-skill/postgresql.avif", alt: "PostgreSQL Logo" },
   { src: "/images/icon-skill/redis.avif", alt: "Redis Logo" },
-  { src: "/images/icon-skill/nodejs.avif", alt: "Node.js Logo" },
 ];
 
 export function Slider() {

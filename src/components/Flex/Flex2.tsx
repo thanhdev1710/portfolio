@@ -20,18 +20,19 @@ export function Flex2() {
       </article>
       <article className="card-customer h-full max-lg:!h-[240px] xl:!w-[40%] p-6 max-xl:w-full group">
         <Link
-          aria-label="To About"
+          aria-label="Tới trang Giới thiệu"
           className="flex flex-col justify-between h-full w-full relative z-10"
           href="/about"
         >
           <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
-            About
+            Giới thiệu
           </h3>
           <h4 className="text-xl font-medium tracking-wide line-clamp-3">
-            Passionate about fullstack development and building scalable apps.
+            Mình đam mê phát triển fullstack và xây dựng các ứng dụng có khả
+            năng mở rộng cao.
           </h4>
           <button
-            aria-label="Button to About"
+            aria-label="Nút tới Giới thiệu"
             className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden"
           >
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />
@@ -43,19 +44,19 @@ export function Flex2() {
       </article>
       <article className="card-customer !w-[35%] p-6 max-xl:hidden group">
         <Link
-          aria-label="To Projects"
+          aria-label="Tới trang Dự án"
           className="flex flex-col justify-between relative z-10 h-full w-full"
           href="/projects"
         >
           <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
-            Projects
+            Dự án
           </h3>
           <h4 className="text-xl font-medium tracking-wide line-clamp-3">
-            Explore my fullstack projects, from scalable social networks to
-            data-driven applications.
+            Khám phá những dự án fullstack mình đã làm — từ mạng xã hội đến các
+            ứng dụng phân tích dữ liệu.
           </h4>
           <button
-            aria-label="Button to Projects"
+            aria-label="Nút tới Dự án"
             className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden"
           >
             <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />

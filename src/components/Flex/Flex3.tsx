@@ -9,11 +9,10 @@ export function Flex3() {
     <section className="h-full w-full flex gap-4 Flex3 max-xl:flex-col-reverse">
       <article className="card-customer !w-[45%] p-6 flex flex-col justify-between max-xl:!w-full max-xl:!h-[200px] max-md:!h-full">
         <h3 className="text-lg relative z-10 tracking-widest font-light text-[var(--text-secondary)] mb-4 uppercase">
-          Subscribe
+          Đăng ký nhận tin
         </h3>
         <p className="text-base relative z-10 font-medium text-[var(--text-primary)] mb-4">
-          Stay updated with the latest blog posts! Enter your email to
-          subscribe.
+          Nhận thông báo khi mình có bài viết mới! Nhập email để theo dõi nhé.
         </p>
 
         <FormSubscribeEmail />
@@ -24,7 +23,7 @@ export function Flex3() {
         <div className="card-customer max-md:!w-full !w-[60%] p-6 flex items-center justify-between max-xl:!w-[75%]">
           <div className="w-full">
             <h3 className="text-3xl font-medium mb-10 relative z-10">
-              Stack I Use
+              Công nghệ mình sử dụng
             </h3>
             <Slider />
           </div>

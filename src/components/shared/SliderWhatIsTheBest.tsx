@@ -11,29 +11,29 @@ import React from "react";
 
 const slides = [
   {
-    title: "Backend Development",
+    title: "Phát triển Backend",
     description:
-      "Building scalable backend systems with modern technologies for high performance and reliability.",
+      "Tạo ra các hệ thống backend mạnh mẽ, mở rộng được, sử dụng công nghệ tiên tiến để đảm bảo hiệu suất ổn định và đáng tin cậy.",
   },
   {
-    title: "Frontend Development",
+    title: "Phát triển Frontend",
     description:
-      "Creating responsive, user-friendly UIs with React and Next.js for a seamless cross-device experience.",
+      "Thiết kế giao diện người dùng dễ sử dụng và đẹp mắt với React và Next.js, mang lại trải nghiệm tuyệt vời trên mọi thiết bị.",
   },
   {
-    title: "Performance Optimization",
+    title: "Tối ưu hiệu suất",
     description:
-      "Optimizing frontend and backend performance, from database queries to UI rendering, for smooth experiences.",
+      "Cải thiện hiệu suất của cả frontend và backend, tối ưu hóa từ các truy vấn cơ sở dữ liệu đến việc hiển thị giao diện người dùng, giúp mọi thứ hoạt động mượt mà hơn.",
   },
   {
-    title: "System Architecture",
+    title: "Kiến trúc hệ thống",
     description:
-      "Designing robust, scalable systems using best practices in backend technologies like PostgreSQL and Redis.",
+      "Xây dựng hệ thống có khả năng mở rộng và dễ bảo trì, áp dụng các phương pháp và công nghệ backend tiên tiến như PostgreSQL và Redis để đạt hiệu suất tối ưu.",
   },
   {
-    title: "API Development",
+    title: "Phát triển API",
     description:
-      "Building high-performance RESTful APIs and microservices for seamless system integration and communication.",
+      "Xây dựng các API RESTful và microservices mạnh mẽ, dễ dàng tích hợp và giao tiếp giữa các hệ thống với nhau một cách hiệu quả.",
   },
 ];
 

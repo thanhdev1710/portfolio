@@ -65,7 +65,7 @@ export default function page() {
       <div className="border-2 border-[var(--border)] p-4 w-full h-full rounded-[30px]">
         <div className="max-w-[1130px] mx-auto h-full">
           <Link
-            aria-label="To portfolio"
+            aria-label="Tới trang portfolio"
             href="/portfolio"
             className="size-14 rounded-full border-2 border-[var(--border)] flex items-center justify-center mx-auto max-sm:mt-4 max-sm:mb-8 mt-8 mb-16"
           >
@@ -76,32 +76,32 @@ export default function page() {
               <article className="card-customer p-6 flex items-center justify-center">
                 <div className="w-full">
                   <h1 className="text-3xl font-medium mb-6 border-b border-[var(--border)] pb-4">
-                    What I&apos;m about?
+                    Tôi là ai?
                   </h1>
                   <div className="mb-6">
                     <h3 className="text-sm tracking-widest font-medium text-[var(--text-secondary)] mb-2 uppercase">
-                      My story
+                      Hành trình của tôi
                     </h3>
                     <p className="text-[clamp(16px,1.5vw,18px)] font-medium leading-loose">
-                      I started my journey as a curious tech enthusiast, always
-                      eager to understand how systems work behind the scenes.
-                      Over time, my passion grew for backend development, diving
-                      into building scalable systems with technologies like
-                      PostgreSQL, Redis, Express.js, and Next.js. I love
-                      optimizing performance and solving complex challenges that
-                      lead to robust applications.
+                      Tôi bắt đầu hành trình của mình với niềm đam mê khám phá
+                      công nghệ, luôn tò mò về cách các hệ thống hoạt động phía
+                      sau hậu trường. Dần dần, tôi yêu thích phát triển backend
+                      và tập trung vào việc xây dựng các hệ thống mở rộng tốt
+                      với PostgreSQL, Redis, Express.js, Gin (Go), và Next.js.
+                      Tôi cũng thường tối ưu hiệu năng và giải các bài toán phức
+                      tạp để tạo nên những ứng dụng bền vững.
                     </p>
                   </div>
                   <div className="mb-6">
                     <h3 className="text-sm tracking-widest font-medium text-[var(--text-secondary)] mb-2 uppercase">
-                      My Current Focus
+                      Mục tiêu hiện tại
                     </h3>
                     <p className="text-[clamp(16px,1.5vw,18px)] font-medium leading-loose">
-                      I’m currently focused on building high-performance backend
-                      systems using Express.js, PostgreSQL, and Redis, while
-                      also creating seamless user experiences with React and
-                      Next.js. Always learning and improving to stay ahead in
-                      the field.
+                      Hiện tại, tôi đang tập trung xây dựng các hệ thống backend
+                      hiệu suất cao với Express.js, PostgreSQL, Redis và Gin
+                      (Go). Đồng thời, tôi cũng phát triển giao diện người dùng
+                      mượt mà với React và Next.js. Tôi không ngừng học hỏi để
+                      luôn dẫn đầu trong lĩnh vực phát triển phần mềm.
                     </p>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function page() {
                       experience.length === 0 && "text-center"
                     } text-sm tracking-widest font-medium text-[var(--text-secondary)] mb-4 uppercase`}
                   >
-                    Experience
+                    Kinh nghiệm
                   </h3>
                   <div className="flex w-full flex-col items-center justify-center gap-4">
                     {experience.length > 0 ? (
@@ -131,8 +131,8 @@ export default function page() {
                       ))
                     ) : (
                       <p className="text-lg font-medium text-center">
-                        My experience section is currently being updated. Stay
-                        tuned for more!
+                        Mục kinh nghiệm đang được cập nhật. Hãy quay lại sau
+                        nhé!
                       </p>
                     )}
                   </div>
@@ -143,7 +143,7 @@ export default function page() {
               <article className="card-customer p-6 flex items-center justify-center">
                 <div className="w-full">
                   <h3 className="text-sm tracking-widest font-medium text-[var(--text-secondary)] mb-4 uppercase">
-                    What is the best?
+                    Điều gì là tuyệt nhất?
                   </h3>
                   <SliderWhatIsTheBest />
                 </div>
@@ -151,7 +151,7 @@ export default function page() {
               <article className="card-customer !h-[260px] shrink-0 p-6 flex items-center justify-center">
                 <div className="w-full">
                   <h3 className="text-3xl font-medium mb-10 relative z-10">
-                    Stack I Use
+                    Công nghệ tôi sử dụng
                   </h3>
                   <Slider />
                 </div>
@@ -159,17 +159,16 @@ export default function page() {
               <article className="card-customer p-6 flex items-center justify-center">
                 <div className="w-full">
                   <h3 className="text-sm tracking-widest font-medium text-[var(--text-secondary)] mb-4 uppercase">
-                    Stay Updated
+                    Cập nhật thường xuyên
                   </h3>
                   <p className="text-[clamp(16px,1.5vw,18px)] font-medium leading-loose mb-6">
-                    Follow my blog for insights on Full Stack Development,
-                    performance optimization, and more. Stay tuned for regular
-                    updates!
+                    Theo dõi blog của tôi để đọc các bài viết về phát triển
+                    Fullstack, tối ưu hiệu năng và nhiều chủ đề kỹ thuật khác.
                   </p>
-                  <Button aria-label="Visit Blog" asChild>
-                    <Link aria-label="Visit Blog" href="/blogs">
+                  <Button aria-label="Truy cập Blog" asChild>
+                    <Link aria-label="Truy cập Blog" href="/blogs">
                       <ExternalLink />
-                      Visit Blog
+                      Truy cập Blog
                     </Link>
                   </Button>
                 </div>

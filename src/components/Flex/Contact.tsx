@@ -8,19 +8,19 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("youremail@example.com");
+    navigator.clipboard.writeText("chithanh171004@gmail.com");
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset trạng thái sau 2 giây
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <article className="card-customer p-6">
       <div className="flex flex-col h-full w-full gap-6 relative z-10">
         <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] uppercase">
-          Contact
+          Liên hệ
         </h3>
         <h4 className="text-xl font-medium tracking-wide">
-          Let&apos;s connect! Feel free to reach out through the following:
+          Kết nối với mình nhé! Bạn có thể liên lạc qua các cách sau:
         </h4>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
@@ -30,37 +30,39 @@ export default function Contact() {
             </span>
           </div>
           <button
-            aria-label="Copy email"
+            aria-label="Sao chép email"
             onClick={handleCopyEmail}
             className="flex items-center gap-2 justify-center w-full py-2 px-4 border-2 border-[var(--border)] rounded-full hover:bg-[var(--hover-bg)] transition-all"
           >
             {copied ? (
               <>
                 <Check className="w-5 h-5 text-green-500" />
-                <span className="text-green-500">Email Copied!</span>
+                <span className="text-green-500">Đã sao chép email!</span>
               </>
             ) : (
               <>
                 <Copy className="w-5 h-5 text-[var(--text-secondary)]" />
-                <span className="text-[var(--text-secondary)]">Copy Email</span>
+                <span className="text-[var(--text-secondary)]">
+                  Sao chép email
+                </span>
               </>
             )}
           </button>
         </div>
         <div className="flex items-center gap-2">
           <Phone className="w-5 h-5 text-[var(--text-secondary)]" />
-          <span className="text-[var(--text-secondary)]">+84 123 456 789</span>
+          <span className="text-[var(--text-secondary)]">+84 705 948 932</span>
         </div>
 
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5 text-[var(--text-secondary)]" />
             <h4 className="text-lg tracking-wide font-medium text-[var(--text-secondary)]">
-              Address
+              Địa chỉ
             </h4>
           </div>
           <p className="text-[var(--text-secondary)]">
-            Ho Chi Minh City, Vietnam — a city full of energy and opportunity.
+            TP. Hồ Chí Minh, Việt Nam
           </p>
         </div>
       </div>

@@ -13,10 +13,10 @@ export default function FlexResponsive() {
           <div className="flex relative z-10 items-center justify-center w-full h-full">
             <div className="flex flex-col items-center">
               <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
-                Experience
+                Kinh nghiệm
               </h3>
               <strong className="font-bold text-5xl">
-                1 <span className="text-3xl font-medium">Year</span>
+                1 <span className="text-3xl font-medium">Năm</span>
               </strong>
             </div>
           </div>
@@ -27,7 +27,7 @@ export default function FlexResponsive() {
           <div className="flex relative z-10 items-center justify-center w-full h-full">
             <div className="flex flex-col items-center">
               <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
-                Projects
+                Dự án
               </h3>
               <strong className="font-bold text-5xl flex items-center">
                 10 <span className="text-3xl font-medium">+</span>
@@ -38,22 +38,23 @@ export default function FlexResponsive() {
           <StarsBackground />
         </div>
       </article>
+
       <article className="!h-[240px] xl:hidden group">
         <div className="card-customer p-6">
           <Link
-            aria-label="To projects"
+            aria-label="Đến trang Dự án"
             className="flex flex-col justify-between h-full w-full relative z-10"
             href="/projects"
           >
             <h3 className="text-lg tracking-widest font-light text-[var(--text-secondary)] mb-2 uppercase">
-              Projects
+              Dự án
             </h3>
             <h4 className="text-xl font-medium tracking-wide line-clamp-3">
-              Explore my fullstack projects, from scalable social networks to
-              data-driven applications.
+              Khám phá các dự án fullstack của mình — từ nền tảng mạng xã hội có
+              thể mở rộng đến ứng dụng phân tích dữ liệu.
             </h4>
             <button
-              aria-label="Button to Projects"
+              aria-label="Nút đến Dự án"
               className="self-end border-2 relative border-[var(--border)] rounded-full size-12 flex justify-center items-center overflow-hidden"
             >
               <ArrowUpRight className="transition-all absolute ease-in-out duration-500 group-hover:translate-x-10 group-hover:-translate-y-10" />
@@ -64,6 +65,7 @@ export default function FlexResponsive() {
           <StarsBackground />
         </div>
       </article>
+
       <article className="!h-[310px] w-full relative rounded-2xl overflow-hidden">
         <Image
           src="/images/img3.webp"
