@@ -16,7 +16,7 @@ export default function FlexASide() {
         </h3>
         <div className="flex gap-4 w-full">
           <Link
-            aria-label="Đến Instagram"
+            aria-label="Đến CV của tôi"
             href="https://drive.google.com/file/d/1rQIocQWuM8Q8brNVXhoya9c6A_jSPTvt/view?usp=sharing"
             target="_blank"
             className="rounded-2xl card-customer !h-auto aspect-square flex items-center justify-center hover:bg-pink-400 hover:text-white"
