@@ -14,7 +14,7 @@ const images1 = [
 export function Slider() {
   return (
     <div className="overflow-hidden w-full h-16">
-      <div className="flex md:w-[200%] w-[600px] h-full">
+      <div className="flex w-full md:min-w-[200%] min-w-[600px] h-full">
         <div className={`flex w-full h-full ${styles.slider}`}>
           {images1.map(({ src, alt }) => (
             <div
