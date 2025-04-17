@@ -67,8 +67,8 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
   useEffect(() => {
     const updateStars = () => {
-      if (canvasRef.current) {
-        const canvas = canvasRef.current;
+      const canvas = canvasRef.current; // Lưu giá trị vào biến tạm
+      if (canvas) {
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
@@ -82,16 +82,18 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    if (canvasRef.current) {
-      resizeObserver.observe(canvasRef.current);
+    const canvas = canvasRef.current; // Lưu giá trị vào biến tạm
+    if (canvas) {
+      resizeObserver.observe(canvas);
     }
 
     return () => {
-      if (canvasRef.current) {
-        resizeObserver.unobserve(canvasRef.current);
+      if (canvas) {
+        resizeObserver.unobserve(canvas);
       }
     };
   }, [
+    // Đảm bảo các dependency được đúng
     starDensity,
     allStarsTwinkle,
     twinkleProbability,
@@ -101,7 +103,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   ]);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = canvasRef.current; // Lưu giá trị vào biến tạm
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");

@@ -7,26 +7,25 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Dự án",
   description:
-    "Explore ThanhDev's projects showcasing a range of web development work using the PERN stack (PostgreSQL, Express.js, React, Node.js), including backend systems, fullstack applications, and performance optimization.",
+    "Khám phá các dự án phát triển web của ThanhDev, bao gồm hệ thống backend, ứng dụng fullstack và các giải pháp tối ưu hiệu suất.",
   keywords: [
     "ThanhDev",
-    "projects",
-    "web development",
-    "PERN stack",
-    "backend development",
-    "fullstack applications",
+    "dự án",
+    "phát triển web",
+    "backend",
+    "ứng dụng fullstack",
     "React",
     "Next.js",
     "PostgreSQL",
     "Redis",
-    "performance optimization",
-    "backend systems",
+    "tối ưu hiệu năng",
+    "hệ thống backend",
     "Node.js",
-    "API development",
-    "software engineering",
-    "ThanhDev portfolio",
+    "phát triển API",
+    "kỹ sư phần mềm",
+    "portfolio ThanhDev",
   ],
   authors: [
     {
@@ -35,17 +34,17 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "Projects | ThanhDev - Fullstack Web Development with PERN",
+    title: "Dự án | ThanhDev - Phát triển Web Fullstack",
     description:
-      "Explore ThanhDev's collection of projects developed using the PERN stack (PostgreSQL, Express.js, React, Node.js). Learn about the cutting-edge technologies and solutions ThanhDev has built.",
+      "Khám phá bộ sưu tập dự án được xây dựng bởi ThanhDev, tập trung vào phát triển backend, ứng dụng fullstack và tối ưu hệ thống.",
     url: "https://thanhdev.io.vn/projects",
-    siteName: "ThanhDev Portfolio",
+    siteName: "Portfolio ThanhDev",
     images: [
       {
         url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "Projects | ThanhDev - Fullstack Web Development with PERN",
+        alt: "Dự án | ThanhDev - Phát triển Web Fullstack",
       },
     ],
     type: "website",
@@ -54,12 +53,20 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@Chiithanh1",
     creator: "@Chiithanh1",
-    title: "ThanhDev Projects - Fullstack Web Development with PERN",
+    title: "Dự án ThanhDev - Phát triển Web Fullstack",
     description:
-      "Explore ThanhDev's web development projects built with the PERN stack (PostgreSQL, Express.js, React, Node.js). Learn about the technologies used and the solutions ThanhDev has developed.",
+      "Khám phá các dự án phát triển web của ThanhDev với trọng tâm là backend, ứng dụng fullstack và hiệu suất hệ thống.",
     images: "/images/website.avif",
   },
 };
+
+export async function generateStaticParams() {
+  const listProject = await getAllProject();
+
+  return listProject.data.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 export default async function page() {
   const listProject = await getAllProject();

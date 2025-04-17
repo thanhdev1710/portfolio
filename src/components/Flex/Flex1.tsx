@@ -6,7 +6,7 @@ export function Flex1() {
     <section className="h-full w-full flex max-xl:h-[240px] gap-4">
       <article className="card-customer xl:!w-[50%] p-10 flex items-center">
         <div className="relative z-10">
-          <h1 className="text-4xl font-semibold mb-6 leading-tight">
+          <h1 className="md:text-4xl text-3xl font-semibold mb-6 leading-tight">
             Xin chào, mình là ThanhDev
           </h1>
           <h2 className="text-2xl text-[var(--text-secondary)] line-clamp-2">

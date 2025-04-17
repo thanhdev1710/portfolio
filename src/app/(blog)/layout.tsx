@@ -9,22 +9,22 @@ import Logo from "@/components/shared/Logo";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Blog | ThanhDev - Sharing My Development Journey",
+  title: "Blog | ThanhDev - Chia sẻ hành trình phát triển phần mềm",
   description:
-    "Welcome to my blog where I share my experience, insights, and tips about web technologies, performance optimization, and development practices.",
+    "Chào mừng bạn đến với blog của tôi, nơi tôi chia sẻ kinh nghiệm, góc nhìn và mẹo vặt về công nghệ web, tối ưu hiệu suất và các phương pháp phát triển hiện đại.",
   keywords: [
     "ThanhDev",
     "blog",
-    "fullstack developer",
-    "web development",
-    "performance optimization",
+    "lập trình viên fullstack",
+    "phát triển web",
+    "tối ưu hiệu suất",
     "Node.js",
     "React",
     "PostgreSQL",
     "Redis",
-    "experience",
-    "career tips",
-    "API development",
+    "kinh nghiệm",
+    "mẹo nghề nghiệp",
+    "phát triển API",
   ],
   authors: [
     {
@@ -33,16 +33,16 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "ThanhDev Blog | Web Development & Insights",
+    title: "Blog ThanhDev | Phát triển Web & Chia sẻ Kinh nghiệm",
     description:
-      "Explore ThanhDev blog, sharing experiences in web development, performance optimization, and best practices.",
+      "Khám phá blog của ThanhDev, nơi chia sẻ trải nghiệm thực tế trong phát triển web, tối ưu hiệu suất và những bài học hữu ích.",
     url: "https://www.thanhdev.io.vn/blogs",
     images: [
       {
         url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "ThanhDev Blog - Development Insights",
+        alt: "Blog ThanhDev - Góc nhìn lập trình và tối ưu hệ thống",
       },
     ],
     type: "website",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@Chiithanh1",
     creator: "@Chiithanh1",
-    title: "ThanhDev Blog | Web Development & Insights",
+    title: "Blog ThanhDev | Phát triển Web & Chia sẻ Kinh nghiệm",
     description:
-      "Explore ThanhDev blog, sharing experiences in web development, performance optimization, and best practices.",
+      "Khám phá blog ThanhDev, nơi chia sẻ kinh nghiệm phát triển web, tối ưu hiệu suất và các phương pháp lập trình hiệu quả.",
     images: "/images/website.avif",
   },
 };

@@ -30,4 +30,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://thanhdev.io.vn/cv/en</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thanhdev.io.vn/cv/vn</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -7,14 +7,12 @@ import toast from "react-hot-toast";
 
 export default function Error({
   error,
-  reset,
 }: {
   error: Error & { digest?: string };
-  reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    toast.error("Server connection error. Please try again later.");
+    // Gửi thông báo lỗi
+    toast.error("Lỗi kết nối đến máy chủ. Vui lòng thử lại sau.");
   }, [error]);
 
   return (
@@ -24,23 +22,25 @@ export default function Error({
 
       <div className="z-20 text-center mb-6 px-4 sm:px-8">
         <h1 className="text-6xl sm:text-7xl font-extrabold text-gradient mb-8 lg:block hidden">
-          💥💥💥 Error 💥💥💥
+          💥💥💥 Lỗi 💥💥💥
         </h1>
         <h1 className="text-6xl sm:text-7xl font-extrabold text-gradient mb-4 lg:hidden block">
-          Error 💥
+          Lỗi 💥
         </h1>
         <h2 className="text-5xl sm:text-6xl font-extrabold text-gradient mb-4">
-          Something went wrong!
+          Đã xảy ra sự cố!
         </h2>
         <p className="text-lg sm:text-xl mb-6">
-          We apologize, but there was an issue processing your request. Please
-          try again or contact support if the problem persists.
+          Rất tiếc, đã có lỗi xảy ra trong quá trình xử lý yêu cầu của bạn. Vui
+          lòng thử lại hoặc liên hệ bộ phận hỗ trợ nếu vấn đề vẫn tiếp diễn.
         </p>
         <button
-          onClick={reset}
+          onClick={() => {
+            location.reload();
+          }}
           className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg rounded-full shadow-lg transform hover:scale-105 transition duration-300"
         >
-          Try Again
+          Thử lại
         </button>
       </div>
     </div>

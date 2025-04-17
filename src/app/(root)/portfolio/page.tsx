@@ -8,14 +8,13 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Welcome to ThanhDev Portfolio. I am a fullstack web developer with a focus on backend development, performance optimization, and building scalable systems. Explore my projects and blog on technologies like React, Next.js, PostgreSQL, Redis, and more.",
+    "Chào mừng đến với Portfolio của ThanhDev. Tôi là lập trình viên fullstack với định hướng backend, tối ưu hiệu suất và xây dựng hệ thống có khả năng mở rộng. Khám phá các dự án và bài viết về React, Next.js, PostgreSQL, Redis và nhiều công nghệ khác.",
   keywords: [
     "ThanhDev",
     "portfolio",
     "fullstack developer",
     "backend developer",
     "web developer",
-    "PERN stack",
     "React",
     "Next.js",
     "PostgreSQL",
@@ -28,33 +27,33 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "ThanhDev",
-      url: "https://thanhdev.io.vn/", // Update with your actual URL
+      url: "https://thanhdev.io.vn/",
     },
   ],
   openGraph: {
-    title: "Portfolio | ThanhDev - Fullstack Web Development with PERN",
+    title: "Portfolio | ThanhDev - Fullstack Web Developer",
     description:
-      "Explore ThanhDev Portfolio, showcasing skills in backend and fullstack web development, performance optimization, and scalable systems.",
-    url: "https://thanhdev.io.vn/portfolio", // Update with your actual URL
+      "Khám phá portfolio của ThanhDev, thể hiện kỹ năng trong phát triển backend, ứng dụng fullstack, tối ưu hiệu suất và xây dựng hệ thống mở rộng.",
+    url: "https://thanhdev.io.vn/portfolio",
     siteName: "ThanhDev Portfolio",
     images: [
       {
-        url: "/images/website.avif", // Ensure the image exists
+        url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "Portfolio | ThanhDev - Fullstack Web Development with PERN",
+        alt: "Portfolio | ThanhDev - Fullstack Web Developer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Chiithanh1", // Correct Twitter handle
-    creator: "@Chiithanh1", // Correct Twitter handle
+    site: "@Chiithanh1",
+    creator: "@Chiithanh1",
     title: "ThanhDev Portfolio - Fullstack Web Developer",
     description:
-      "Explore ThanhDev Portfolio, showcasing backend and fullstack development skills. Learn about projects and achievements.",
-    images: "/images/website.avif", // Ensure the image link is correct
+      "Khám phá portfolio của ThanhDev, nơi chia sẻ các dự án web với trọng tâm backend và kỹ thuật tối ưu hệ thống.",
+    images: "/images/website.avif",
   },
 };
 

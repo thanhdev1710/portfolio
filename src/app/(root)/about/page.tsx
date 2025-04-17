@@ -7,22 +7,22 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "About ThanhDev - Fullstack Developer",
+  title: "Giới thiệu về ThanhDev - Lập trình viên Fullstack",
   description:
-    "Get to know ThanhDev, a fullstack developer with a passion for building scalable systems, optimizing performance, and creating robust web applications. Learn about my journey, expertise, and what drives me.",
+    "Tìm hiểu về ThanhDev, lập trình viên fullstack với niềm đam mê xây dựng hệ thống có khả năng mở rộng, tối ưu hiệu suất và phát triển ứng dụng web vững chắc. Khám phá hành trình, kỹ năng và động lực làm nghề của tôi.",
   keywords: [
     "ThanhDev",
-    "about ThanhDev",
-    "fullstack developer",
-    "web developer",
-    "career journey",
-    "optimization",
-    "experience",
+    "giới thiệu ThanhDev",
+    "lập trình viên fullstack",
+    "nhà phát triển web",
+    "hành trình sự nghiệp",
+    "tối ưu hóa",
+    "kinh nghiệm lập trình",
     "React",
     "Next.js",
     "PostgreSQL",
     "Redis",
-    "software engineering",
+    "kỹ sư phần mềm",
   ],
   authors: [
     {
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "About",
+    title: "Giới thiệu",
     description:
-      "Explore ThanhDev's journey, a developer specializing in fullstack web applications, system optimization, and creating scalable solutions. Get a closer look at my story and what motivates me.",
+      "Khám phá hành trình của ThanhDev, lập trình viên chuyên về ứng dụng web fullstack, tối ưu hệ thống và xây dựng giải pháp mở rộng. Hiểu rõ hơn về câu chuyện và động lực phía sau công việc của tôi.",
     url: "https://thanhdev.io.vn/about",
     siteName: "ThanhDev Portfolio",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: "/images/website.avif",
         width: 1200,
         height: 630,
-        alt: "About | ThanhDev - Fullstack Developer",
+        alt: "Giới thiệu | ThanhDev - Lập trình viên Fullstack",
       },
     ],
     type: "website",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@Chiithanh1",
     creator: "@Chiithanh1",
-    title: "About | ThanhDev - Fullstack Web Developer",
+    title: "Giới thiệu | ThanhDev - Lập trình viên Fullstack",
     description:
-      "Learn more about ThanhDev, a fullstack developer passionate about creating scalable systems and optimizing performance. Get insights into my journey and expertise.",
+      "Tìm hiểu thêm về ThanhDev, lập trình viên fullstack với đam mê tối ưu hiệu suất và xây dựng hệ thống có khả năng mở rộng. Khám phá kỹ năng và hành trình phát triển sự nghiệp.",
     images: "/images/website.avif",
   },
 };

@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 export const getAllProject = async (): Promise<Projects> => {
   const url = `${API_URL}${API_VERSION}projects`;
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      cache: "force-cache",
+    });
 
     if (!res.ok) {
       throw new Error(
@@ -23,7 +25,9 @@ export const getAllProject = async (): Promise<Projects> => {
 export const getProjectBySlug = async (slug: string): Promise<Project> => {
   const url = `${API_URL}${API_VERSION}projects/${slug}`;
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      cache: "force-cache",
+    });
 
     if (!res.ok) {
       throw new Error(`Lỗi khi lấy dự án: ${res.status} - ${res.statusText}`);

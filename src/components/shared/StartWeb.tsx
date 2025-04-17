@@ -9,12 +9,12 @@ export default function StartWeb() {
     <div className={styles.container}>
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Hi there! <br /> <span>Welcome to Thanh&apos;s </span>
+          Xin chào! <br /> <span>Mình là ThanhDev </span>
           <br />
           <FlipWords
             duration={500}
             className="text-white"
-            words={["Portfolio", "Website"]}
+            words={["Trang cá nhân", "Website"]}
           />
           <div className={styles.aurora}>
             <div className={styles.aurora__item}></div>
@@ -24,8 +24,9 @@ export default function StartWeb() {
           </div>
         </h1>
         <p className={`text-white ${styles.subtitle}`}>
-          I’m a backend-focused developer, specializing in building scalable
-          systems and optimizing website performance.
+          Mình là lập trình viên web, chuyên xây dựng ứng dụng web từ giao diện
+          người dùng đến hệ thống phía sau, với mục tiêu tối ưu trải nghiệm và
+          hiệu năng toàn diện.
         </p>
       </div>
       <StarsBackground />

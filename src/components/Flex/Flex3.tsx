@@ -23,7 +23,7 @@ export function Flex3() {
         <div className="card-customer max-md:!w-full !w-[60%] p-6 flex items-center justify-between max-xl:!w-[75%]">
           <div className="w-full">
             <h3 className="text-3xl font-medium mb-10 relative z-10">
-              Công nghệ mình sử dụng
+              Công nghệ sử dụng
             </h3>
             <Slider />
           </div>

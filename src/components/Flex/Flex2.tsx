@@ -52,8 +52,8 @@ export function Flex2() {
             Dự án
           </h3>
           <h4 className="text-xl font-medium tracking-wide line-clamp-3">
-            Khám phá những dự án fullstack mình đã làm — từ mạng xã hội đến các
-            ứng dụng phân tích dữ liệu.
+            Khám phá các dự án fullstack mình đã xây dựng — bao gồm nền tảng
+            mạng xã hội và nhiều ứng dụng web hiện đại khác.
           </h4>
           <button
             aria-label="Nút tới Dự án"

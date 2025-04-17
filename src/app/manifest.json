@@ -1,17 +1,17 @@
 {
   "id": "/manifest.json",
-  "name": "ThanhDev Portfolio - Fullstack Developer",
+  "name": "ThanhDev Portfolio - Lập trình viên Fullstack",
   "short_name": "ThanhDev",
-  "description": "Explore ThanhDev Portfolio, showcasing skills in fullstack web applications, optimization techniques, and scalable systems using the PERN stack (PostgreSQL, Express.js, React, Node.js).",
+  "description": "Khám phá Portfolio của ThanhDev, thể hiện kỹ năng trong phát triển ứng dụng web fullstack, kỹ thuật tối ưu hóa và xây dựng hệ thống mở rộng với PERN stack (PostgreSQL, Express.js, React, Node.js).",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#ffffff",
-  "lang": "en",
+  "lang": "vi",
   "dir": "ltr",
-  "categories": ["portfolio", "developer", "web development", "PERN stack"],
+  "categories": ["portfolio", "developer", "phát triển web", "PERN stack"],
   "icons": [
     {
       "src": "/images/icon.png",

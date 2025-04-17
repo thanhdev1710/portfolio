@@ -5,8 +5,8 @@ import React, { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ThanhDev - Fullstack Web Development with PERN",
-    default: "Welcome to website | ThanhDev",
+    template: "%s | ThanhDev - Phát triển Web Fullstack",
+    default: "Chào mừng đến với website | ThanhDev",
   },
 };
 
