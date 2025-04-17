@@ -14,12 +14,12 @@ const images1 = [
 export function Slider() {
   return (
     <div className="overflow-hidden w-full h-16">
-      <div className="flex w-full md:min-w-[200%] min-w-[600px] h-full">
-        <div className={`flex w-full h-full ${styles.slider}`}>
+      <div className="flex md:w-[200%] w-[580px] h-full">
+        <div className={`flex shrink-0 w-full h-full ${styles.slider}`}>
           {images1.map(({ src, alt }) => (
             <div
               key={src}
-              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 p-2 rounded-2xl mx-2"
+              className="h-full w-auto shrink-0 aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 p-2 rounded-2xl mx-2"
             >
               <Image
                 width={100}
@@ -31,11 +31,11 @@ export function Slider() {
             </div>
           ))}
         </div>
-        <div className={`flex w-full ${styles.slider}`}>
+        <div className={`flex shrink-0 w-full ${styles.slider}`}>
           {images1.map(({ src, alt }) => (
             <div
               key={src}
-              className="h-auto w-full aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 p-2 rounded-2xl mx-2"
+              className="h-full w-auto shrink-0 aspect-square overflow-hidden dark:bg-zinc-600/60 bg-zinc-200 p-2 rounded-2xl mx-2"
             >
               <Image
                 width={100}
